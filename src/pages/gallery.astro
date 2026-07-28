@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const galleryImages = [
+  'https://images.unsplash.com/photo-1590059392725-47c4b28a46d9?w=600&h=600&fit=crop',
+  'https://images.unsplash.com/photo-1540520370997-c950afc78d3b?w=600&h=600&fit=crop',
+  'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=600&fit=crop',
+  'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&h=600&fit=crop',
+  'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600&h=600&fit=crop',
+  'https://images.unsplash.com/photo-1578683010236-d716f9a3f461?w=600&h=600&fit=crop',
+  'https://images.unsplash.com/photo-1504198266287-1659872e6590?w=600&h=600&fit=crop',
+  'https://images.unsplash.com/photo-1527529482837-469817a63b88?w=600&h=600&fit=crop',
+];
+---
+
+<BaseLayout
+  title="Gallery - Mahakal Bhakta Nivas Ujjain"
+  description="Photo gallery of Mahakal Bhakta Nivas dharmashala in Ujjain. See our rooms, temple views, restaurant, and surroundings near Mahakaleshwar Temple."
+>
+  <Header />
+
+  <section class="section" style="padding-top:100px">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Photo Gallery</span>
+        <h1 class="heading-display heading-lg section-title">Glimpses of Mahakal Bhakta Nivas</h1>
+        <p class="section-subtitle">
+          Take a virtual tour of our dharmashala, rooms, and the divine surroundings of Ujjain.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        {galleryImages.map((src, i) => (
+          <div class="gallery-item">
+            <img src={src} alt={`Gallery image ${i + 1} - Mahakal Bhakta Nivas`} loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

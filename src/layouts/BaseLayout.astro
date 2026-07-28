@@ -1,0 +1,96 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  image?: string;
+  noIndex?: boolean;
+}
+
+const canonicalUrl = Astro.props.canonical
+  ? new URL(Astro.props.canonical, Astro.site)
+  : new URL(Astro.url.pathname, Astro.site);
+const pageTitle = `${Astro.props.title} | Mahakal Bhakta Nivas Ujjain`;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LodgingBusiness',
+  name: 'Mahakal Bhakta Nivas',
+  description: Astro.props.description,
+  url: 'https://mahakalbhaktanivas.in',
+  telephone: '+919876543210',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Near Mahakaleshwar Temple',
+    addressLocality: 'Ujjain',
+    addressRegion: 'Madhya Pradesh',
+    postalCode: '456001',
+    addressCountry: 'IN',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 23.1793,
+    longitude: 75.7689,
+  },
+  image: Astro.props.image || 'https://mahakalbhaktanivas.in/og-image.jpg',
+  priceRange: '₹₹',
+  amenityFeature: [
+    { '@type': 'LocationFeatureSpecification', name: 'Hot Water', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'WiFi', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Pure Veg Restaurant', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Temple View', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Parking', value: true },
+    { '@type': 'LocationFeatureSpecification', name: '24/7 Reception', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Room Service', value: true },
+  ],
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://mahakalbhaktanivas.in/' },
+    ...(Astro.url.pathname !== '/'
+      ? [{ '@type': 'ListItem', position: 2, name: Astro.props.title, item: canonicalUrl.toString() }]
+      : []),
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={Astro.props.description} />
+    <link rel="canonical" href={canonicalUrl} />
+    {Astro.props.noIndex && <meta name="robots" content="noindex,nofollow" />}
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={Astro.props.title} />
+    <meta property="og:description" content={Astro.props.description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Mahakal Bhakta Nivas" />
+    <meta property="og:image" content={Astro.props.image || 'https://mahakalbhaktanivas.in/og-image.jpg'} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={Astro.props.title} />
+    <meta name="twitter:description" content={Astro.props.description} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(breadcrumbLd)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
