@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE, POOJAS, FESTIVALS } from '../config';
+const title = "Pooja & Seva at Mahakaleshwar Temple | Mahakal Bhakta Nivas";
+const desc = "Book Mahamrityunjaya Jaap, Rudrabhishek, Laghurudri and temple sevas at Mahakaleshwar Temple. Mahakal Bhakta Nivas helps arrange all POOJAS for pilgrims.";
+---
+
+<BaseLayout title={title} description={desc}>
+  <Header />
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+          <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Pooja & Seva</span>
+        </nav>
+        <h1>Pooja & Seva at Mahakaleshwar</h1>
+        <p>Sacred rituals and offerings at the Mahakaleshwar Jyotirlinga</p>
+      </div>
+    </section>
+    <section class="POOJAS-section">
+      <div class="container">
+        <h2>Pooja Offerings</h2>
+        <p class="section-intro">We help arrange these sacred POOJAS at Mahakaleshwar Temple for you and your family.</p>
+        <div class="POOJAS-grid">
+          {POOJAS.map(p => (
+            <div class="pooja-card">
+              <div class="pooja-header">
+                <h3>{p.name}</h3>
+                <span class="pooja-price">{p.price}</span>
+              </div>
+              <p>{p.desc}</p>
+              <div class="pooja-meta">⏱ {p.duration}</div>
+              <a href={`https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(`I'd like to book ${p.name} (${p.price}). Please share details.`)}`}
+                 target="_blank" rel="noopener" class="pooja-book-btn">
+                Book Pooja on WhatsApp
+              </a>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    <section class="FESTIVALS-section">
+      <div class="container">
+        <h2>Major Festivals at Ujjain</h2>
+        <p class="section-intro">Plan your visit around these auspicious occasions.</p>
+        <div class="FESTIVALS-list">
+          {FESTIVALS.map(f => (
+            <div class="festival-card">
+              <h3>{f.name}</h3>
+              <div class="festival-date">📅 {f.date}</div>
+              <p>{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero { background: var(--c-cream); padding: 32px 0 28px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+  .breadcrumb { font-size: 13px; color: #888; margin-bottom: 14px; }
+  .breadcrumb a { color: var(--c-maroon); }
+  .page-hero h1 { font-family: var(--font-dev); font-size: clamp(1.5rem, 4vw, 2rem); color: var(--c-maroon); margin-bottom: 8px; }
+  .page-hero p { font-size: 14px; color: #666; }
+  .POOJAS-section, .FESTIVALS-section { padding: 40px 0; }
+  .FESTIVALS-section { background: var(--c-cream); }
+  h2 { font-family: var(--font-dev); font-size: 1.6rem; color: var(--c-maroon); text-align: center; margin-bottom: 8px; }
+  .section-intro { text-align: center; color: #666; font-size: 14.5px; max-width: 600px; margin: 0 auto 24px; }
+  .POOJAS-grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .pooja-card {
+    background: #fff; padding: 20px; border-radius: 14px;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .pooja-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+  .pooja-card h3 { font-size: 16px; color: var(--c-maroon); }
+  .pooja-price { font-size: 16px; font-weight: 700; color: #25D366; }
+  .pooja-card p { font-size: 13.5px; color: #555; margin-bottom: 10px; }
+  .pooja-meta { font-size: 12.5px; color: #888; margin-bottom: 12px; }
+  .pooja-book-btn {
+    display: inline-block; padding: 10px 18px; background: #25D366; color: #fff;
+    border-radius: 8px; font-size: 13.5px; font-weight: 600;
+  }
+  .FESTIVALS-list { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  .festival-card {
+    background: #fff; padding: 18px 20px; border-radius: 12px;
+    border-left: 4px solid var(--c-gold);
+  }
+  .festival-card h3 { font-size: 15px; color: var(--c-maroon); margin-bottom: 4px; }
+  .festival-date { font-size: 12.5px; color: #888; margin-bottom: 6px; }
+  .festival-card p { font-size: 13.5px; color: #555; }
+
+  @media (min-width: 600px) {
+    .POOJAS-grid { grid-template-columns: repeat(2, 1fr); }
+    .FESTIVALS-list { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

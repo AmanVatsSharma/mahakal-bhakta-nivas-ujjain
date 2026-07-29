@@ -1,0 +1,78 @@
+{
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "How far is Mahakal Bhakta Nivas from Mahakaleshwar Temple?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "We are located just 200 metres (about a 3-minute walk) from the main Mahakaleshwar Temple gates. Our proximity makes it easy for devotees to attend morning and evening aartis without any travel hassle."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "How can I reach Mahakal Bhakta Nivas from Ujjain Railway Station?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Ujjain Railway Station is approximately 3 km away. Auto-rickshaws and local taxis are readily available (10–15 minutes). We can also arrange a pickup on request — just call us in advance."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Do you provide meals with the rooms?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes, we offer pure vegetarian satvik meals as part of select packages. Guests can also enjoy our complimentary morning tea and prasadam. The on-site canteen serves local and North Indian cuisine."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Can I book rooms online?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Absolutely! You can book directly through our website, call us, or message us on WhatsApp. Online bookings confirm instantly, and we'll share booking details and directions via SMS."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "What is the check-in and check-out time?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Standard check-in time is 12:00 PM and check-out is 11:00 AM. Early check-in or late check-out can be arranged subject to availability — please contact us in advance."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Do you offer group or family booking discounts?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes! We offer special rates for family groups, temple trusts, and large devotional groups. For groups of 10 or more, please contact us directly for custom packages."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Is parking available at the dharmashala?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Yes, we have dedicated parking space for two-wheelers and four-wheelers. Our premises are secured with CCTV surveillance for the safety of your vehicle."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "What payment methods do you accept?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "We accept cash, UPI (Google Pay, PhonePe, Paytm), all major credit and debit cards. Online payments via our website booking engine are also supported."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "Are there any nearby temples I should visit?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Ujjain is one of the 12 Jyotirlinga sites and home to many sacred spots. Key temples near us include: Harsiddhi Temple (1 km), Ram Ghat (500 m), Gopal Mandir (1.5 km), and the famous Kumbh Mela site on the Shipra River."
+			}
+		}
+	]
+}

@@ -1,411 +1,1708 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import { SITE, CONTACT, STATS, ROOMS, AMENITIES, TESTIMONIALS, FAQ_DATA, GALLERY_CATEGORIES, GALLERY_ITEMS, NAV_LINKS, POOJAS, FESTIVALS } from '../config';
+import Header from './components/Header.astro';
+import Footer from './components/Footer.astro';
+import FaqSchema from '../components/FaqSchema.json';
 
-const starSvg = `<svg viewBox="0 0 24 24" fill="currentColor" stroke="none" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
-
-const checkSvg = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>`;
-
-const testimonials = [
-  {
-    name: 'Rajesh Sharma',
-    location: 'Mumbai, Maharashtra',
-    text: 'The best dharmashala in Ujjain! Walking distance from Mahakaleshwar temple. The rooms are clean, food is excellent, and the staff is very helpful.',
-    initials: 'RS',
-    stars: 5,
-  },
-  {
-    name: 'Priya Patel',
-    location: 'Ahmedabad, Gujarat',
-    text: 'Our family stayed for 3 days during Simhastha. The suite was spacious and comfortable. The prasad service and temple guide arrangements made our trip seamless.',
-    initials: 'PP',
-    stars: 5,
-  },
-  {
-    name: 'Anil Kumar',
-    location: 'Delhi NCR',
-    text: 'I visit Ujjain every year for Mahashivratri. Mahakal Bhakta Nivas is my go-to stay. Excellent value for money, hot water available, and very close to the temple.',
-    initials: 'AK',
-    stars: 5,
-  },
-];
-
-const amenities = [
-  { icon: 'wifi', name: 'Free WiFi' },
-  { icon: 'droplet', name: 'Hot Water 24/7' },
-  { icon: 'utensils', name: 'Pure Veg Restaurant' },
-  { icon: 'car', name: 'Free Parking' },
-  { icon: 'tv', name: 'TV in Rooms' },
-  { icon: 'heart', name: 'Medical Room' },
-  { icon: 'bag', name: 'Prasad Shop' },
-  { icon: 'users', name: 'Group Booking' },
-  { icon: 'pin', name: 'Temple Guide' },
-  { icon: 'clock', name: '24/7 Reception' },
-  { icon: 'shield', name: 'Secure Lockers' },
-  { icon: 'zap', name: 'Power Backup' },
-];
-
-function amenitySvg(type: string) {
-  const paths: Record<string, string> = {
-    wifi: '<path d="M5 12.55a11 11 0 0114.08 0" /><path d="M1.42 9a16 16 0 0121.16 0" /><path d="M8.53 16.11a6 6 0 016.95 0" /><line x1="12" y1="20" x2="12.01" y2="20" />',
-    droplet: '<path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z" />',
-    utensils: '<path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2" /><path d="M7 2v20" /><path d="M21 2v20" /><path d="M18 12h.01" />',
-    car: '<path d="M14 16H9m10 0h3v-3.15a1 1 0 00-.84-.99L16 11l-2.7-3.6a1 1 0 00-.8-.4H5.24a2 2 0 00-1.8 1.1l-.8 1.63A6 6 0 002 12.42V16h2" /><circle cx="6.5" cy="16.5" r="2.5" /><circle cx="16.5" cy="16.5" r="2.5" />',
-    tv: '<rect x="2" y="7" width="20" height="15" rx="2" ry="2" /><polyline points="17 2 12 7 7 2" />',
-    heart: '<path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />',
-    bag: '<path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" /><line x1="3" y1="6" x2="21" y2="6" /><path d="M16 10a4 4 0 01-8 0" />',
-    users: '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 00-3-3.87" /><path d="M16 3.13a4 4 0 010 7.75" />',
-    pin: '<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />',
-    clock: '<circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />',
-    shield: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />',
-    zap: '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />',
-  };
-  return paths[type] || '';
-}
+const pageTitle = `${SITE.name} - Best Dharmashala Near Mahakaleshwar Temple, Ujjain`;
+const pageDescription = SITE.description;
+const pageUrl = SITE.url;
+const ogImage = `${SITE.url}/og-image.jpg`;
 ---
 
-<BaseLayout
-  title="Mahakal Bhakta Nivas - Best Dharmashala Near Mahakaleshwar Temple Ujjain"
-  description="Book comfortable rooms at Mahakal Bhakta Nivas, the best dharmashala near Mahakaleshwar Temple in Ujjain. Clean rooms, pure veg food, 24/7 service. Walk to the temple in 5 minutes."
-  canonical="/"
-  image="https://mahakalbhaktanivas.in/og-image.jpg"
->
-  <Header />
+<BaseLayout title={pageTitle} description={pageDescription} canonical={pageUrl} ogImage={ogImage}>
+	<!-- Hero Section -->
+	<section class="hero" id="home">
+		<div class="hero-bg">
+			<img src="/images/hero-bg.webp" alt="Mahakaleshwar Temple Ujjain - Sacred Jyotirlinga" loading="eager" fetchpriority="high">
+		</div>
+		<div class="hero-overlay"></div>
+		<div class="container hero-content">
+			<div class="hero-badge">
+				<span class="hero-badge-dot"></span>
+				<span>Just 200m from Mahakaleshwar Temple</span>
+			</div>
+			<h1>Welcome to <span class="highlight">Mahakal Bhakta Nivas</span></h1>
+			<p class="hero-subtitle">The most trusted dharmashala in Ujjain — clean rooms, pure veg meals, and spiritual peace just steps from the Jyotirlinga.</p>
+			<div class="hero-ctas">
+				<a href={`https://wa.me/${SITE.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('Namaste! I would like to inquire about room availability at Mahakal Bhakta Nivas.')}`} class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.365.195 1.88.118.574-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+					WhatsApp Booking
+				</a>
+				<a href={`tel:${SITE.phone}`} class="btn btn-call">
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+					Call Now
+				</a>
+				<a href="#rooms" class="btn btn-outline">View Rooms</a>
+			</div>
+			<div class="hero-stats">
+				{STATS.map((stat) => (
+					<div class="hero-stat">
+						<div class="hero-stat-value">{stat.value}</div>
+						<div class="hero-stat-label">{stat.label}</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
 
-  <!-- ==================== HERO ==================== -->
-  <section class="hero" id="home">
-    <div class="hero-bg">
-      <img src="/hero_01.png" alt="Mahakaleshwar Bhakta Nivas Dharmashala in Ujjain" fetchpriority="high" />
-    </div>
+	<!-- Trust / Stats Band -->
+	<section class="trust-band">
+		<div class="container">
+			<div class="trust-grid">
+				{STATS.map((stat) => (
+					<div class="trust-card" key={stat.label}>
+						<span class="trust-value">{stat.value}</span>
+						<span class="trust-label">{stat.label}</span>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
 
-    <div class="hero-cta-bar">
-      <a href="https://wa.me/919876543210?text=Hi,%20I%20would%20like%20to%20book%20a%20room%20at%20Mahakal%20Bhakta%20Nivas" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        Book on WhatsApp
-      </a>
-      <a href="tel:+919876543210" class="btn btn-call btn-lg">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-        </svg>
-        Call Now
-      </a>
-      <a href="#rooms" class="btn btn-secondary btn-lg">View Rooms</a>
-    </div>
-  </section>
+	<!-- Rooms Section -->
+	<section class="rooms-section" id="rooms">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-eyebrow">Accommodation</span>
+				<h2>Rooms at Mahakal Bhakta Nivas</h2>
+				<p>From budget dormitories to premium family suites — pick the perfect stay for your Ujjain pilgrimage. All rooms are clean, well-ventilated, and just steps from Mahakaleshwar Temple.</p>
+			</div>
+			<div class="rooms-grid">
+				{ROOMS.map((room) => (
+					<div class="room-card" key={room.id}>
+						<div class="room-image">
+							<img src={room.image} alt={room.imageAlt} loading="lazy" width="400" height="260">
+							{room.badge && <span class="room-badge">{room.badge}</span>}
+						</div>
+						<div class="room-details">
+							<h3>{room.name}</h3>
+							<p class="room-meta">{room.capacity} · {room.size}</p>
+							<p>{room.description}</p>
+							<ul class="room-features">
+								{room.features.map((f) => (
+									<li>{f}</li>
+								))}
+							</ul>
+							<div class="room-price-row">
+								<span class="room-price">{room.priceText}<span>/night</span></span>
+								<a href={`https://wa.me/${SITE.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(`Hi! I'd like to book the ${room.name} at Mahakal Bhakta Nivas.`)}`} target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
+									Book Now
+								</a>
+							</div>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
 
-  <!-- ==================== ROOMS ==================== -->
-  <section class="section" id="rooms">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Accommodation</span>
-        <h2 class="heading-display heading-lg section-title">Our Rooms & Suites</h2>
-        <p class="section-subtitle">
-          From cozy single rooms to spacious family suites — all designed for a restful spiritual journey.
-        </p>
-      </div>
+	<!-- Amenities -->
+	<section class="amenities-section" id="amenities">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-eyebrow">What We Offer</span>
+				<h2>Amenities & Facilities</h2>
+				<p>We've thought of everything to make your spiritual journey comfortable and hassle-free.</p>
+			</div>
+			<div class="amenities-grid">
+				{AMENITIES.map((a) => (
+					<div class="amenity-card" key={a.title}>
+						<span class="amenity-icon">{a.icon}</span>
+						<h4>{a.title}</h4>
+						<p>{a.desc}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
 
-      <div class="rooms-grid stagger-children">
-        {[
-          {
-            title: 'Deluxe Room',
-            desc: 'Comfortable AC room with queen bed, attached bathroom with hot water, and temple view.',
-            price: '₹1,200',
-            badge: 'Popular',
-            features: ['AC', 'Hot Water', 'Free WiFi', 'TV'],
-            image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&h=400&fit=crop',
-          },
-          {
-            title: 'Family Suite',
-            desc: 'Spacious room with double bed + single bed, perfect for families visiting the temple.',
-            price: '₹1,800',
-            badge: 'Best Value',
-            features: ['AC', 'Hot Water', 'Free WiFi', 'Balcony'],
-            image: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600&h=400&fit=crop',
-          },
-          {
-            title: 'Temple View Room',
-            desc: 'Premium room with direct view of Mahakaleshwar Temple gopuram. Wake up to darshan vibes.',
-            price: '₹2,500',
-            badge: 'Premium',
-            features: ['AC', 'Hot Water', 'Free WiFi', 'TV', 'Balcony'],
-            image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop',
-          },
-          {
-            title: 'Non-AC Room',
-            desc: 'Clean, well-ventilated budget room with comfortable beds. Great for pilgrims on a budget.',
-            price: '₹600',
-            badge: 'Budget',
-            features: ['Fan', 'Hot Water', 'Common WiFi'],
-            image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&h=400&fit=crop',
-          },
-          {
-            title: 'Dormitory',
-            desc: 'Shared accommodation for large groups. Separate spaces for men and women with lockers.',
-            price: '₹350',
-            badge: 'Group',
-            features: ['Fan', 'Hot Water', 'Common WiFi', 'Lockers'],
-            image: 'https://images.unsplash.com/photo-1555854877-bab0e1dbfd81?w=600&h=400&fit=crop',
-          },
-          {
-            title: 'Dharamshala Hall',
-            desc: 'Large hall for group bookings and satsangs. Mattress arrangement for 50+ people.',
-            price: '₹200/bed',
-            badge: 'Groups',
-            features: ['Common Bath', 'Hot Water', 'Kitchen Access'],
-            image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop',
-          },
-        ].map((room) => (
-          <div class="room-card">
-            <div class="room-card-image">
-              <img src={room.image} alt={room.title} loading="lazy" />
-              <span class="room-badge">{room.badge}</span>
-              <span class="room-price-tag">From {room.price}/night</span>
-            </div>
-            <div class="room-card-body">
-              <h3 class="room-card-title">{room.title}</h3>
-              <p class="room-card-desc">{room.desc}</p>
-              <div class="room-features">
-                {room.features.map(f => (
-                  <span class="room-feature">{checkSvg} {f}</span>
-                ))}
-              </div>
-              <a href={"https://wa.me/919876543210?text=" + encodeURIComponent("Hi, I would like to inquire about " + room.title)} class="btn btn-primary" target="_blank" rel="noopener">
-                Book Now
-              </a>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+	<!-- Temple & Darshan Info -->
+	<section class="temple-section" id="temple">
+		<div class="container">
+			<div class="temple-layout">
+				<div class="temple-info">
+					<span class="section-eyebrow">Mahakaleshwar Temple</span>
+					<h2>One of the 12 Sacred Jyotirlingas</h2>
+					<p class="temple-lead">Mahakaleshwar Jyotirlinga in Ujjain is one of the most revered Shiva temples in India. Located on the banks of the Shipra River, it is believed that Lord Shiva himself dwells here as the Mahakal — the lord of time and death.</p>
+					<div class="temple-details">
+						<div class="temple-detail">
+							<span class="detail-label">Main Aarti Times</span>
+							<ul>
+								<li><strong>Morning Aarti:</strong> 4:00 AM (Bhasma Aarti — prior booking required)</li>
+								<li><strong>Evening Aarti:</strong> 7:00 PM</li>
+								<li><strong>Night Aarti:</strong> 11:00 PM</li>
+							</ul>
+						</div>
+						<div class="temple-detail">
+							<span class="detail-label">Temple Opening Hours</span>
+							<ul>
+								<li><strong>Opening:</strong> 4:00 AM</li>
+								<li><strong>Closing:</strong> 11:00 PM</li>
+								<li><strong>Closed:</strong> None (open all year round)</li>
+							</ul>
+						</div>
+						<div class="temple-detail">
+							<span class="detail-label">Dress Code</span>
+							<p>Dress modestly — traditional Indian attire preferred. Shorts, sleeveless tops, and leather items are not allowed inside the temple premises.</p>
+						</div>
+					</div>
+					<a href={`https://wa.me/${SITE.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('I would like information about Bhasma Aarti booking and Mahakaleshwar darshan timings.')}`} target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+						📿 Get Temple Info via WhatsApp
+					</a>
+				</div>
+				<div class="temple-visual">
+					<div class="temple-image-card">
+						<img src="/images/gallery/placeholder.webp" alt="Mahakaleshwar Temple Ujjain - Mahakal Jyotirlinga" loading="lazy">
+					</div>
+					<div class="temple-darshan-card">
+						<h4>🕐 Quick Tips for Darshan</h4>
+						<ul>
+							<li><strong>Bhasma Aarti</strong> — Most auspicious; requires advance booking via the temple's official website or at the temple gate.</li>
+							<li><strong>Best Time to Visit</strong> — Early morning (4-7 AM) for darshan with minimal crowd; evening aarti is equally divine.</li>
+							<li><strong>Prasadam</strong> — Available at the temple; don't miss the divine Bhasma.</li>
+							<li><strong>Nearby Ghats</strong> — Ram Ghat and Shipra Ghat are ideal for evening aarti and a holy dip.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-  <!-- ==================== AMENITIES ==================== -->
-  <section class="section amenities-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Why Choose Us</span>
-        <h2 class="heading-display heading-lg section-title">Amenities & Services</h2>
-        <p class="section-subtitle">
-          Everything you need for a comfortable and spiritually uplifting stay in Ujjain.
-        </p>
-      </div>
+	<!-- How to Reach -->
+	<section class="reach-section" id="reach">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-eyebrow">Directions</span>
+				<h2>How to Reach Us</h2>
+				<p>Ujjain is well-connected by air, rail, and road. Here's how to reach Mahakal Bhakta Nivas from major transit points.</p>
+			</div>
+			<div class="reach-grid">
+				<div class="reach-card">
+					<div class="reach-icon">✈️</div>
+					<h3>By Air</h3>
+					<p class="reach-location">Devi Ahilya Bai Holkar Airport, Indore</p>
+					<p>About 55 km from Ujjain. Take a taxi or bus from Indore to Ujjain (approx. 1.5 hours).</p>
+				</div>
+				<div class="reach-card">
+					<div class="reach-icon">🚆</div>
+					<h3>By Train</h3>
+					<p class="reach-location">Ujjain Junction Railway Station</p>
+					<p>Just 3 km away. Auto-rickshaws and taxis are available outside the station (10 min ride).</p>
+				</div>
+				<div class="reach-card">
+					<div class="reach-icon">🚌</div>
+					<h3>By Bus</h3>
+					<p class="reach-location">Ujjain ISBT / Private Bus Stand</p>
+					<p>Direct buses from Indore, Bhopal, Kota, and Jaipur. Walking distance to our location.</p>
+				</div>
+				<div class="reach-card">
+					<div class="reach-icon">🚗</div>
+					<h3>By Car / Taxi</h3>
+					<p class="reach-location">Near Mahakaleshwar Temple, Ujjain</p>
+					<p>Google Maps: Search "Mahakal Bhakta Nivas Ujjain". Free parking available at our premises.</p>
+				</div>
+			</div>
+			<div class="reach-cta">
+				<a href="https://maps.google.com/?q=Mahakaleshwar+Temple+Ujjain" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+					📍 Get Directions on Google Maps
+				</a>
+			</div>
+		</div>
+	</section>
 
-      <div class="amenities-grid stagger-children">
-        {amenities.map(a => (
-          <div class="amenity-card">
-            <div class="amenity-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                {amenitySvg(a.icon)}
-              </svg>
-            </div>
-            <span class="amenity-name">{a.name}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+	<!-- Pooja & Seva -->
+	<section class="seva-section" id="seva">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-eyebrow">Spiritual Services</span>
+				<h2>Pooja & Seva Offerings</h2>
+				<p>Enhance your spiritual journey with traditional pooja arrangements and temple services we can help you coordinate.</p>
+			</div>
+			<div class="seva-grid">
+				<div class="seva-card">
+					<div class="seva-icon">🔥</div>
+					<h4>Rudrabhishek</h4>
+					<p>Sacred Lord Shiva abhishek with chanting of the Rudram. Available for individual and family bookings.</p>
+				</div>
+				<div class="seva-card">
+					<div class="seva-icon">🪔</div>
+					<h4>Deep Dan</h4>
+					<p>Offer a lamp at Mahakaleshwar temple for divine blessings and peace.</p>
+				</div>
+				<div class="seva-card">
+					<div class="seva-icon">🌿</div>
+					<h4>Satvik Thali</h4>
+					<p>Pure vegetarian meals prepared with devotion — available for breakfast, lunch, and dinner.</p>
+				</div>
+				<div class="seva-card">
+					<div class="seva-icon">📿</div>
+					<h4>Bhasma Aarti Booking</h4>
+					<p>We'll help you arrange the famous Bhasma Aarti — the most coveted pooja at Mahakaleshwar Temple.</p>
+				</div>
+				<div class="seva-card">
+					<div class="seva-icon">🎉</div>
+					<h4>Group / Festival Arrangements</h4>
+					<p>Special arrangements during Mahashivratri, Kumbh Mela, and other festivals. Contact us for group bookings.</p>
+				</div>
+				<div class="seva-card">
+					<div class="seva-icon">🛺</div>
+					<h4>Local Transport</h4>
+					<p>Temple pick-up & drop-off, local sightseeing tours, and cab arrangements for Ujjain and nearby sites.</p>
+				</div>
+			</div>
+		</div>
+	</section>
 
-  <!-- ==================== LOCATION ==================== -->
-  <section class="section" id="location">
-    <div class="container">
-      <div class="location-grid">
-        <div>
-          <span class="section-label">Location</span>
-          <h2 class="heading-display heading-lg" style="color:var(--color-sand-900);margin-bottom:var(--space-4)">In the Heart of Ujjain</h2>
-          <p style="color:var(--color-sand-700);margin-bottom:var(--space-3);line-height:1.7">
-            Located just 500 meters from the sacred Mahakaleshwar Jyotirlinga temple,
-            Mahakal Bhakta Nivas offers the most convenient stay for devotees visiting Ujjain.
-          </p>
-          <p style="color:var(--color-sand-700);margin-bottom:var(--space-3);line-height:1.7">
-            Our dharmashala is in the bustling temple market area, with easy access to
-            the Ram Ghat, Kal Bhairav Temple, and the famous bazaars of Ujjain.
-          </p>
-          <div class="location-distances">
-            <div class="distance-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
-              </svg>
-              <div>
-                <strong>500m</strong>
-                <span>Mahakaleshwar Temple</span>
-              </div>
-            </div>
-            <div class="distance-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
-              </svg>
-              <div>
-                <strong>1.2 km</strong>
-                <span>Ram Ghat</span>
-              </div>
-            </div>
-            <div class="distance-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
-              </svg>
-              <div>
-                <strong>3.5 km</strong>
-                <span>Ujjain Junction</span>
-              </div>
-            </div>
-            <div class="distance-item">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" />
-              </svg>
-              <div>
-                <strong>8 km</strong>
-                <span>Ujjain Airport</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="location-map">
-          <div class="location-map-placeholder">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-              <circle cx="12" cy="10" r="3" />
-            </svg>
-            <span>Near Mahakaleshwar Temple, Ujjain, MP 456001</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+	<!-- Festival Calendar -->
+	<section class="festival-section" id="festivals">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-eyebrow">When to Visit</span>
+				<h2>Ujjain's Sacred Calendar</h2>
+				<p>Plan your visit around these auspicious dates for an unforgettable spiritual experience.</p>
+			</div>
+			<div class="festival-grid">
+				{[
+					{ name: 'Mahashivratri', date: 'Feb–Mar (annual)', desc: 'The most important night dedicated to Lord Shiva. Entire Ujjain transforms into a sea of devotees. Book 2-3 months in advance.' },
+					{ name: 'Kumbh Mela', date: 'Every 12 years', desc: 'Ujjain hosts one of the four Kumbh Melas. Millions gather for the sacred bath in the Shipra River. Next expected: 2028.' },
+					{ name: 'Simhastha Kumbh', date: 'Next: 2028', desc: 'The grand Kumbh of Ujjain — once in 12 years. Special arrangements for devotees worldwide.' },
+					{ name: 'Nagar Kirtan', date: 'Monthly (Sawan)', desc: 'Devotional processions during the holy month of Shravan. Every Monday is especially significant at Mahakaleshwar.' },
+					{ name: 'Anant Chaturdashi', date: 'Sep–Oct (annual)', desc: 'Dedicated to Lord Anant (Vishnu). Special poojas and rituals at the temple.' },
+					{ name: 'Diwali', date: 'Oct–Nov (annual)', desc: 'The entire city of Ujjain lights up. Temple celebrations are magnificent during Deepavali.' },
+				].map((festival) => (
+					<div class="festival-card" key={festival.name}>
+						<div class="festival-name">{festival.name}</div>
+						<div class="festival-date">📅 {festival.date}</div>
+						<p>{festival.desc}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
 
-  <!-- ==================== TESTIMONIALS ==================== -->
-  <section class="section testimonials-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Testimonials</span>
-        <h2 class="heading-display heading-lg section-title">What Devotees Say</h2>
-        <p class="section-subtitle">
-          Hear from the thousands of pilgrims who've made Mahakal Bhakta Nivas their home in Ujjain.
-        </p>
-      </div>
+	<!-- Testimonials -->
+	<section class="testimonials-section" id="testimonials">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-eyebrow">Guest Reviews</span>
+				<h2>What Our Guests Say</h2>
+				<p>Trusted by thousands of devotees visiting Mahakaleshwar Temple every year.</p>
+			</div>
+			<div class="testimonials-grid">
+				{TESTIMONIALS.map((t) => (
+					<div class="testimonial-card" key={t.name}>
+						<div class="testimonial-header">
+							<div class="testimonial-avatar">{t.name.charAt(0)}</div>
+							<div>
+								<strong>{t.name}</strong>
+								<span class="testimonial-location">{t.location}</span>
+							</div>
+							<div class="testimonial-rating">{'⭐'.repeat(t.rating)}</div>
+						</div>
+						<p class="testimonial-text">"{t.text}"</p>
+						<span class="testimonial-date">{t.date}</span>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
 
-      <div class="testimonials-grid stagger-children">
-        {testimonials.map(t => (
-          <div class="testimonial-card">
-            <div class="testimonial-stars">
-              {Array(t.stars).fill(0).map(() => `<span>${starSvg}</span>`).join('')}
-            </div>
-            <p class="testimonial-text">{t.text}</p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar">{t.initials}</div>
-              <div>
-                <div class="testimonial-name">{t.name}</div>
-                <div class="testimonial-location">{t.location}</div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+	<!-- Gallery -->
+	<section class="gallery-section" id="gallery">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-eyebrow">Gallery</span>
+				<h2>Photos of Mahakal Bhakta Nivas</h2>
+				<p>Take a visual tour of our dharmashala, rooms, and the sacred surroundings of Ujjain.</p>
+			</div>
+			<div class="gallery-grid">
+				{GALLERY_ITEMS.map((item) => (
+					<div class="gallery-item" key={item.id}>
+						<img src={item.src} alt={item.alt} loading="lazy" width="400" height="300">
+					</div>
+				))}
+			</div>
+			<div class="gallery-note">
+				<p>📸 Photos are for reference only. Actual rooms may vary slightly.</p>
+			</div>
+		</div>
+	</section>
 
-  <!-- ==================== BOOKING CTA ==================== -->
-  <section class="section booking-section">
-    <div class="booking-inner">
-      <span class="section-label">Book Your Stay</span>
-      <h2 class="heading-display heading-lg section-title" style="color:var(--color-white)">Reserve Your Sacred Stay</h2>
-      <p style="color:rgba(255,255,255,0.75);max-width:500px;margin-inline:auto">
-        Fill the form below and we'll confirm your booking via WhatsApp or phone within minutes.
-      </p>
+	<!-- FAQ Section -->
+	<section class="faq-section" id="faq">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-eyebrow">Common Questions</span>
+				<h2>Frequently Asked Questions</h2>
+				<p>Everything you need to know about staying at Mahakal Bhakta Nivas, Ujjain.</p>
+			</div>
+			<div class="faq-grid">
+				{FAQ_DATA.map((faq, i) => (
+					<div class="faq-item" key={i}>
+						<h4 class="faq-question">{faq.question}</h4>
+						<p class="faq-answer">{faq.answer}</p>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
 
-      <form class="booking-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
-        <input type="hidden" name="subject" value="Room Booking - Mahakal Bhakta Nivas" />
-        <input type="hidden" name="from_name" value="Mahakal Bhakta Nivas Website" />
+	<!-- Location / Map -->
+	<section class="location-section" id="location">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-eyebrow">Visit Us</span>
+				<h2>Our Location in Ujjain</h2>
+				<p>We are located near the Mahakaleshwar Temple in the heart of Ujjain — walkable to all major attractions.</p>
+			</div>
+			<div class="location-grid">
+				<div class="location-info">
+					<div class="location-card">
+						<h4>📍 Address</h4>
+						<p>Near Mahakaleshwar Temple, Gopal Mandir Road, Ujjain, MP 456006</p>
+					</div>
+					<div class="location-card">
+						<h4>📞 Contact</h4>
+						<p><a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a></p>
+						<p><a href={`https://wa.me/${SITE.whatsapp.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer">WhatsApp: {SITE.phoneDisplay}</a></p>
+					</div>
+					<div class="location-card">
+						<h4>⏰ Hours</h4>
+						<p>Open 24 hours, 7 days a week</p>
+					</div>
+					<div class="location-landmarks">
+						<h4>🏛️ Nearby Attractions</h4>
+						<div class="landmark-list">
+							{[
+								{ name: 'Mahakaleshwar Temple', dist: '200 m', time: '2 min walk' },
+								{ name: 'Ram Ghat', dist: '500 m', time: '8 min walk' },
+								{ name: 'Gopal Mandir', dist: '1.5 km', time: '20 min walk' },
+								{ name: 'Harsiddhi Temple', dist: '2 km', time: '25 min walk' },
+								{ name: 'Ujjain Junction', dist: '3 km', time: '10 min auto' },
+							].map((lm) => (
+								<div class="landmark" key={lm.name}>
+									<span class="lm-name">{lm.name}</span>
+									<span class="lm-dist">{lm.dist} ({lm.time})</span>
+								</div>
+							))}
+						</div>
+					</div>
+				</div>
+				<div class="map-wrapper">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.5!2d75.768!3d23.182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDEwJzU1LjIiTiA3NcKwNDYnMDQuOCJF!5e0!3m2!1sen!2sin!4v1700000000000"
+						width="100%"
+						height="450"
+						style="border:0; border-radius: 12px;"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+						title="Mahakal Bhakta Nivas location on Google Maps"
+					></iframe>
+				</div>
+			</div>
+		</div>
+	</section>
 
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="name">Full Name *</label>
-            <input type="text" id="name" name="name" placeholder="Your full name" required />
-          </div>
-          <div class="form-group">
-            <label for="phone">Phone Number *</label>
-            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required />
-          </div>
-          <div class="form-group">
-            <label for="checkin">Check-in Date *</label>
-            <input type="date" id="checkin" name="checkin" required />
-          </div>
-          <div class="form-group">
-            <label for="checkout">Check-out Date *</label>
-            <input type="date" id="checkout" name="checkout" required />
-          </div>
-          <div class="form-group">
-            <label for="roomtype">Room Type</label>
-            <select id="roomtype" name="roomtype">
-              <option value="">Select room type</option>
-              <option value="deluxe">Deluxe Room - ₹1,200</option>
-              <option value="family">Family Suite - ₹1,800</option>
-              <option value="temple-view">Temple View Room - ₹2,500</option>
-              <option value="non-ac">Non-AC Room - ₹600</option>
-              <option value="dormitory">Dormitory - ₹350</option>
-              <option value="hall">Dharamshala Hall - ₹200/bed</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="guests">Guests</label>
-            <select id="guests" name="guests">
-              <option value="1">1 Guest</option>
-              <option value="2" selected>2 Guests</option>
-              <option value="3">3 Guests</option>
-              <option value="4">4 Guests</option>
-              <option value="5+">5+ Guests</option>
-            </select>
-          </div>
-          <div class="form-group full-width">
-            <label for="message">Special Requests</label>
-            <textarea id="message" name="message" rows="3" placeholder="Any special requirements or questions..."></textarea>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary btn-lg">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
-          </svg>
-          Send Booking Request
-        </button>
-        <p style="margin-top:var(--space-3);font-size:0.8125rem;color:rgba(255,255,255,0.5)">
-          Or call directly: <a href="tel:+919876543210" style="color:var(--color-gold-light)">+91 98765 43210</a>
-          or <a href="https://wa.me/919876543210" style="color:var(--color-gold-light)">WhatsApp us</a>
-        </p>
-      </form>
-    </div>
-  </section>
+	<!-- Contact Section -->
+	<section class="contact-section" id="contact">
+		<div class="container">
+			<div class="contact-grid">
+				<div class="contact-info">
+					<span class="section-eyebrow">Get In Touch</span>
+					<h2>Book Your Stay at Mahakal Bhakta Nivas</h2>
+					<p>Whether you are coming for Mahashivratri, a regular darshan trip, or a family vacation — we have the right room for you. Reach out today!</p>
+					<div class="contact-methods">
+						<a href={`tel:${SITE.phone}`} class="contact-method">
+							<span class="cm-icon">📞</span>
+							<div>
+								<span class="cm-label">Call</span>
+								<span class="cm-value">{SITE.phoneDisplay}</span>
+							</div>
+						</a>
+						<a href={`https://wa.me/${SITE.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('Namaste! I would like to inquire about rooms and availability at Mahakal Bhakta Nivas.')}`} class="contact-method" target="_blank" rel="noopener noreferrer">
+							<span class="cm-icon">💬</span>
+							<div>
+								<span class="cm-label">WhatsApp</span>
+								<span class="cm-value">Quick Reply</span>
+							</div>
+						</a>
+						<a href={`mailto:${SITE.email}`} class="contact-method">
+							<span class="cm-icon">✉️</span>
+							<div>
+								<span class="cm-label">Email</span>
+								<span class="cm-value">{SITE.email}</span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<form class="booking-form" id="booking-form" action="#" method="POST">
+					<h3>Quick Booking Request</h3>
+					<p class="form-subtitle">Fill this form and we will confirm via WhatsApp within 30 minutes.</p>
+					<div class="form-row">
+						<div class="form-group">
+							<label for="name">Full Name *</label>
+							<input type="text" id="name" name="name" required placeholder="Your full name" />
+						</div>
+						<div class="form-group">
+							<label for="phone">Phone / WhatsApp *</label>
+							<input type="tel" id="phone" name="phone" required placeholder="+91 98765 43210" />
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group">
+							<label for="checkin">Check-in Date *</label>
+							<input type="date" id="checkin" name="checkin" required />
+						</div>
+						<div class="form-group">
+							<label for="checkout">Check-out Date *</label>
+							<input type="date" id="checkout" name="checkout" required />
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group">
+							<label for="guests">Guests *</label>
+							<select id="guests" name="guests" required>
+								<option value="">Select</option>
+								<option value="1">1</option>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5+</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="room">Room Type</label>
+							<select id="room" name="room">
+								<option value="any">Any Available</option>
+								<option value="ac-double">AC Double</option>
+								<option value="ac-triple">AC Triple</option>
+								<option value="ac-family">AC Family Suite</option>
+								<option value="dormitory">Non-AC Dormitory</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="message">Special Requests</label>
+						<textarea id="message" name="message" rows="3" placeholder="Early check-in? Group booking? Temple aarti info?"></textarea>
+					</div>
+					<button type="submit" class="btn btn-whatsapp btn-block">Send Booking Request via WhatsApp</button>
+					<p class="form-note">By submitting, you agree to be contacted via WhatsApp or phone. We'll reply within 30 minutes.</p>
+				</form>
+			</div>
+		</div>
+	</section>
 
-  <Footer />
-
-  <!-- Mobile Floating CTA -->
-  <div class="floating-cta">
-    <a href="https://wa.me/919876543210" class="btn btn-whatsapp" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-      WhatsApp
-    </a>
-    <a href="tel:+919876543210" class="btn btn-call">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
-      </svg>
-      Call
-    </a>
-    <a href="#rooms" class="btn btn-primary">Rooms</a>
-  </div>
-
-  <script>
-    const header = document.getElementById('siteHeader');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-  </script>
+	<!-- FAQ Schema Script -->
+	<script type="application/ld+json" is:inline set:html={JSON.stringify(FaqSchema)} />
 </BaseLayout>
+
+<style>
+	/* ========== HERO ========== */
+	.hero {
+		position: relative;
+		min-height: 100vh;
+		min-height: 100svh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		color: white;
+		overflow: hidden;
+	}
+
+	.hero-bg {
+		position: absolute;
+		inset: 0;
+		z-index: -2;
+	}
+
+	.hero-bg img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.hero-overlay {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(180deg, rgba(10, 10, 10, 0.4) 0%, rgba(10, 10, 10, 0.7) 100%);
+		z-index: -1;
+	}
+
+	.hero-content {
+		max-width: 900px;
+		padding: 1.5rem;
+	}
+
+	.hero-badge {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		background: rgba(255, 153, 51, 0.2);
+		border: 1px solid rgba(255, 153, 51, 0.5);
+		padding: 0.4rem 1.2rem;
+		border-radius: 999px;
+		font-size: 0.9rem;
+		font-weight: 500;
+		margin-bottom: 1.5rem;
+	}
+
+	.hero-badge-dot {
+		width: 8px;
+		height: 8px;
+		background: #ff9933;
+		border-radius: 50%;
+		animation: pulse 2s infinite;
+	}
+
+	@keyframes pulse {
+		0%, 100% { opacity: 1; transform: scale(1); }
+		50% { opacity: 0.6; transform: scale(1.4); }
+	}
+
+	.hero h1 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: clamp(2.2rem, 7vw, 4rem);
+		font-weight: 700;
+		line-height: 1.1;
+		margin-bottom: 1rem;
+		text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+	}
+
+	.hero h1 .highlight {
+		color: #ffcc80;
+		font-style: italic;
+	}
+
+	.hero-subtitle {
+		font-size: clamp(1rem, 2.5vw, 1.2rem);
+		opacity: 0.92;
+		line-height: 1.6;
+		max-width: 700px;
+		margin: 0 auto 2rem;
+	}
+
+	.hero-ctas {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		justify-content: center;
+		margin-bottom: 3rem;
+	}
+
+	.hero-ctas .btn {
+		padding: 0.9rem 1.8rem;
+		font-size: 1rem;
+		font-weight: 600;
+		border-radius: 999px;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.btn-whatsapp {
+		background: #25D366;
+		color: white;
+		border: none;
+		transition: all 0.3s;
+	}
+
+	.btn-whatsapp:hover {
+		background: #1fb855;
+		transform: translateY(-2px);
+		box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+	}
+
+	.btn-call {
+		background: white;
+		color: #1c1410;
+	}
+
+	.btn-call:hover {
+		background: #f5f5f5;
+		transform: translateY(-2px);
+	}
+
+	.btn-outline {
+		background: transparent;
+		color: white;
+		border: 2px solid rgba(255, 255, 255, 0.5);
+	}
+
+	.btn-outline:hover {
+		background: white;
+		color: #1c1410;
+	}
+
+	.hero-stats {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1rem;
+		padding: 1.5rem;
+		background: rgba(255, 255, 255, 0.1);
+		backdrop-filter: blur(10px);
+		border-radius: 16px;
+		border: 1px solid rgba(255, 255, 255, 0.2);
+	}
+
+	.hero-stat {
+		text-align: center;
+	}
+
+	.hero-stat-value {
+		font-size: clamp(1.3rem, 4vw, 1.8rem);
+		font-weight: 700;
+		color: #ffcc80;
+		line-height: 1.2;
+	}
+
+	.hero-stat-label {
+		font-size: 0.75rem;
+		opacity: 0.8;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	/* ========== TRUST BAND ========== */
+	.trust-band {
+		background: white;
+		padding: 2rem 1.5rem;
+		border-bottom: 1px solid #f0e0c8;
+	}
+
+	.trust-grid {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5rem;
+		max-width: 1000px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.trust-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+	}
+
+	.trust-value {
+		font-size: 1.75rem;
+		font-weight: 800;
+		color: #d97706;
+	}
+
+	.trust-label {
+		font-size: 0.8rem;
+		color: #8b6f47;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	/* ========== SECTION SHARED ========== */
+	.section-eyebrow {
+		display: inline-block;
+		color: #d97706;
+		font-weight: 600;
+		font-size: 0.8rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		margin-bottom: 0.5rem;
+	}
+
+	.section-header {
+		text-align: center;
+		max-width: 700px;
+		margin: 0 auto 3rem;
+	}
+
+	.section-header h2 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: clamp(1.8rem, 5vw, 2.5rem);
+		color: #1c1410;
+		margin: 0.5rem 0 0.75rem;
+		line-height: 1.2;
+	}
+
+	.section-header p {
+		color: #6b5640;
+		font-size: 1.05rem;
+		line-height: 1.6;
+	}
+
+	/* ========== ROOMS ========== */
+	.rooms-section {
+		padding: 5rem 1.5rem;
+		background: #fffcf7;
+	}
+
+	.rooms-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+		gap: 2rem;
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+
+	.room-card {
+		background: white;
+		border-radius: 16px;
+		overflow: hidden;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+		transition: all 0.3s ease;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.room-card:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+	}
+
+	.room-image {
+		position: relative;
+		width: 100%;
+		height: 200px;
+		overflow: hidden;
+	}
+
+	.room-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.4s ease;
+	}
+
+	.room-card:hover .room-image img {
+		transform: scale(1.06);
+	}
+
+	.room-badge {
+		position: absolute;
+		top: 12px;
+		left: 12px;
+		background: #d97706;
+		color: white;
+		padding: 0.3rem 0.9rem;
+		border-radius: 20px;
+		font-size: 0.78rem;
+		font-weight: 600;
+	}
+
+	.room-details {
+		padding: 1.5rem;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.room-details h3 {
+		font-size: 1.2rem;
+		color: #1c1410;
+		margin: 0 0 0.25rem;
+	}
+
+	.room-meta {
+		font-size: 0.85rem;
+		color: #8b6f47;
+		margin: 0 0 0.75rem;
+	}
+
+	.room-details p {
+		font-size: 0.95rem;
+		color: #4b3c30;
+		line-height: 1.55;
+		margin-bottom: 0.75rem;
+		flex: 1;
+	}
+
+	.room-features {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem 0.8rem;
+		margin-bottom: 1.25rem;
+	}
+
+	.room-features li {
+		font-size: 0.82rem;
+		color: #4b3c30;
+		list-style: none;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.25rem;
+	}
+
+	.room-features li::before {
+		content: '✓';
+		color: #16a34a;
+		font-weight: 700;
+	}
+
+	.room-price-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 1rem;
+		border-top: 1px solid #f5ede0;
+	}
+
+	.room-price {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: #1c1410;
+	}
+
+	.room-price span {
+		font-size: 0.85rem;
+		font-weight: 400;
+		color: #8b6f47;
+	}
+
+	.room-price-row .btn {
+		padding: 0.5rem 1.2rem;
+		font-size: 0.85rem;
+		font-weight: 600;
+		border-radius: 999px;
+	}
+
+	/* ========== AMENITIES ========== */
+	.amenities-section {
+		padding: 5rem 1.5rem;
+		background: white;
+	}
+
+	.amenities-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+		gap: 1.25rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.amenity-card {
+		text-align: center;
+		padding: 1.5rem 1rem;
+		background: #fefaf4;
+		border-radius: 12px;
+		border: 1px solid #f5e6cc;
+		transition: all 0.3s;
+	}
+
+	.amenity-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 6px 20px rgba(217, 119, 6, 0.12);
+		border-color: #ff9933;
+	}
+
+	.amenity-icon {
+		font-size: 2rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.amenity-card h4 {
+		font-size: 0.95rem;
+		color: #1c1410;
+		margin: 0 0 0.4rem;
+	}
+
+	.amenity-card p {
+		font-size: 0.82rem;
+		color: #6b5640;
+		margin: 0;
+	}
+
+	/* ========== TEMPLE ========== */
+	.temple-section {
+		padding: 5rem 1.5rem;
+		background: linear-gradient(135deg, #fefaf4 0%, #fdf5e6 100%);
+	}
+
+	.temple-layout {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		max-width: 1100px;
+		margin: 0 auto;
+		align-items: start;
+	}
+
+	.temple-info h2 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: clamp(1.8rem, 5vw, 2.5rem);
+		color: #1c1410;
+		margin: 0.5rem 0 1rem;
+	}
+
+	.temple-lead {
+		font-size: 1.05rem;
+		color: #4b3c30;
+		line-height: 1.7;
+		margin-bottom: 2rem;
+	}
+
+	.temple-details {
+		margin-bottom: 2rem;
+	}
+
+	.temple-detail {
+		margin-bottom: 1.5rem;
+	}
+
+	.detail-label {
+		display: block;
+		font-weight: 700;
+		color: #d97706;
+		margin-bottom: 0.5rem;
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.temple-detail ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.temple-detail li {
+		font-size: 0.95rem;
+		color: #4b3c30;
+		padding: 0.3rem 0;
+	}
+
+	.temple-visual {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.temple-image-card {
+		border-radius: 16px;
+		overflow: hidden;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+	}
+
+	.temple-image-card img {
+		width: 100%;
+		height: 280px;
+		object-fit: cover;
+	}
+
+	.temple-darshan-card {
+		background: white;
+		border-radius: 16px;
+		padding: 1.5rem;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+	}
+
+	.temple-darshan-card h4 {
+		font-size: 1.1rem;
+		color: #1c1410;
+		margin: 0 0 0.75rem;
+	}
+
+	.temple-darshan-card ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.temple-darshan-card li {
+		font-size: 0.9rem;
+		color: #4b3c30;
+		padding: 0.5rem 0;
+		border-bottom: 1px solid #f5e6cc;
+		line-height: 1.5;
+	}
+
+	.temple-darshan-card li:last-child {
+		border-bottom: none;
+	}
+
+	/* ========== HOW TO REACH ========== */
+	.reach-section {
+		padding: 5rem 1.5rem;
+		background: white;
+	}
+
+	.reach-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+		gap: 1.5rem;
+		max-width: 1000px;
+		margin: 0 auto 2rem;
+	}
+
+	.reach-card {
+		background: #fefaf4;
+		border: 1px solid #f5e6cc;
+		border-radius: 16px;
+		padding: 1.75rem;
+		text-align: center;
+		transition: all 0.3s;
+	}
+
+	.reach-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 8px 25px rgba(217, 119, 6, 0.12);
+		border-color: #ff9933;
+	}
+
+	.reach-icon {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.reach-card h3 {
+		font-size: 1.1rem;
+		color: #1c1410;
+		margin: 0 0 0.25rem;
+	}
+
+	.reach-location {
+		font-size: 0.85rem;
+		color: #d97706;
+		font-weight: 600;
+		margin-bottom: 0.5rem;
+	}
+
+	.reach-card p {
+		font-size: 0.9rem;
+		color: #4b3c30;
+		line-height: 1.5;
+	}
+
+	.reach-cta {
+		text-align: center;
+	}
+
+	.btn-secondary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.9rem 2rem;
+		background: white;
+		color: #1c1410;
+		border: 2px solid #1c1410;
+		border-radius: 999px;
+		font-size: 1rem;
+		font-weight: 600;
+		text-decoration: none;
+		transition: all 0.3s;
+	}
+
+	.btn-secondary:hover {
+		background: #1c1410;
+		color: white;
+		transform: translateY(-2px);
+	}
+
+	/* ========== SEVA ========== */
+	.seva-section {
+		padding: 5rem 1.5rem;
+		background: #fefaf4;
+	}
+
+	.seva-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+		gap: 1.5rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.seva-card {
+		background: white;
+		border-radius: 16px;
+		padding: 1.75rem;
+		text-align: center;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+		border: 1px solid #f5e6cc;
+		transition: all 0.3s;
+	}
+
+	.seva-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 8px 25px rgba(217, 119, 6, 0.1);
+		border-color: #ff9933;
+	}
+
+	.seva-icon {
+		font-size: 2.2rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.seva-card h4 {
+		font-size: 1.1rem;
+		color: #1c1410;
+		margin: 0 0 0.5rem;
+	}
+
+	.seva-card p {
+		font-size: 0.9rem;
+		color: #6b5640;
+		line-height: 1.55;
+	}
+
+	/* ========== FESTIVAL ========== */
+	.festival-section {
+		padding: 5rem 1.5rem;
+		background: white;
+	}
+
+	.festival-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+		gap: 1.5rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.festival-card {
+		background: linear-gradient(135deg, #fefaf4, #fdf5e6);
+		border: 1px solid #f5e6cc;
+		border-radius: 16px;
+		padding: 1.5rem;
+		transition: all 0.3s;
+	}
+
+	.festival-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 6px 20px rgba(217, 119, 6, 0.12);
+	}
+
+	.festival-name {
+		font-size: 1.15rem;
+		font-weight: 700;
+		color: #1c1410;
+		margin-bottom: 0.25rem;
+	}
+
+	.festival-date {
+		font-size: 0.85rem;
+		color: #d97706;
+		font-weight: 600;
+		margin-bottom: 0.75rem;
+	}
+
+	.festival-card p {
+		font-size: 0.9rem;
+		color: #4b3c30;
+		line-height: 1.5;
+	}
+
+	/* ========== TESTIMONIALS ========== */
+	.testimonials-section {
+		padding: 5rem 1.5rem;
+		background: #fefaf4;
+	}
+
+	.testimonials-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 1.5rem;
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+
+	.testimonial-card {
+		background: white;
+		border-radius: 16px;
+		padding: 1.75rem;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+		border: 1px solid #f5e6cc;
+		transition: all 0.3s;
+	}
+
+	.testimonial-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 8px 25px rgba(217, 119, 6, 0.1);
+	}
+
+	.testimonial-header {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.testimonial-avatar {
+		width: 44px;
+		height: 44px;
+		background: linear-gradient(135deg, #ff9933, #d97706);
+		color: white;
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 700;
+		font-size: 1.1rem;
+	}
+
+	.testimonial-header strong {
+		display: block;
+		font-size: 0.95rem;
+		color: #1c1410;
+	}
+
+	.testimonial-location {
+		display: block;
+		font-size: 0.8rem;
+		color: #8b6f47;
+	}
+
+	.testimonial-rating {
+		margin-left: auto;
+		font-size: 0.85rem;
+	}
+
+	.testimonial-text {
+		font-size: 0.95rem;
+		color: #4b3c30;
+		line-height: 1.6;
+		font-style: italic;
+		margin-bottom: 0.5rem;
+	}
+
+	.testimonial-date {
+		font-size: 0.78rem;
+		color: #8b6f47;
+	}
+
+	/* ========== GALLERY ========== */
+	.gallery-section {
+		padding: 5rem 1.5rem;
+		background: white;
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		gap: 1rem;
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+
+	.gallery-item {
+		border-radius: 12px;
+		overflow: hidden;
+		aspect-ratio: 4/3;
+	}
+
+	.gallery-item img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.3s;
+	}
+
+	.gallery-item:hover img {
+		transform: scale(1.05);
+	}
+
+	.gallery-note {
+		text-align: center;
+		margin-top: 1.5rem;
+		font-size: 0.85rem;
+		color: #8b6f47;
+	}
+
+	/* ========== FAQ ========== */
+	.faq-section {
+		padding: 5rem 1.5rem;
+		background: #fefaf4;
+	}
+
+	.faq-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+		gap: 1.25rem;
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+	.faq-item {
+		background: white;
+		border: 1px solid #f5e6cc;
+		border-radius: 12px;
+		padding: 1.25rem;
+		transition: all 0.3s;
+	}
+
+	.faq-item:hover {
+		box-shadow: 0 4px 15px rgba(217, 119, 6, 0.1);
+		border-color: #ff9933;
+	}
+
+	.faq-question {
+		font-size: 1rem;
+		font-weight: 600;
+		color: #1c1410;
+		margin: 0 0 0.5rem;
+	}
+
+	.faq-answer {
+		font-size: 0.92rem;
+		color: #4b3c30;
+		line-height: 1.6;
+		margin: 0;
+	}
+
+	/* ========== LOCATION ========== */
+	.location-section {
+		padding: 5rem 1.5rem;
+		background: white;
+	}
+
+	.location-grid {
+		display: grid;
+		grid-template-columns: 1fr 1.3fr;
+		gap: 2.5rem;
+		max-width: 1100px;
+		margin: 0 auto;
+		align-items: start;
+	}
+
+	.location-info {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.location-card {
+		background: #fefaf4;
+		border: 1px solid #f5e6cc;
+		border-radius: 12px;
+		padding: 1.25rem;
+	}
+
+	.location-card h4 {
+		font-size: 0.85rem;
+		font-weight: 700;
+		color: #d97706;
+		margin: 0 0 0.4rem;
+	}
+
+	.location-card p,
+	.location-card a {
+		font-size: 0.95rem;
+		color: #4b3c30;
+		line-height: 1.5;
+	}
+
+	.location-card a {
+		color: #d97706;
+		text-decoration: underline;
+	}
+
+	.landmark-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.landmark {
+		display: flex;
+		justify-content: space-between;
+		font-size: 0.88rem;
+		padding: 0.4rem 0;
+		border-bottom: 1px solid #f5e6cc;
+	}
+
+	.landmark:last-child {
+		border-bottom: none;
+	}
+
+	.lm-name {
+		color: #4b3c30;
+	}
+
+	.lm-dist {
+		color: #8b6f47;
+		font-size: 0.8rem;
+	}
+
+	.map-wrapper {
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+	}
+
+	.map-wrapper iframe {
+		display: block;
+	}
+
+	/* ========== CONTACT ========== */
+	.contact-section {
+		padding: 5rem 1.5rem;
+		background: linear-gradient(135deg, #fefaf4 0%, #fdf5e6 100%);
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		max-width: 1100px;
+		margin: 0 auto;
+		align-items: start;
+	}
+
+	.contact-info h2 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: clamp(1.8rem, 5vw, 2.5rem);
+		color: #1c1410;
+		margin: 0.5rem 0 1rem;
+	}
+
+	.contact-info > p {
+		font-size: 1.05rem;
+		color: #4b3c30;
+		line-height: 1.7;
+		margin-bottom: 1.5rem;
+	}
+
+	.contact-methods {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.contact-method {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1rem 1.25rem;
+		background: white;
+		border-radius: 12px;
+		text-decoration: none;
+		border: 1px solid #f5e6cc;
+		transition: all 0.3s;
+	}
+
+	.contact-method:hover {
+		transform: translateX(4px);
+		border-color: #ff9933;
+		box-shadow: 0 4px 12px rgba(217, 119, 6, 0.1);
+	}
+
+	.cm-icon {
+		font-size: 1.5rem;
+		width: 44px;
+		height: 44px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: #fef9f3;
+		border-radius: 10px;
+		flex-shrink: 0;
+	}
+
+	.contact-method .cm-label {
+		display: block;
+		font-size: 0.78rem;
+		color: #8b6f47;
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.contact-method .cm-value {
+		display: block;
+		font-size: 1rem;
+		font-weight: 600;
+		color: #1c1410;
+	}
+
+	.booking-form {
+		background: white;
+		border-radius: 16px;
+		padding: 2.5rem;
+		box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+	}
+
+	.booking-form h3 {
+		font-size: 1.5rem;
+		color: #1c1410;
+		margin: 0 0 0.25rem;
+	}
+
+	.form-subtitle {
+		font-size: 0.9rem;
+		color: #6b5640;
+		margin: 0 0 1.5rem;
+	}
+
+	.form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+	}
+
+	.form-group label {
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: #4b3c30;
+	}
+
+	.form-group input,
+	.form-group select,
+	.form-group textarea {
+		padding: 0.75rem 1rem;
+		border: 1.5px solid #e5d9c8;
+		border-radius: 8px;
+		font-size: 0.95rem;
+		font-family: inherit;
+		color: #1c1410;
+		background: white;
+		transition: all 0.2s;
+	}
+
+	.form-group input:focus,
+	.form-group select:focus,
+	.form-group textarea:focus {
+		outline: none;
+		border-color: #ff9933;
+		box-shadow: 0 0 0 3px rgba(255, 153, 51, 0.1);
+	}
+
+	.form-group textarea {
+		resize: vertical;
+		min-height: 70px;
+	}
+
+	.btn-block {
+		width: 100%;
+		padding: 1rem;
+		font-size: 1.05rem;
+		margin-top: 0.5rem;
+	}
+
+	.form-note {
+		font-size: 0.78rem;
+		color: #8b6f47;
+		text-align: center;
+		margin: 0.75rem 0 0;
+	}
+
+	/* ========== MOBILE RESPONSIVE ========== */
+	@media (max-width: 968px) {
+		.hero-stats {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.trust-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.temple-layout,
+		.location-grid,
+		.contact-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.faq-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 640px) {
+		.hero-ctas {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.hero-ctas .btn {
+			width: 100%;
+			max-width: 300px;
+			justify-content: center;
+		}
+
+		.hero-stats {
+			grid-template-columns: repeat(2, 1fr);
+			padding: 1rem;
+		}
+
+		.trust-grid {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1rem;
+		}
+
+		.trust-value {
+			font-size: 1.4rem;
+		}
+
+		.rooms-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.amenities-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		.seva-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.festival-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.testimonials-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.gallery-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.form-row {
+			grid-template-columns: 1fr;
+		}
+
+		.booking-form {
+			padding: 1.5rem;
+		}
+
+		.location-info {
+			gap: 0.75rem;
+		}
+
+		.section-header {
+			margin-bottom: 2rem;
+		}
+
+		.hero h1 {
+			font-size: 2rem;
+		}
+	}
+
+	@media (max-width: 380px) {
+		.hero-stats {
+			grid-template-columns: 1fr 1fr;
+			gap: 0.75rem;
+		}
+
+		.hero-stat-value {
+			font-size: 1.1rem;
+		}
+
+		.gallery-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.amenities-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

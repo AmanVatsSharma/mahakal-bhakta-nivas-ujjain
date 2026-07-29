@@ -1,31 +1,38 @@
-# Mahakal Bhakta Nivas - Ujjain
+# Welcome to Mahakal Bhakta Nivas
 
-A fast, mobile-first Astro website for Mahakal Bhakta Nivas Dharmashala, Ujjain.
+Your spiritual home in Ujjain — where devotion meets comfort.
 
-## Setup
+## Getting Started
 
 ```bash
 npm install
-npm run dev      # Start dev server
-npm run build    # Production build
-npm run preview  # Preview production build
+npm run dev
 ```
 
-## Deploy
+## Project Structure
 
-Deploys automatically to Netlify on push to `main` via GitHub Actions.
+```
+src/
+├── layouts/
+│   └── Layout.astro       # Base layout with SEO
+├── pages/
+│   ├── index.astro        # Homepage
+│   ├── rooms.astro        # Rooms & Accommodation
+│   ├── booking.astro      # Booking inquiry form
+│   ├── amenities.astro    # Amenities page
+│   └── contact.astro      # Contact & Location
+├── components/
+│   └── Header.astro       # Sticky navigation
+└── styles/
+    └── global.css         # Tailwind + custom styles
+```
 
-### Setup (one-time)
+## Technologies
 
-1. **Get Netlify credentials** from your Netlify dashboard: Site settings → General → Site details → Site ID.
-2. In your repository, go to **Settings → Secrets and variables → Actions**.
-3. Add two repository secrets:
-   - `NETLIFY_AUTH_TOKEN` — your [personal access token](https://app.netlify.com/user/applications#personal-access-tokens)
-   - `NETLIFY_SITE_ID` — the site ID from step 1
-4. Push to `main` — the deploy workflow runs automatically.
+- [Astro](https://astro.build/) - Static site generator
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS
+- Vanilla JavaScript - No framework bloat
 
-> **First time only**: You can also create the Netlify site manually at app.netlify.com/new and link it to this repo.
+## Deployment
 
-## SEO
-
-Optimized for the keyword "Mahakal Bhakta Nivas Ujjain".
+Ready for deployment to Vercel, Netlify, or any static host.

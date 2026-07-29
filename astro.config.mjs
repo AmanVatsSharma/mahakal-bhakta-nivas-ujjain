@@ -1,9 +1,8 @@
 import { defineConfig } from 'astro/config';
 
-// https://astro.build/config
 export default defineConfig({
   site: 'https://mahakalbhaktanivas.in',
-  compressHTML: true,
+  trailingSlash: 'always',
   build: {
     inlineStylesheets: 'auto',
   },

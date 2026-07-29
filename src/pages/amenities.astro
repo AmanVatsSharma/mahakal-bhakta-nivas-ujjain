@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../config';
+const title = "Amenities | Mahakal Bhakta Nivas Ujjain";
+const desc = "Discover all amenities at Mahakal Bhakta Nivas — pure veg restaurant, free Wi-Fi, 24×7 hot water, CCTV security, and more.";
+---
+
+<BaseLayout title={title} description={desc}>
+  <Header />
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+          <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Amenities</span>
+        </nav>
+        <h1>Amenities & Services</h1>
+        <p>Everything you need for a comfortable and spiritual stay</p>
+      </div>
+    </section>
+    <section class="amenities-content">
+      <div class="container">
+        <div class="amenities-intro">
+          <p>At Mahakal Bhakta Nivas, we ensure every pilgrim's needs are taken care of — from hygienic rooms to nourishing sattvic meals. Our amenities are designed to make your stay peaceful, comfortable, and focused on your spiritual journey.</p>
+        </div>
+        <div class="amenities-grid" role="list">
+          {
+            [
+              { icon: '🍽', name: 'Pure Veg Restaurant', desc: 'Sattvic, hygienic vegetarian meals 3 times a day. Jain food available on request.' },
+              { icon: '💧', name: '24×7 Hot Water', desc: 'Hot water available round the clock in all attached bathrooms.' },
+              { icon: '📶', name: 'Free High-Speed Wi-Fi', desc: 'Complimentary Wi-Fi throughout the property to stay connected.' },
+              { icon: '🛎', name: 'Room Service', desc: 'In-room dining available from 7 AM to 10 PM.' },
+              { icon: '🎒', name: 'Cloak Room', desc: 'Secure storage for your luggage during temple visits.' },
+              { icon: '🅿️', name: 'Parking Space', desc: 'Free parking for cars and two-wheelers within the premises.' },
+              { icon: '🚰', name: 'RO Drinking Water', desc: 'Pure, filtered drinking water available 24×7.' },
+              { icon: '🔋', name: 'Power Backup', desc: '24×7 inverter backup — no power cuts during your stay.' },
+              { icon: '📹', name: 'CCTV Security', desc: 'Round-the-clock surveillance for your safety and peace of mind.' },
+              { icon: '🏥', name: 'First Aid', desc: 'Basic first aid kit available at reception. Nearby hospital within 2 km.' },
+              { icon: '👔', name: 'Laundry Service', desc: 'Same-day laundry and dry cleaning service at nominal charges.' },
+              { icon: '🗺', name: 'Travel Desk', desc: 'Local guides, temple timings info, and travel arrangements.' },
+            ].map(a => (
+              <div class="amenity-card" role="listitem">
+                <div class="amenity-icon">{a.icon}</div>
+                <h3>{a.name}</h3>
+                <p>{a.desc}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+    <section class="cta-strip">
+      <div class="container">
+        <p>Experience all these amenities — <a href={`https://wa.me/SITE.whatsapp`} target="_blank" rel="noopener">Book on WhatsApp 💬</a></p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .page-hero { background: var(--c-cream); padding: 32px 0 28px; border-bottom: 1px solid rgba(0,0,0,0.05); }
+  .breadcrumb { font-size: 13px; color: #888; margin-bottom: 14px; }
+  .breadcrumb a { color: var(--c-maroon); }
+  .page-hero h1 { font-family: var(--font-dev); font-size: clamp(1.5rem, 4vw, 2rem); color: var(--c-maroon); margin-bottom: 8px; }
+  .page-hero p { font-size: 14px; color: #666; }
+  .amenities-content { padding: 36px 0; }
+  .amenities-intro { max-width: 680px; margin: 0 auto 28px; text-align: center; }
+  .amenities-intro p { font-size: 15px; color: #555; line-height: 1.65; }
+  .amenities-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  .amenity-card {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: #fff; padding: 16px 18px; border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+  .amenity-icon { font-size: 28px; flex-shrink: 0; }
+  .amenity-card h3 { font-size: 14px; color: var(--c-maroon); margin-bottom: 4px; }
+  .amenity-card p { font-size: 13px; color: #666; line-height: 1.5; }
+  .cta-strip { background: var(--c-maroon); color: #fff; padding: 20px 0; text-align: center; }
+  .cta-strip a { color: var(--c-gold); font-weight: 600; }
+
+  @media (min-width: 520px) {
+    .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 900px) {
+    .amenities-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+</style>

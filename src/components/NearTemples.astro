@@ -1,0 +1,236 @@
+---
+import Layout from './Layout.astro';
+import { SITE } from '../config';
+
+export default function NearTemples() {
+	const temples = [
+		{
+			name: 'Harsiddhi Temple',
+			distance: '1 km',
+			duration: '~15 min walk',
+			description: 'A revered Shakti Peetha dedicated to Goddess Harsiddhi, believed to have been built by King Vikramaditya.',
+			image: `${SITE.base}images/ujjain/temple-harsiddhi.jpg`,
+		},
+		{
+			name: 'Ram Ghat',
+			distance: '500 m',
+			duration: '~8 min walk',
+			description: 'The sacred bathing ghat on the Shipra River where millions gather for Kumbh Mela. A spiritual centrepiece of Ujjain.',
+			image: `${SITE.base}images/ujjain/temple-ramghat.jpg`,
+		},
+		{
+			name: 'Gopal Mandir',
+			distance: '1.5 km',
+			duration: '~20 min walk',
+			description: 'A magnificent temple dedicated to Lord Krishna, built by Maharani Bayajibai Scindia with exquisite marble carvings.',
+			image: `${SITE.base}images/ujjain/temple-gopal.jpg`,
+		},
+		{
+			name: 'Kal Bhairav Temple',
+			distance: '3 km',
+			duration: '~10 min by auto',
+			description: 'Dedicated to the fierce form of Lord Shiva, this temple is unique for its tradition of offering liquor to the deity.',
+			image: `${SITE.base}images/ujjain/temple-kalbhairav.jpg`,
+		},
+		{
+			name: 'Bade Ganesh Temple',
+			distance: '1.2 km',
+			duration: '~18 min walk',
+			description: 'Home to the giant idol of Lord Ganesh near the Mahakaleshwar Temple, popular among devotees seeking blessings.',
+			image: `${SITE.base}images/ujjain/temple-ganesh.jpg`,
+		},
+		{
+			name: 'Shipra River Ghats',
+			distance: '500 m',
+			duration: '~8 min walk',
+			description: 'The holy Shipra River with multiple ghats — perfect for evening aarti, a spiritual dip, and serene riverside contemplation.',
+			image: `${SITE.base}images/ujjain/temple-shipra.jpg`,
+		},
+	];
+}
+
+---
+
+<section class="near-temples">
+	<div class="container">
+		<div class="section-header">
+			<span class="section-tag">Nearby Sacred Sites</span>
+			<h2>Temples & Spiritual Sites Near Us</h2>
+			<p>Ujjain is one of Hinduism's seven sacred cities. Explore these divine destinations, all within easy reach of Mahakal Bhakta Nivas.</p>
+		</div>
+		<div class="temples-grid">
+			{temples.map((temple) => (
+				<div class="temple-card">
+					<div class="temple-image">
+						<img
+							src={temple.image}
+							alt={`${temple.name} in Ujjain`}
+							loading="lazy"
+						/>
+						<div class="temple-distance">
+							<span class="distance-icon">📍</span>
+							<span>{temple.distance}</span>
+						</div>
+					</div>
+					<div class="temple-info">
+						<h3>{temple.name}</h3>
+						<span class="walk-time">{temple.duration}</span>
+						<p>{temple.description}</p>
+					</div>
+				</div>
+			))}
+		</div>
+		<div class="near-temples-cta">
+			<a href="https://maps.app.goo.gl/?api=1&destination=Mahakaleshwar+Temple,+Ujjain" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+				<span class="btn-icon">🗺️</span>
+				<span>Get Directions on Google Maps</span>
+			</a>
+		</div>
+	</div>
+</section>
+
+<style>
+	.near-temples {
+		padding: 5rem 1.5rem;
+		background: var(--gradient-section);
+	}
+
+	.section-header {
+		text-align: center;
+		max-width: 650px;
+		margin: 0 auto 3.5rem;
+	}
+
+	.section-header h2 {
+		font-size: clamp(1.8rem, 5vw, 2.5rem);
+		color: var(--color-text);
+		margin: 0.5rem 0 1rem;
+	}
+
+	.section-header p {
+		font-size: 1.05rem;
+		color: var(--color-text-light);
+		line-height: 1.7;
+	}
+
+	.temples-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+		gap: 2rem;
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+
+	.temple-card {
+		background: var(--color-white);
+		border-radius: 16px;
+		overflow: hidden;
+		box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.temple-card:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+	}
+
+	.temple-image {
+		position: relative;
+		width: 100%;
+		height: 200px;
+		overflow: hidden;
+	}
+
+	.temple-image img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: transform 0.4s ease;
+	}
+
+	.temple-card:hover .temple-image img {
+		transform: scale(1.05);
+	}
+
+	.temple-distance {
+		position: absolute;
+		bottom: 12px;
+		right: 12px;
+		background: rgba(255,255,255,0.95);
+		padding: 0.3rem 0.75rem;
+		border-radius: 20px;
+		font-size: 0.8rem;
+		font-weight: 600;
+		color: var(--color-primary-dark);
+		display: flex;
+		align-items: center;
+		gap: 0.3rem;
+	}
+
+	.distance-icon {
+		font-size: 0.85rem;
+	}
+
+	.temple-info {
+		padding: 1.5rem;
+	}
+
+	.temple-info h3 {
+		font-size: 1.2rem;
+		color: var(--color-text);
+		margin: 0 0 0.25rem;
+	}
+
+	.walk-time {
+		font-size: 0.85rem;
+		color: var(--color-accent);
+		font-weight: 600;
+	}
+
+	.temple-info p {
+		font-size: 0.95rem;
+		color: var(--color-text-light);
+		line-height: 1.6;
+		margin: 0.75rem 0 0;
+	}
+
+	.near-temples-cta {
+		text-align: center;
+		margin-top: 3rem;
+	}
+
+	.near-temples-cta .btn-secondary {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.9rem 2rem;
+		font-size: 1rem;
+		font-weight: 600;
+		border-radius: 50px;
+		background: var(--color-white);
+		color: var(--color-primary-dark);
+		border: 2px solid var(--color-primary);
+		text-decoration: none;
+		transition: all 0.3s ease;
+	}
+
+	.near-temples-cta .btn-secondary:hover {
+		background: var(--color-primary);
+		color: var(--color-white);
+	}
+
+	.btn-icon {
+		font-size: 1.1rem;
+	}
+
+	@media (max-width: 768px) {
+		.near-temples {
+			padding: 3.5rem 1rem;
+		}
+
+		.temples-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+	}
+</style>

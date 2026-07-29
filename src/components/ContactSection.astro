@@ -1,0 +1,412 @@
+---
+import { CONTACT, SITE } from '../config';
+---
+
+<section class="contact" id="contact">
+	<div class="container">
+		<div class="contact-grid">
+			<div class="contact-info">
+				<span class="section-tag">Book Your Stay</span>
+				<h2>Reserve Your Room at Mahakal Bhakta Nivas</h2>
+				<p class="lead">Reach out to us for bookings, group inquiries, or any questions. We're here to make your Ujjain pilgrimage smooth, peaceful, and blessed.</p>
+
+				<div class="contact-methods">
+					<a href={`tel:${CONTACT.phone}`} class="contact-method">
+						<div class="method-icon">📞</div>
+						<div class="method-text">
+							<span class="method-label">Call Us</span>
+							<span class="method-value">{CONTACT.phoneDisplay}</span>
+						</div>
+					</a>
+
+					<a href={`https://wa.me/${CONTACT.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('Namaste! I would like to book a room at Mahakal Bhakta Nivas.')}`} target="_blank" rel="noopener noreferrer" class="contact-method">
+						<div class="method-icon">💬</div>
+						<div class="method-text">
+							<span class="method-label">WhatsApp</span>
+							<span class="method-value">Quick Reply</span>
+						</div>
+					</a>
+
+					<div class="contact-method">
+						<div class="method-icon">📍</div>
+						<div class="method-text">
+							<span class="method-label">Address</span>
+							<span class="method-value">{CONTACT.address}</span>
+						</div>
+					</div>
+
+					<div class="contact-method">
+						<div class="method-icon">⏰</div>
+						<div class="method-text">
+							<span class="method-label">Check-in / Check-out</span>
+							<span class="method-value">24 Hours • Anytime</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="map-wrapper">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.5!2d75.768!3d23.182!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDEwJzU1LjIiTiA3NcKwNDYnMDQuOCJF!5e0!3m2!1sen!2sin!4v1700000000000"
+						width="100%"
+						height="250"
+						style="border:0; border-radius: 12px;"
+						allowfullscreen=""
+						loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"
+						title="Mahakal Bhakta Nivas Location"
+					></iframe>
+				</div>
+			</div>
+
+			<form class="contact-form" id="contact-form" novalidate>
+				<h3>Quick Booking Request</h3>
+				<p class="form-subtitle">Fill in your details and we'll get back to you within 30 minutes via WhatsApp.</p>
+
+				<div class="form-group">
+					<label for="name">Full Name *</label>
+					<input type="text" id="name" name="name" required placeholder="Your full name" />
+				</div>
+
+				<div class="form-row">
+					<div class="form-group">
+						<label for="phone">Phone / WhatsApp *</label>
+						<input type="tel" id="phone" name="phone" required placeholder="+91 98765 43210" />
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" placeholder="you@example.com" />
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group">
+						<label for="checkin">Check-in Date *</label>
+						<input type="date" id="checkin" name="checkin" required />
+					</div>
+
+					<div class="form-group">
+						<label for="checkout">Check-out Date *</label>
+						<input type="date" id="checkout" name="checkout" required />
+					</div>
+				</div>
+
+				<div class="form-row">
+					<div class="form-group">
+						<label for="guests">Number of Guests *</label>
+						<select id="guests" name="guests" required>
+							<option value="">Select...</option>
+							<option value="1">1 Guest</option>
+							<option value="2">2 Guests</option>
+							<option value="3">3 Guests</option>
+							<option value="4">4 Guests</option>
+							<option value="5+">5+ Guests</option>
+						</select>
+					</div>
+
+					<div class="form-group">
+						<label for="room-type">Room Type</label>
+						<select id="room-type" name="room-type">
+							<option value="any">Any Available</option>
+							<option value="ac">AC Room</option>
+							<option value="non-ac">Non-AC Room</option>
+							<option value="dormitory">Dormitory</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label for="message">Special Requests</label>
+					<textarea id="message" name="message" rows="3" placeholder="Any special requirements, group bookings, or questions..."></textarea>
+				</div>
+
+				<button type="submit" class="btn btn-submit">
+					<span>Send Booking Request</span>
+					<span class="btn-arrow">→</span>
+				</button>
+
+				<p class="form-note">By submitting, you agree to receive a confirmation via WhatsApp or phone call.</p>
+			</form>
+		</div>
+	</div>
+</section>
+
+<script>
+	const form = document.getElementById('contact-form') as HTMLFormElement;
+
+	if (form) {
+		form.addEventListener('submit', (e) => {
+			e.preventDefault();
+
+			const formData = new FormData(form);
+			const name = formData.get('name') as string;
+			const phone = formData.get('phone') as string;
+			const email = formData.get('email') as string;
+			const checkin = formData.get('checkin') as string;
+			const checkout = formData.get('checkout') as string;
+			const guests = formData.get('guests') as string;
+			const roomType = formData.get('room-type') as string;
+			const message = formData.get('message') as string;
+
+			const whatsappMessage = `🙏 *New Booking Request*
+
+*Name:* ${name}
+*Phone:* ${phone}
+${email ? `*Email:* ${email}\n` : ''}*Check-in:* ${checkin}
+*Check-out:* ${checkout}
+*Guests:* ${guests}
+*Room Type:* ${roomType}
+${message ? `*Message:* ${message}` : ''}`;
+
+			const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(whatsappMessage)}`;
+			window.open(whatsappUrl, '_blank');
+
+			form.reset();
+		});
+
+		const today = new Date().toISOString().split('T')[0];
+		const checkinInput = document.getElementById('checkin') as HTMLInputElement;
+		const checkoutInput = document.getElementById('checkout') as HTMLInputElement;
+
+		if (checkinInput) checkinInput.min = today;
+		if (checkoutInput) {
+			checkoutInput.min = today;
+			checkinInput.addEventListener('change', () => {
+				const checkinDate = checkinInput.value;
+				if (checkinDate) {
+					const nextDay = new Date(checkinDate);
+					nextDay.setDate(nextDay.getDate() + 1);
+					checkoutInput.min = nextDay.toISOString().split('T')[0];
+				}
+			});
+		}
+	}
+</script>
+
+<style>
+	.contact {
+		padding: 5rem 1.5rem;
+		background: var(--color-bg-cream);
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		max-width: 1200px;
+		margin: 0 auto;
+		align-items: start;
+	}
+
+	.section-tag {
+		display: inline-block;
+		background: var(--color-bg-light);
+		color: var(--color-accent-dark);
+		padding: 0.4rem 1rem;
+		border-radius: 20px;
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+		margin-bottom: 1rem;
+	}
+
+	.contact-info h2 {
+		font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+		color: var(--color-text);
+		margin: 0.5rem 0 1rem;
+		line-height: 1.2;
+	}
+
+	.lead {
+		font-size: 1.05rem;
+		color: var(--color-text-light);
+		line-height: 1.7;
+		margin-bottom: 2rem;
+	}
+
+	.contact-methods {
+		display: grid;
+		gap: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.contact-method {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		padding: 1rem;
+		background: var(--color-white);
+		border-radius: 12px;
+		text-decoration: none;
+		transition: all 0.3s ease;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+	}
+
+	a.contact-method:hover {
+		transform: translateX(4px);
+		box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+	}
+
+	.method-icon {
+		font-size: 1.5rem;
+		width: 50px;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: var(--color-bg-light);
+		border-radius: 12px;
+		flex-shrink: 0;
+	}
+
+	.method-text {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+	}
+
+	.method-label {
+		font-size: 0.8rem;
+		color: var(--color-text-light);
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.5px;
+	}
+
+	.method-value {
+		font-size: 1rem;
+		color: var(--color-text);
+		font-weight: 600;
+	}
+
+	.map-wrapper {
+		margin-top: 1.5rem;
+		box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+		border-radius: 12px;
+		overflow: hidden;
+	}
+
+	.contact-form {
+		background: var(--color-white);
+		padding: 2.5rem;
+		border-radius: 16px;
+		box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+	}
+
+	.contact-form h3 {
+		font-size: 1.5rem;
+		color: var(--color-text);
+		margin: 0 0 0.5rem;
+	}
+
+	.form-subtitle {
+		font-size: 0.95rem;
+		color: var(--color-text-light);
+		margin: 0 0 2rem;
+	}
+
+	.form-group {
+		margin-bottom: 1.25rem;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.form-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
+
+	.form-group label {
+		font-size: 0.9rem;
+		font-weight: 600;
+		color: var(--color-text);
+		margin-bottom: 0.5rem;
+	}
+
+	.form-group input,
+	.form-group select,
+	.form-group textarea {
+		padding: 0.75rem 1rem;
+		border: 1.5px solid var(--color-border);
+		border-radius: 8px;
+		font-size: 1rem;
+		font-family: inherit;
+		color: var(--color-text);
+		background: var(--color-white);
+		transition: border-color 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.form-group input:focus,
+	.form-group select:focus,
+	.form-group textarea:focus {
+		outline: none;
+		border-color: var(--color-primary);
+		box-shadow: 0 0 0 3px rgba(255, 102, 0, 0.1);
+	}
+
+	.form-group textarea {
+		resize: vertical;
+		min-height: 80px;
+	}
+
+	.btn-submit {
+		width: 100%;
+		padding: 1rem;
+		background: var(--gradient-primary);
+		color: var(--color-white);
+		border: none;
+		border-radius: 8px;
+		font-size: 1.05rem;
+		font-weight: 600;
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		transition: transform 0.2s ease, box-shadow 0.3s ease;
+		margin-top: 0.5rem;
+	}
+
+	.btn-submit:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 8px 20px rgba(255, 102, 0, 0.3);
+	}
+
+	.btn-arrow {
+		transition: transform 0.3s ease;
+	}
+
+	.btn-submit:hover .btn-arrow {
+		transform: translateX(4px);
+	}
+
+	.form-note {
+		font-size: 0.8rem;
+		color: var(--color-text-light);
+		text-align: center;
+		margin: 1rem 0 0;
+	}
+
+	@media (max-width: 968px) {
+		.contact-grid {
+			grid-template-columns: 1fr;
+			gap: 2.5rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.contact {
+			padding: 3.5rem 1rem;
+		}
+
+		.contact-form {
+			padding: 1.75rem 1.5rem;
+		}
+
+		.form-row {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

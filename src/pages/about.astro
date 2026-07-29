@@ -1,111 +1,118 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import { SITE } from '../config';
 ---
 
-<BaseLayout
-  title="About Us - Mahakal Bhakta Nivas Ujjain"
-  description="Learn about Mahakal Bhakta Nivas, our history of serving pilgrims at Mahakaleshwar Temple Ujjain, our values, and why we are the #1 choice for devotees visiting Ujjain."
->
-  <Header />
+<BaseLayout title={`About Us | ${SITE.name}`} description={`Learn about Mahakal Bhakta Nivas — our story, mission, and commitment to providing the best accommodation near Mahakaleshwar Temple, Ujjain.`}>
+	<div class="page-wrapper">
+		<div class="container">
+			<nav class="breadcrumb" aria-label="Breadcrumb">
+				<a href="/">Home</a>
+				<span>/</span>
+				<span>About Us</span>
+			</nav>
+		</div>
+	</div>
 
-  <section class="about-hero">
-    <div class="about-hero-content">
-      <span class="section-label" style="color:var(--color-gold-light)">Our Story</span>
-      <h1 class="heading-display heading-xl" style="color:var(--color-white);margin-bottom:var(--space-6)">
-        Serving Devotees for Over <em style="color:var(--color-gold)">25 Years</em>
-      </h1>
-      <p style="font-size:clamp(1rem,2vw,1.1875rem);color:rgba(255,255,255,0.75);line-height:1.8;max-width:700px;margin-inline:auto">
-        Mahakal Bhakta Nivas was founded with a simple mission — to provide every devotee
-        visiting the Mahakaleshwar Jyotirlinga with comfortable, affordable, and spiritually
-        uplifting accommodation.
-      </p>
-    </div>
-  </section>
+	<section class="page-hero">
+		<div class="container">
+			<h1>About Mahakal Bhakta Nivas</h1>
+			<p class="lead">A tradition of warm hospitality for pilgrims visiting the sacred Mahakaleshwar Temple in Ujjain.</p>
+		</div>
+	</section>
 
-  <section class="section">
-    <div class="container" style="max-width:800px">
-      <div style="text-align:center;margin-bottom:var(--space-12)">
-        <span class="section-label">Who We Are</span>
-        <h2 class="heading-display heading-lg section-title">A Tradition of Hospitality</h2>
-        <p style="color:var(--color-sand-700);font-size:1.0625rem;line-height:1.8">
-          Founded in 1998 by the Agarwal family, Mahakal Bhakta Nivas started as a small
-          10-room facility near the Mahakaleshwar Temple. Over the past 25+ years, we have
-          grown into one of the most trusted dharmashalas in Ujjain, serving over
-          <strong> 2,00,000 devotees</strong> from across India and the world.
-        </p>
-        <p style="color:var(--color-sand-700);font-size:1.0625rem;line-height:1.8;margin-top:var(--space-4)">
-          Our philosophy is rooted in the tradition of <em>"Atithi Devo Bhava"</em> — the guest
-          is divine. Every member of our team shares a deep connection to Ujjain and the
-          Mahakaleshwar Temple, and we treat every visitor like family.
-        </p>
-      </div>
-
-      <div class="values-grid">
-        <div class="value-card">
-          <div class="value-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
-            </svg>
-          </div>
-          <h3>Atithi Devo Bhava</h3>
-          <p>We treat every guest as divine. Your comfort and spiritual experience is our highest priority.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h3>Trust & Safety</h3>
-          <p>Secure premises, CCTV surveillance, and verified staff ensure your stay is worry-free.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M11 20A7 7 0 019.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z" />
-              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
-            </svg>
-          </div>
-          <h3>Pure & Sattvic</h3>
-          <p>Our restaurant serves pure vegetarian, sattvic meals prepared with love and devotion.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 00-3-3.87" />
-              <path d="M16 3.13a4 4 0 010 7.75" />
-            </svg>
-          </div>
-          <h3>Community</h3>
-          <p>We bring devotees together. Satsangs, group darshan arrangements, and shared experiences.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-            </svg>
-          </div>
-          <h3>Cleanliness</h3>
-          <p>Hygiene is non-negotiable. Our rooms and common areas are cleaned daily to the highest standards.</p>
-        </div>
-        <div class="value-card">
-          <div class="value-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="2" y1="12" x2="22" y2="12" />
-              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
-            </svg>
-          </div>
-          <h3>Accessibility</h3>
-          <p>Located at the heart of the temple complex, we make darshan convenient for everyone.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <Footer />
+	<section class="about-section">
+		<div class="container">
+			<div class="about-grid">
+				<div>
+					<h2>Our Story</h2>
+					<p>Mahakal Bhakta Nivas was established with a singular vision: to provide clean, affordable, and peaceful accommodation for devotees visiting the Mahakaleshwar Jyotirlinga in Ujjain.</p>
+					<p>For over 15 years, we have welcomed thousands of pilgrims from across India and abroad. Our family-run dharmashala is known for its cleanliness, warmth, and proximity to the temple — making it the preferred choice for devotees seeking a comfortable stay during their spiritual journey.</p>
+				</div>
+				<div>
+					<h2>Our Mission</h2>
+					<p>We believe that every pilgrim deserves a restful, hygienic, and spiritually uplifting place to stay — without breaking the bank.</p>
+					<p>From solo travellers to large family groups, we offer a range of rooms and services to make your Ujjain visit memorable and hassle-free.</p>
+				</div>
+			</div>
+		</div>
+	</section>
 </BaseLayout>
+
+<style>
+	.page-wrapper {
+		padding: 1.5rem 0;
+	}
+
+	.breadcrumb {
+		display: flex;
+		gap: 0.5rem;
+		align-items: center;
+		font-size: 0.9rem;
+		color: #8b6f47;
+		padding: 1rem 0;
+	}
+
+	.breadcrumb a {
+		color: #d97706;
+		text-decoration: none;
+	}
+
+	.breadcrumb a:hover {
+		text-decoration: underline;
+	}
+
+	.page-hero {
+		background: linear-gradient(135deg, #fef9f3 0%, #fdf0d5 100%);
+		padding: 3rem 1.5rem;
+		text-align: center;
+	}
+
+	.page-hero h1 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: clamp(1.8rem, 5vw, 2.8rem);
+		color: #1c1410;
+		margin: 0 0 0.75rem;
+	}
+
+	.page-hero .lead {
+		font-size: 1.1rem;
+		color: #4b3c30;
+		max-width: 650px;
+		margin: 0 auto;
+	}
+
+	.about-section {
+		padding: 4rem 1.5rem;
+		background: white;
+	}
+
+	.about-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.about-grid h2 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: 1.6rem;
+		color: #1c1410;
+		margin: 0 0 1rem;
+	}
+
+	.about-grid p {
+		font-size: 1rem;
+		color: #4b3c30;
+		line-height: 1.7;
+		margin-bottom: 1rem;
+	}
+
+	@media (max-width: 640px) {
+		.about-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+	}
+</style>

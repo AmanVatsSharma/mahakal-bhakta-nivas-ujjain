@@ -1,137 +1,528 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-
-const rooms = [
-  {
-    title: 'Deluxe Room',
-    desc: 'Comfortable AC room with queen bed, attached bathroom with hot water, and temple view.',
-    price: '₹1,200',
-    capacity: '2 Guests',
-    size: '200 sq ft',
-    features: ['AC', 'Hot Water', 'Free WiFi', 'TV', 'Temple View'],
-    image: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=600&h=400&fit=crop',
-  },
-  {
-    title: 'Family Suite',
-    desc: 'Spacious room with double bed + single bed, perfect for families visiting the temple.',
-    price: '₹1,800',
-    capacity: '4 Guests',
-    size: '320 sq ft',
-    features: ['AC', 'Hot Water', 'Free WiFi', 'Balcony', 'Mini Fridge'],
-    image: 'https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600&h=400&fit=crop',
-  },
-  {
-    title: 'Temple View Room',
-    desc: 'Premium room with direct view of Mahakaleshwar Temple gopuram. Wake up to darshan vibes.',
-    price: '₹2,500',
-    capacity: '2 Guests',
-    size: '240 sq ft',
-    features: ['AC', 'Hot Water', 'Free WiFi', 'TV', 'Balcony', 'Temple View'],
-    image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&h=400&fit=crop',
-  },
-  {
-    title: 'Non-AC Room',
-    desc: 'Clean, well-ventilated budget room with comfortable beds. Great for pilgrims on a budget.',
-    price: '₹600',
-    capacity: '2 Guests',
-    size: '150 sq ft',
-    features: ['Fan', 'Hot Water', 'Common WiFi'],
-    image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600&h=400&fit=crop',
-  },
-  {
-    title: 'Dormitory',
-    desc: 'Shared accommodation for large groups. Separate spaces for men and women with lockers.',
-    price: '₹350',
-    capacity: '6-8 Guests',
-    size: 'Shared Hall',
-    features: ['Fan', 'Hot Water', 'Common WiFi', 'Lockers'],
-    image: 'https://images.unsplash.com/photo-1555854877-bab0e1dbfd81?w=600&h=400&fit=crop',
-  },
-  {
-    title: 'Dharamshala Hall',
-    desc: 'Large hall for group bookings and satsangs. Mattress arrangement for 50+ people.',
-    price: '₹200/bed',
-    capacity: '50+ Guests',
-    size: 'Large Hall',
-    features: ['Common Bath', 'Hot Water', 'Kitchen Access', 'Power Backup'],
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=400&fit=crop',
-  },
-];
-
-const checkSvg = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>`;
+import { SITE } from '../config';
+const pageTitle = "Rooms & Accommodation - Mahakal Bhakta Nivas | Budget to Deluxe Rooms in Ujjain";
+const pageDescription = "View our room types at Mahakal Bhakta Nivas Ujjain - Non-AC Dormitory (₹600), AC Private Room (₹1,200), Deluxe Room (₹1,800), and Family Room (₹2,500). All rooms near Mahakaleshwar Temple with attached bathrooms, hot water, and pure veg food.";
 ---
 
-<BaseLayout
-  title="Rooms & Rates - Mahakal Bhakta Nivas Ujjain"
-  description="View our rooms at Mahakal Bhakta Nivas. Deluxe rooms, family suites, temple view rooms, dormitory and budget rooms near Mahakaleshwar Temple, Ujjain. Prices starting from ₹350."
->
-  <Header />
-
-  <section class="section" style="padding-top:100px">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Our Accommodation</span>
-        <h1 class="heading-display heading-lg section-title">Rooms & Rates</h1>
-        <p class="section-subtitle">
-          From budget dormitories to premium temple-view suites — we have the perfect stay for every pilgrim.
-        </p>
-      </div>
-
-      <div class="rooms-grid stagger-children">
-        {rooms.map((room) => (
-          <div class="room-card">
-            <div class="room-card-image">
-              <img src={room.image} alt={room.title} loading="lazy" />
-              <span class="room-badge">From {room.price}/night</span>
+<BaseLayout title={pageTitle} description={pageDescription} canonical="/rooms">
+    <main>
+        <!-- Rooms Hero -->
+        <section class="rooms-hero">
+            <div class="container">
+                <span class="section-tag">Accommodation</span>
+                <h1>Rooms & Tariff</h1>
+                <p class="hero-lead">Comfortable, clean, and affordable rooms for every budget — all within walking distance of Mahakaleshwar Temple.</p>
             </div>
-            <div class="room-card-body">
-              <h3 class="room-card-title">{room.title}</h3>
-              <p class="room-card-desc">{room.desc}</p>
-              <div style="display:flex;gap:var(--space-4);font-size:0.8125rem;color:var(--color-sand-700);margin-bottom:var(--space-3)">
-                <span>👥 {room.capacity}</span>
-                <span>📐 {room.size}</span>
-              </div>
-              <div class="room-features" style="margin-bottom:var(--space-4)">
-                {room.features.map(f => (
-                  <span class="room-feature">
-                    <span set:html={checkSvg} />
-                    {f}
-                  </span>
-                ))}
-              </div>
-              <a href={"https://wa.me/919876543210?text=" + encodeURIComponent("Hi, I would like to inquire about " + room.title)} class="btn btn-primary" target="_blank" rel="noopener">
-                Book {room.title}
-              </a>
+        </section>
+
+        <!-- Rooms Grid -->
+        <section class="rooms-section">
+            <div class="container">
+                <div class="rooms-grid">
+                    <!-- Room 1: Non-AC Dormitory -->
+                    <div class="room-card" itemscope itemtype="https://schema.org/LodgingBusiness">
+                        <div class="room-image">
+                            <img src="/images/placeholder-room.jpg" alt="Non-AC Dormitory Room" loading="lazy">
+                            <span class="room-type-badge">Budget</span>
+                        </div>
+                        <div class="room-content">
+                            <h3 itemprop="name">Non-AC Dormitory</h3>
+                            <p class="room-description">Shared dormitory with comfortable beds, clean linen, and shared bathroom. Ideal for solo travelers on a budget.</p>
+                            <ul class="room-features">
+                                <li>✓ Shared bathroom</li>
+                                <li>✓ Hot water</li>
+                                <li>✓ Clean linen</li>
+                                <li>✓ 24x7 security</li>
+                                <li>✓ Power backup</li>
+                            </ul>
+                            <div class="room-footer">
+                                <div class="room-price">
+                                    <span class="price-amount" itemprop="priceRange">₹600</span>
+                                    <span class="price-period">/night</span>
+                                </div>
+                                <a href="https://wa.me/919007458189?text=Hello,%20I'd%20like%20to%20book%20a%20Non-AC%20Dormitory%20room"
+                                   class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener">
+                                    Book Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room 2: AC Private Room -->
+                    <div class="room-card featured" itemscope itemtype="https://schema.org/LodgingBusiness">
+                        <div class="room-image">
+                            <img src="/images/placeholder-room.jpg" alt="AC Private Room" loading="lazy">
+                            <span class="room-type-badge popular">Most Popular</span>
+                        </div>
+                        <div class="room-content">
+                            <h3 itemprop="name">AC Private Room</h3>
+                            <p class="room-description">Private air-conditioned room with attached bathroom, perfect for couples and small families seeking comfort.</p>
+                            <ul class="room-features">
+                                <li>✓ Attached bathroom</li>
+                                <li>✓ Air conditioning</li>
+                                <li>✓ Hot water</li>
+                                <li>✓ TV & WiFi</li>
+                                <li>✓ Power backup</li>
+                                <li>✓ Room service</li>
+                            </ul>
+                            <div class="room-footer">
+                                <div class="room-price">
+                                    <span class="price-amount" itemprop="priceRange">₹1,200</span>
+                                    <span class="price-period">/night</span>
+                                </div>
+                                <a href="https://wa.me/919007458189?text=Hello,%20I'd%20like%20to%20book%20an%20AC%20Private%20room"
+                                   class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener">
+                                    Book Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room 3: Deluxe Room -->
+                    <div class="room-card" itemscope itemtype="https://schema.org/LodgingBusiness">
+                        <div class="room-image">
+                            <img src="/images/placeholder-room.jpg" alt="Deluxe Room" loading="lazy">
+                            <span class="room-type-badge">Premium</span>
+                        </div>
+                        <div class="room-content">
+                            <h3 itemprop="name">Deluxe Room</h3>
+                            <p class="room-description">Spacious deluxe room with premium amenities, comfortable seating area, and a peaceful environment for spiritual rest.</p>
+                            <ul class="room-features">
+                                <li>✓ Attached bathroom</li>
+                                <li>✓ Air conditioning</li>
+                                <li>✓ Hot water</li>
+                                <li>✓ TV & WiFi</li>
+                                <li>✓ Seating area</li>
+                                <li>✓ Premium linen</li>
+                                <li>✓ Room service</li>
+                            </ul>
+                            <div class="room-footer">
+                                <div class="room-price">
+                                    <span class="price-amount" itemprop="priceRange">₹1,800</span>
+                                    <span class="price-period">/night</span>
+                                </div>
+                                <a href="https://wa.me/919007458189?text=Hello,%20I'd%20like%20to%20book%20a%20Deluxe%20room"
+                                   class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener">
+                                    Book Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Room 4: Family Room -->
+                    <div class="room-card" itemscope itemtype="https://schema.org/LodgingBusiness">
+                        <div class="room-image">
+                            <img src="/images/placeholder-room.jpg" alt="Family Room" loading="lazy">
+                            <span class="room-type-badge">Family</span>
+                        </div>
+                        <div class="room-content">
+                            <h3 itemprop="name">Family Room</h3>
+                            <p class="room-description">Large family room accommodating up to 6 people, with multiple beds and all premium amenities for a comfortable family stay.</p>
+                            <ul class="room-features">
+                                <li>✓ Multiple beds (up to 6)</li>
+                                <li>✓ Attached bathroom</li>
+                                <li>✓ Air conditioning</li>
+                                <li>✓ Hot water</li>
+                                <li>✓ TV & WiFi</li>
+                                <li>✓ Seating area</li>
+                                <li>✓ Room service</li>
+                            </ul>
+                            <div class="room-footer">
+                                <div class="room-price">
+                                    <span class="price-amount" itemprop="priceRange">₹2,500</span>
+                                    <span class="price-period">/night</span>
+                                </div>
+                                <a href="https://wa.me/919007458189?text=Hello,%20I'd%20like%20to%20book%20a%20Family%20room"
+                                   class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener">
+                                    Book Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+        </section>
 
-  <Footer />
+        <!-- Amenities Band -->
+        <section class="amenities-section">
+            <div class="container">
+                <h2 class="section-title">All Rooms Include</h2>
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <span class="amenity-icon">🛏️</span>
+                        <span>Clean Linen</span>
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-icon">🚿</span>
+                        <span>Hot Water</span>
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-icon">📶</span>
+                        <span>Free WiFi</span>
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-icon">📺</span>
+                        <span>Television</span>
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-icon">❄️</span>
+                        <span>AC (Private/Deluxe/Family)</span>
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-icon">🔒</span>
+                        <span>24x7 Security</span>
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-icon">🔌</span>
+                        <span>Power Backup</span>
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-icon">🛎️</span>
+                        <span>Room Service</span>
+                    </div>
+                    <div class="amenity-item">
+                        <span class="amenity-icon">🥗</span>
+                        <span>Pure Veg Food</span>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <div class="floating-cta">
-    <a href="https://wa.me/919876543210" class="btn btn-whatsapp" target="_blank" rel="noopener">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-      </svg>
-      WhatsApp
-    </a>
-    <a href="tel:+919876543210" class="btn btn-call">Call</a>
-  </div>
+        <!-- Terms -->
+        <section class="terms-section">
+            <div class="container">
+                <h2 class="section-title">Booking Information</h2>
+                <div class="terms-grid">
+                    <div class="term-item">
+                        <h3>🕐 Check-in / Check-out</h3>
+                        <p>Check-in from 12:00 PM, Check-out by 11:00 AM. Early check-in/late check-out subject to availability.</p>
+                    </div>
+                    <div class="term-item">
+                        <h3>📋 ID Required</h3>
+                        <p>Government-issued photo ID (Aadhaar, PAN, Passport, or Driving License) is mandatory at check-in.</p>
+                    </div>
+                    <div class="term-item">
+                        <h3>💳 Payment</h3>
+                        <p>Cash and UPI payments accepted. Advance booking recommended during Simhastha Kumbh Mela and Mahashivratri.</p>
+                    </div>
+                    <div class="term-item">
+                        <h3>🍽️ Food</h3>
+                        <p>Pure vegetarian meals available. Thali meals, snacks, and prasadam can be arranged. Ask at reception.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <script>
-    const header = document.getElementById('siteHeader');
-    window.addEventListener('scroll', () => {
-      header.classList.toggle('scrolled', window.scrollY > 50);
-    }, { passive: true });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-  </script>
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2>Book Your Stay Today</h2>
+                    <p>Call or WhatsApp us to check availability and book your room at Mahakal Bhakta Nivas.</p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/919007458189?text=Hello,%20I'd%20like%20to%20book%20a%20room%20at%20Mahakal%20Bhakta%20Nivas"
+                           class="btn btn-whatsapp" target="_blank" rel="noopener">
+                            Book on WhatsApp
+                        </a>
+                        <a href="tel:+919007458189" class="btn btn-call">
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 </BaseLayout>
+
+<style>
+    .rooms-hero {
+        padding: var(--space-16) 0;
+        background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-800) 100%);
+        text-align: center;
+    }
+
+    .rooms-hero .section-tag {
+        display: inline-block;
+        background: var(--accent);
+        color: var(--cream);
+        padding: var(--space-2) var(--space-4);
+        border-radius: var(--radius-full);
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: var(--space-4);
+    }
+
+    .rooms-hero h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        color: var(--cream);
+        margin-bottom: var(--space-4);
+    }
+
+    .rooms-hero .hero-lead {
+        color: var(--primary-200);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .rooms-section {
+        padding: var(--space-16) 0;
+        background: var(--cream);
+    }
+
+    .rooms-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+        margin-top: var(--space-10);
+    }
+
+    .room-card {
+        background: white;
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .room-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .room-card.featured {
+        border-color: var(--accent);
+    }
+
+    .room-image {
+        position: relative;
+        height: 220px;
+        overflow: hidden;
+    }
+
+    .room-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .room-type-badge {
+        position: absolute;
+        top: var(--space-4);
+        left: var(--space-4);
+        background: var(--primary-900);
+        color: var(--cream);
+        padding: var(--space-2) var(--space-4);
+        border-radius: var(--radius-full);
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .room-type-badge.popular {
+        background: var(--accent);
+    }
+
+    .room-content {
+        padding: var(--space-6);
+    }
+
+    .room-content h3 {
+        font-size: 1.3rem;
+        color: var(--primary-900);
+        margin-bottom: var(--space-3);
+    }
+
+    .room-description {
+        color: var(--gray-600);
+        font-size: 0.95rem;
+        margin-bottom: var(--space-4);
+        line-height: 1.6;
+    }
+
+    .room-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 var(--space-4);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-2);
+    }
+
+    .room-features li {
+        font-size: 0.85rem;
+        color: var(--gray-700);
+    }
+
+    .room-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: var(--space-4);
+        border-top: 1px solid var(--gray-100);
+    }
+
+    .room-price {
+        display: flex;
+        align-items: baseline;
+        gap: var(--space-1);
+    }
+
+    .price-amount {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-700);
+    }
+
+    .price-period {
+        font-size: 0.85rem;
+        color: var(--gray-500);
+    }
+
+    .btn-sm {
+        padding: var(--space-2) var(--space-5);
+        font-size: 0.85rem;
+    }
+
+    /* Amenities */
+    .amenities-section {
+        padding: var(--space-16) 0;
+        background: white;
+    }
+
+    .amenities-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-6);
+        margin-top: var(--space-10);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .amenity-item {
+        display: flex;
+        align-items: center;
+        gap: var(--space-3);
+        padding: var(--space-4);
+        background: var(--gray-50);
+        border-radius: var(--radius-lg);
+        transition: background 0.3s ease;
+    }
+
+    .amenity-item:hover {
+        background: var(--primary-50);
+    }
+
+    .amenity-icon {
+        font-size: 1.5rem;
+    }
+
+    .amenity-item span:last-child {
+        font-weight: 500;
+        color: var(--gray-700);
+        font-size: 0.9rem;
+    }
+
+    /* Terms */
+    .terms-section {
+        padding: var(--space-16) 0;
+        background: linear-gradient(135deg, var(--primary-50) 0%, var(--cream) 100%);
+    }
+
+    .terms-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--space-4);
+        margin-top: var(--space-10);
+    }
+
+    .term-item {
+        background: white;
+        padding: var(--space-6);
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .term-item h3 {
+        font-size: 1rem;
+        color: var(--primary-900);
+        margin-bottom: var(--space-2);
+    }
+
+    .term-item p {
+        color: var(--gray-600);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* CTA */
+    .cta-section {
+        padding: var(--space-16) 0;
+        background: var(--primary-900);
+    }
+
+    .cta-card {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .cta-card h2 {
+        font-size: clamp(1.6rem, 4vw, 2.2rem);
+        color: var(--cream);
+        margin-bottom: var(--space-4);
+    }
+
+    .cta-card p {
+        color: var(--primary-200);
+        font-size: 1.05rem;
+        margin-bottom: var(--space-8);
+    }
+
+    .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+        align-items: center;
+    }
+
+    .cta-buttons .btn {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+
+    @media (min-width: 768px) {
+        .rooms-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .amenities-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .terms-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .cta-buttons {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .cta-buttons .btn {
+            width: auto;
+            min-width: 220px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .rooms-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>

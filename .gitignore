@@ -1,23 +1,36 @@
 # dependencies
 node_modules/
+.pnpm-store/
 
-# build output
+# build outputs
 dist/
-
-# Astro cache
 .astro/
 
-# environment files
+# environment
 .env
-.env.*
-!.env.example
+.env.local
+.env.production
 
-# editor / OS
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS
 .DS_Store
+Thumbs.db
+
+# editors
 .vscode/
 .idea/
-*.log
 *.swp
 
-# screenshots (dev artifacts)
-screenshot-*.png
+# playwright test artifacts
+.playwright-mcp/
+*.jpeg
+*.png
+
+# misc
+*.log
+.cache/
