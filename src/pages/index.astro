@@ -4,6 +4,8 @@ import { SITE, CONTACT, STATS, ROOMS, AMENITIES, TESTIMONIALS, FAQ_DATA, GALLERY
 import Header from './components/Header.astro';
 import Footer from './components/Footer.astro';
 import FaqSchema from '../components/FaqSchema.json';
+import { Image } from 'astro:assets';
+import heroBg from '../assets/hero-bg.png';
 
 const pageTitle = `${SITE.name} - Best Dharmashala Near Mahakaleshwar Temple, Ujjain`;
 const pageDescription = SITE.description;
@@ -15,7 +17,7 @@ const ogImage = `${SITE.url}/og-image.jpg`;
 	<!-- Hero Section -->
 	<section class="hero" id="home">
 		<div class="hero-bg">
-			<img src="/images/hero-bg.webp" alt="Mahakaleshwar Temple Ujjain - Sacred Jyotirlinga" loading="eager" fetchpriority="high">
+			<Image src={heroBg} alt="Mahakaleshwar Temple Ujjain - Sacred Jyotirlinga" widths={[640, 960, 1280, 1600, 2000]} sizes="100vw" loading="eager" fetchpriority="high" />
 		</div>
 		<div class="hero-overlay"></div>
 		<div class="container hero-content">
