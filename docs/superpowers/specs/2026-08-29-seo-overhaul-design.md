@@ -9,7 +9,7 @@ Astro 5 static site (10 pages, ~25 components) for Mahakal Bhakta Nivas, a dhara
 
 An audit found the site cannot rank well today:
 
-1. Three different domains mixed: `mahakalbhakta.in` (src/config.ts → homepage canonical), `mahakalbhaktanivasujjain.in` (BaseLayout defaults + JSON-LD), `mahakalbhaktanivas.in` (astro.config, robots.txt, CLAUDE.md). Canonical mismatch across sitemap/robots/schema.
+1. Four different domains mixed, **none correct**: `mahakalbhakta.in` (src/config.ts → homepage canonical), `mahakalbhaktanivasujjain.in` (BaseLayout defaults + JSON-LD), `mahakalbhaktanivas.in` (astro.config, robots.txt, CLAUDE.md). The **live production domain** (user-confirmed + verified live, serving this exact site) is `https://www.shrimahakalbhaktniwasujjain.com`.
 2. Homepage renders no header at all (broken import `./components/Header.astro` in index.astro; `<Header />` never rendered) and has no `<h1>` — the hero is a baked-text poster image with zero crawlable text.
 3. Hero poster (1122×1402 PNG) is displayed with `object-fit: cover` in a 100vh hero → heavily cropped on desktop (~60% of the poster hidden).
 4. Room images broken: `ROOMS` config points to `/images/rooms/*.webp` — that directory is empty. Real photos sit in `public/rooms/*.jpg` (untracked in git).
@@ -20,7 +20,7 @@ An audit found the site cannot rank well today:
 
 ## Decisions (user-confirmed)
 
-- **Domain**: `https://mahakalbhaktanivas.in` everywhere.
+- **Domain**: `https://www.shrimahakalbhaktniwasujjain.com` (with `www`, exactly as live) everywhere: canonicals, sitemap, robots, JSON-LD, OG URLs, astro.config `site`. Email address `info@mahakalbhakta.in` is the owner's real mailbox (shown on live site) — leave unchanged.
 - **Hero**: full poster, natural height, never cropped (`width: 100%; height: auto`). No visible text hero. SEO handled by a screen-reader-only `<h1>` (user explicitly chose poster-only look over text hero).
 - **Header**: polish the existing sticky header (trishul logo mark, Playfair Display brand, animated gold underline nav, WhatsApp + Call pill buttons, mobile hamburger slide-down) and actually render it on the homepage.
 - **Booking**: new `/booking` page with a form that composes a prefilled WhatsApp message (no backend). Linked from header, hero poster area, rooms CTAs, footer.
@@ -29,15 +29,18 @@ An audit found the site cannot rank well today:
 
 ## 1. Foundation — one domain, no dead code
 
-- `SITE.url` in `src/config.ts` → `https://mahakalbhaktanivas.in`. Email address (`info@mahakalbhakta.in`) is the owner's real mailbox — leave unchanged everywhere.
-- `BaseLayout.astro`: default canonical, JSON-LD `url`, `og:image` absolute URL, `image` refs → the single domain. Fix schema image path (currently `/hero.webp` which doesn't exist) → real og-image URL.
+- Canonical domain everywhere: `https://www.shrimahakalbhaktniwasujjain.com`
+- `SITE.url` in `src/config.ts` → the canonical domain.
+- `astro.config.mjs` `site` → `https://www.shrimahakalbhaktniwasujjain.com`.
+- `BaseLayout.astro`: default canonical, JSON-LD `url`, `og:image` absolute URL, `image` refs → the canonical domain. Fix schema image path (currently `/hero.webp` which doesn't exist) → real og-image URL.
+- `robots.txt` sitemap line → `https://www.shrimahakalbhaktniwasujjain.com/sitemap.xml`.
 - Delete dead files: `src/data/content.js`, `src/layouts/Layout.astro`, `src/components/SEO.astro` (verify zero imports first).
-- Acceptance: `grep -r "mahakalbhakta.in\b\|mahakalbhaktanivasujjain" dist/` returns nothing.
+- Acceptance: `grep -rE "mahakalbhakta\.in|mahakalbhaktanivas\.in|mahakalbhaktanivasujjain" dist/` returns nothing (all three stale domains absent).
 
 ## 2. Technical SEO
 
 - **Sitemap**: delete `public/sitemap.xml`. Rewrite `src/pages/sitemap.xml.ts`: enumerate all indexable pages (/, /rooms/, /booking/, /amenities/, /gallery/, /pooja-seva/, /about/, /contact/, /faq/), trailing slashes, current lastmod. Exclude `/privacy-policy/` (noindex) and `/404`.
-- **robots.txt**: unchanged except verified sitemap line points to `https://mahakalbhaktanivas.in/sitemap.xml` (already correct).
+- **robots.txt**: sitemap line → `https://www.shrimahakalbhaktniwasujjain.com/sitemap.xml`.
 - **Netlify**: remove the `/* → /index.html` 200 SPA fallback from `netlify.toml` so unknown URLs return Astro's `/404.html` with 404 status. Keep cache/security headers.
 - **Trailing slashes**: canonical tags and internal links use trailing-slash form on subpages, matching `trailingSlash: 'always'`.
 - **noindex**: `/privacy-policy/` gets `<meta name="robots" content="noindex, follow">`.
@@ -116,9 +119,9 @@ Rebuild beyond a card grid:
 ## 9. Verification (per task, then final)
 
 - `npm run build` passes.
-- `grep` dist for `mahakalbhakta.in` (short domain) and `mahakalbhaktanivasujjain` → zero matches.
-- `dist/sitemap.xml`: 9 URLs, all trailing-slash, correct domain; `dist/robots.txt` sitemap line correct.
-- Built homepage: `<header>` present, sr-only H1 present, canonical = `https://mahakalbhaktanivas.in/`, exactly one `<h1>`.
+- `grep` dist for the three stale domains (`mahakalbhakta.in`, `mahakalbhaktanivas.in`, `mahakalbhaktanivasujjain.in`) → zero matches.
+- `dist/sitemap.xml`: 9 URLs, all trailing-slash, all on `https://www.shrimahakalbhaktniwasujjain.com`; `dist/robots.txt` sitemap line matches.
+- Built homepage: `<header>` present, sr-only H1 present, canonical = `https://www.shrimahakalbhaktniwasujjain.com/`, exactly one `<h1>`.
 - `/rooms/` and `/booking/` render with data-driven rooms, working images.
 - JSON-LD parses (spot-check via node JSON.parse of extracted blocks).
 - Playwright screenshots: desktop + mobile — homepage (header + full poster, no crop), rooms, booking form.
