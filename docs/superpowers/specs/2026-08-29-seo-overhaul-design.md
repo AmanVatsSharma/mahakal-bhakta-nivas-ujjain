@@ -39,7 +39,10 @@ An audit found the site cannot rank well today:
 
 ## 2. Technical SEO
 
-- **Sitemap**: delete `public/sitemap.xml`. Rewrite `src/pages/sitemap.xml.ts`: enumerate all indexable pages (/, /rooms/, /booking/, /amenities/, /gallery/, /pooja-seva/, /about/, /contact/, /faq/), trailing slashes, current lastmod. Exclude `/privacy-policy/` (noindex) and `/404`.
+- **Sitemap (index structure)**: delete `public/sitemap.xml`. Build a **sitemap index** at `/sitemap.xml` listing two child sitemaps (endpoints in `src/pages/`):
+  - `/sitemap-pages.xml` — 9 core URLs (/, /rooms/, /booking/, /amenities/, /gallery/, /pooja-seva/, /about/, /contact/, /faq/), trailing slashes, current lastmod
+  - `/sitemap-blog.xml` — 30 blog posts + blog index/pagination pages (see §10)
+  - Exclude `/privacy-policy/` (noindex) and `/404`.
 - **robots.txt**: sitemap line → `https://www.shrimahakalbhaktniwasujjain.com/sitemap.xml`.
 - **Netlify**: remove the `/* → /index.html` 200 SPA fallback from `netlify.toml` so unknown URLs return Astro's `/404.html` with 404 status. Keep cache/security headers.
 - **Trailing slashes**: canonical tags and internal links use trailing-slash form on subpages, matching `trailingSlash: 'always'`.
@@ -79,7 +82,7 @@ Every page gets a unique title (≤60 chars), meta description (≤155 chars, bo
 ### Header (`src/components/Header.astro`)
 - Fix index.astro import (`../components/Header.astro`) and render `<Header />` above the hero.
 - Logo: trishul-in-temple-arch SVG mark with saffron→gold gradient; brand name in Playfair Display; "UJJAIN" subtitle.
-- Nav links to real pages with trailing slashes: Home `/`, Rooms `/rooms/`, Booking `/booking/`, Amenities `/amenities/`, Gallery `/gallery/`, Pooja & Seva `/pooja-seva/`, Contact `/contact/` — animated gold underline hover. (Page links, not `#section` anchors, so nav works identically from every page and passes link equity; homepage in-page anchors stay in the homepage's own CTAs only.)
+- Nav links to real pages with trailing slashes: Home `/`, Rooms `/rooms/`, Booking `/booking/`, Blog `/blog/`, Amenities `/amenities/`, Gallery `/gallery/`, Pooja & Seva `/pooja-seva/`, Contact `/contact/` — animated gold underline hover. (Page links, not `#section` anchors, so nav works identically from every page and passes link equity; homepage in-page anchors stay in the homepage's own CTAs only.)
 - CTAs: green WhatsApp pill + amber Call pill + prominent "Book Now" → `/booking/`. Phone from `CONTACT` config (no hardcoded numbers).
 - Mobile (<900px): hamburger toggle + slide-down panel with nav + CTAs; accessible (`aria-expanded`, keyboard).
 - Stays sticky, cream + blur backdrop (existing look).
@@ -120,15 +123,74 @@ Rebuild beyond a card grid:
 
 - `npm run build` passes.
 - `grep` dist for the three stale domains (`mahakalbhakta.in`, `mahakalbhaktanivas.in`, `mahakalbhaktanivasujjain.in`) → zero matches.
-- `dist/sitemap.xml`: 9 URLs, all trailing-slash, all on `https://www.shrimahakalbhaktniwasujjain.com`; `dist/robots.txt` sitemap line matches.
+- `dist/sitemap.xml` is a valid sitemap **index** listing `sitemap-pages.xml` (9 URLs) + `sitemap-blog.xml` (30 posts + 3 pagination pages); all URLs trailing-slash on `https://www.shrimahakalbhaktniwasujjain.com`; `dist/robots.txt` sitemap line matches; `dist/rss.xml` parses.
+- All 30 blog posts build, each with unique title/description, `BlogPosting` schema, ≥1 internal link to `/rooms/` or `/booking/`, valid hero image URL, FAQ schema where FAQ present.
 - Built homepage: `<header>` present, sr-only H1 present, canonical = `https://www.shrimahakalbhaktniwasujjain.com/`, exactly one `<h1>`.
 - `/rooms/` and `/booking/` render with data-driven rooms, working images.
 - JSON-LD parses (spot-check via node JSON.parse of extracted blocks).
 - Playwright screenshots: desktop + mobile — homepage (header + full poster, no crop), rooms, booking form.
 - Netlify: 404 behavior can't be tested locally; verify netlify.toml no longer has the 200 fallback (review-only).
 
+## 10. Blog system + 30 articles
+
+### Infrastructure
+- **Content collection**: `src/content/blog/*.md` with a typed frontmatter schema (`title`, `description`, `pubDate`, `updatedDate?`, `heroImage`, `heroAlt`, `tags`, `keywords`, `faq[]?`). Posts written in Markdown.
+- **Routes**: `/blog/` index with pagination (10 posts/page → `/blog/`, `/blog/2/`, `/blog/3/`) via `paginate()`; `/blog/[slug]/` post page.
+- **Post layout**: hero image (lazy), breadcrumbs, publish/updated dates, styled prose, FAQ accordion block (if frontmatter faq), "Book your stay near Mahakal" CTA box (links to `/booking/` + `/rooms/`), related posts (same tag, next 3), author = Mahakal Bhakta Nivas (`Person`/`Organization` in schema).
+- **Schema per post**: `BlogPosting` (headline, dates, image, author, publisher LodgingBusiness) + `FAQPage` when FAQ block present. `BreadcrumbList` too.
+- **RSS**: `/rss.xml` via `@astrojs/rss`.
+- **Nav/Footer**: "Blog" link added (see §4). Footer gets latest 5 posts.
+- **Internal linking rules**: every post contextually links ≥1× to `/rooms/` or `/booking/`, ≥2× to related posts; booking-intent posts link the specific room type discussed. External links only to authoritative sources (official temple portal, railway sites) with `rel="noopener"`.
+- **Hero images**: reuse the site's own `public/gallery/*.jpg` photos where fitting; otherwise Unsplash-hosted URLs (`images.unsplash.com`, hotlinked `<img loading="lazy">`, descriptive alt). No fabricated images.
+- **Fact discipline**: timings/prices verified against the official portal (shrimahakaleshwar.mp.gov.in) and site config; time-sensitive facts carry "as of 2026 — verify on the official portal" notes; no invented dates for Kumbh 2028 (verify at writing time).
+
+### The 30 topics (keyword-mapped)
+
+**Booking & high-intent (10):**
+1. How to Book Bhasma Aarti at Mahakaleshwar Temple — 2026 Complete Guide *(bhasma aarti booking)*
+2. Mahakaleshwar Darshan Guide: Timings, Queue & Sheeghra Darshan *(mahakaleshwar darshan timings)*
+3. Where to Stay Near Mahakaleshwar Temple: Dharamshala vs Hotel *(stay near mahakaleshwar temple)*
+4. Rooms Near Mahakaleshwar Temple Under ₹1500 — Honest Comparison *(rooms near mahakaleshwar)*
+5. Online Room Booking in Ujjain: Step-by-Step WhatsApp Guide *(ujjain room booking online)*
+6. Mahakaleshwar Aarti List: Bhasma, Sandhya & Shayan Timings + Booking *(mahakaleshwar aarti timings)*
+7. Abhishek & Pooja Booking at Mahakaleshwar: Costs & Process *(mahakaleshwar abhishek booking)*
+8. 2-Day Ujjain Temple Trip: Complete Itinerary With Stay *(ujjain itinerary 2 days)*
+9. One Day in Ujjain: Mahakaleshwar + Nearby Temples Plan *(one day ujjain darshan)*
+10. Kumbh Mela Ujjain (Simhastha) 2028: Pilgrim Stay & Booking Guide *(kumbh mela ujjain 2028)*
+
+**Temple, ritual & faith (8):**
+11. Mahakal Lok Corridor: Complete Visitor Guide *(mahakal lok guide)*
+12. The Story of Mahakaleshwar Jyotirlinga — Lord of Time *(mahakaleshwar jyotirlinga story)*
+13. What Is Bhasma Aarti? Meaning, Ritual & Rules *(what is bhasma aarti)*
+14. Mahashivratri at Mahakaleshwar: Planning Guide *(mahashivratri ujjain)*
+15. The 12 Jyotirlingas: Complete List & What Makes Mahakal Unique *(12 jyotirlinga list)*
+16. Big Festival Days at Mahakaleshwar: Nag Panchami to Hariyali Amavasya *(ujjain festivals)*
+17. Shravan Somvar at Mahakaleshwar: Complete Sawan Guide *(sawan somvar mahakal)*
+18. Shipra River & Ram Ghat: Aarti Timings & Mahakal Connection *(ram ghat ujjain aarti)*
+
+**Travel planning (7):**
+19. How to Reach Ujjain: Airport, Railway & Road Guide *(how to reach ujjain)*
+20. Best Time to Visit Mahakaleshwar — Month-by-Month Weather *(best time to visit ujjain)*
+21. Indore to Ujjain Mahakal Trip: Transport & 1-Day Plan *(indore to ujjain)*
+22. Bhopal to Ujjain: Best Travel Options for Mahakal Darshan *(bhopal to ujjain)*
+23. Trains to Ujjain: Mahakal Express & Key Rail Connections *(train to ujjain mahakal)*
+24. Facilities at Mahakaleshwar: Cloakroom, Prasad, Parking & More *(mahakaleshwar facilities)*
+25. Ujjain Mahakal Trip Budget: Real Cost Breakdown *(ujjain trip budget)*
+
+**Nearby & discover (5):**
+26. Temples Near Ujjain You Shouldn't Miss *(temples near ujjain)*
+27. Kal Bhairav Temple Ujjain: History, Timings & Guide *(kal bhairav temple ujjain)*
+28. Omkareshwar vs Mahakaleshwar: Two Jyotirlingas, One Trip *(omkareshwar vs mahakaleshwar)*
+29. Mahakaleshwar to Omkareshwar: Route & Same-Day Plan *(mahakaleshwar to omkareshwar)*
+30. Food & Shopping in Ujjain: Pure-Veg Guide Near Mahakal *(food in ujjain)*
+
+Publish cadence at build time: all 30 ship in this project with staggered `pubDate`s (2-3 per week looking back from today) so the blog doesn't look spam-launched; `updatedDate` left unset initially.
+
 ## Risks / open items
 
 - Facts in tariff table/policies must be owner-approved (flagged placeholders, sourced from existing page content only).
+- Blog facts (aarti timings/fees, Kumbh 2028 dates, train names) must be verified against official sources at writing time; never invented. Time-sensitive numbers get "as of 2026" qualifiers.
+- 30 articles is a large content batch: plan implements them in themed groups (booking → temple → travel → nearby) with a build check after each group, so a failure is never buried in 30 files.
+- Unsplash hotlinked hero images depend on a third-party CDN; acceptable trade-off for a static site, alt text always present.
 - `aggregateRating` only if genuine review markup exists on page (Google penalty risk otherwise) — likely skip.
 - Room photo → room mapping needs visual confirmation during implementation.
