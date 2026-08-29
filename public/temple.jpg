@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F97316"/>
+      <stop offset="50%" style="stop-color:#C84C0C"/>
+      <stop offset="100%" style="stop-color:#3D2B1A"/>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#g)"/>
+  <rect x="100" y="100" width="1720" height="880" rx="20" fill="none" stroke="#D4A849" stroke-width="3" opacity="0.3"/>
+  <text x="960" y="480" text-anchor="middle" fill="#FFFFFF" font-family="Georgia, serif" font-size="72" font-weight="bold" opacity="0.85">Mahakaleshwar Temple</text>
+  <text x="960" y="560" text-anchor="middle" fill="#F0D590" font-family="Georgia, serif" font-size="40" opacity="0.8">One of the 12 Jyotirlingas</text>
+  <text x="960" y="640" text-anchor="middle" fill="#FFFFFF" font-family="Georgia, serif" font-size="32" opacity="0.5">Ujjain, Madhya Pradesh</text>
+  <circle cx="960" cy="340" r="50" fill="none" stroke="#F0D590" stroke-width="2" opacity="0.4"/>
+  <text x="960" y="355" text-anchor="middle" fill="#F0D590" font-size="48" opacity="0.6">🕉</text>
+</svg>
