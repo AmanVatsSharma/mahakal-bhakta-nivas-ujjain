@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE, CONTACT, STATS, ROOMS, AMENITIES, TESTIMONIALS, FAQ_DATA, GALLERY_CATEGORIES, GALLERY_ITEMS, NAV_LINKS, POOJAS, FESTIVALS } from '../config';
-import Header from './components/Header.astro';
+import Header from '../components/Header.astro';
 import Footer from './components/Footer.astro';
 import FaqSchema from '../components/FaqSchema.json';
 import { Image } from 'astro:assets';
@@ -14,10 +14,13 @@ const ogImage = `${SITE.url}/og-image.jpg`;
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} canonical={pageUrl} ogImage={ogImage}>
-	<!-- Hero Section -->
-	<section class="hero" id="home">
+	<Header />
+
+	<!-- Hero Section: full poster, natural aspect ratio, never cropped -->
+	<section class="hero" id="home" aria-label="Mahakal Bhakta Nivas introduction poster">
+		<h1 class="sr-only">Dharamshala &amp; Rooms Near Mahakaleshwar Temple, Ujjain — Mahakal Bhakta Nivas</h1>
 		<div class="hero-bg">
-			<Image src={heroBg} alt="Mahakaleshwar Temple Ujjain - Sacred Jyotirlinga" widths={[640, 960, 1280, 1600, 2000]} sizes="100vw" loading="eager" fetchpriority="high" />
+			<Image src={heroBg} alt="Mahakal Bhakta Nivas Ujjain — rooms and dharamshala near Mahakaleshwar Jyotirlinga temple" widths={[640, 960, 1280, 1600, 2000]} sizes="100vw" loading="eager" fetchpriority="high" />
 		</div>
 	</section>
 
@@ -477,22 +480,19 @@ const ogImage = `${SITE.url}/og-image.jpg`;
 	/* ========== HERO ========== */
 	.hero {
 		position: relative;
-		min-height: 100vh;
-		min-height: 100svh;
 		overflow: hidden;
+		background: #1c1410;
 	}
 
 	.hero-bg {
-		position: absolute;
-		inset: 0;
+		position: relative;
 		z-index: 0;
 	}
 
 	.hero-bg img {
+		display: block;
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center top;
+		height: auto;
 	}
 
 	/* ========== TRUST BAND ========== */
@@ -1508,10 +1508,6 @@ const ogImage = `${SITE.url}/og-image.jpg`;
 
 		.section-header {
 			margin-bottom: 2rem;
-		}
-
-		.hero h1 {
-			font-size: 2rem;
 		}
 	}
 
