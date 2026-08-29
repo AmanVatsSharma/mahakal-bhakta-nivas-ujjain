@@ -1,0 +1,478 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE, CONTACT } from '../config';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+
+export interface Props {
+	post: CollectionEntry<'blog'>;
+	related: CollectionEntry<'blog'>[];
+}
+
+const { post, related } = Astro.props;
+const { Content } = await render(post);
+const { title, description, pubDate, updatedDate, heroImage, heroAlt, tags, faq } = post.data;
+
+const url = `${SITE.url}/blog/${post.id}/`;
+const ogImage = heroImage.startsWith('http') ? heroImage : `${SITE.url}${heroImage}`;
+const waNumber = CONTACT.whatsapp.replace(/\D/g, '');
+const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(`Namaste! I read your article "${title}" and would like to book a room at Mahakal Bhakta Nivas, Ujjain.`)}`;
+
+const fmtDate = (d: Date) =>
+	d.toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const jsonLd = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'BlogPosting',
+		headline: title,
+		description,
+		image: ogImage,
+		datePublished: pubDate.toISOString(),
+		dateModified: (updatedDate ?? pubDate).toISOString(),
+		mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+		author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+		publisher: {
+			'@type': 'Organization',
+			name: SITE.name,
+			url: SITE.url,
+		},
+		keywords: tags.join(', '),
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE.url}/` },
+			{ '@type': 'ListItem', position: 2, name: 'Blog', item: `${SITE.url}/blog/` },
+			{ '@type': 'ListItem', position: 3, name: title, item: url },
+		],
+	},
+	...(faq.length
+		? [
+				{
+					'@context': 'https://schema.org',
+					'@type': 'FAQPage',
+					mainEntity: faq.map((f) => ({
+						'@type': 'Question',
+						name: f.q,
+						acceptedAnswer: { '@type': 'Answer', text: f.a },
+					})),
+				},
+			]
+		: []),
+];
+---
+
+<BaseLayout title={`${title} | ${SITE.name}`} description={description} canonical={url} ogImage={ogImage}>
+	<Header />
+
+	<article class="blog-post">
+		<nav class="crumbs container" aria-label="Breadcrumb">
+			<a href="/">Home</a> <span aria-hidden="true">›</span>
+			<a href="/blog/">Blog</a> <span aria-hidden="true">›</span>
+			<span class="crumb-current">{title}</span>
+		</nav>
+
+		<header class="container post-header">
+			<div class="post-tags">
+				{tags.map((t) => <span class="tag">{t}</span>)}
+			</div>
+			<h1>{title}</h1>
+			<p class="post-meta">
+				<time datetime={pubDate.toISOString()}>{fmtDate(pubDate)}</time>
+				{updatedDate && <span> · Updated <time datetime={updatedDate.toISOString()}>{fmtDate(updatedDate)}</time></span>}
+				<span> · By {SITE.name}</span>
+			</p>
+		</header>
+
+		<div class="post-hero container-narrow">
+			<img src={heroImage} alt={heroAlt} loading="lazy" decoding="async" width="1200" height="675" />
+		</div>
+
+		<div class="container-narrow prose">
+			<Content />
+
+			{faq.length > 0 && (
+				<section class="post-faq" aria-labelledby="faq-heading">
+					<h2 id="faq-heading">Frequently Asked Questions</h2>
+					{faq.map((f) => (
+						<details class="faq-item">
+							<summary>{f.q}</summary>
+							<p>{f.a}</p>
+						</details>
+					))}
+				</section>
+			)}
+
+			<aside class="post-cta" aria-label="Book your stay">
+				<div class="post-cta-text">
+					<h3>Planning a Mahakaleshwar Trip?</h3>
+					<p>Stay at {SITE.name} — clean rooms from ₹600/night, pure veg food, and just minutes from the temple.</p>
+				</div>
+				<div class="post-cta-actions">
+					<a href={waLink} target="_blank" rel="noopener noreferrer" class="cta-wa">Book on WhatsApp</a>
+					<a href="/rooms/" class="cta-rooms">View Rooms &amp; Tariff</a>
+				</div>
+			</aside>
+
+			{related.length > 0 && (
+				<section class="related" aria-labelledby="related-heading">
+					<h2 id="related-heading">Related Guides</h2>
+					<div class="related-grid">
+						{related.map((r) => (
+							<a href={`/blog/${r.id}/`} class="related-card">
+								<img src={r.data.heroImage} alt={r.data.heroAlt} loading="lazy" decoding="async" width="400" height="225" />
+								<div class="related-body">
+									<span class="related-date"><time datetime={r.data.pubDate.toISOString()}>{fmtDate(r.data.pubDate)}</time></span>
+									<h3>{r.data.title}</h3>
+								</div>
+							</a>
+						))}
+					</div>
+				</section>
+			)}
+		</div>
+	</article>
+
+	<Footer />
+
+	<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
+</BaseLayout>
+
+<style>
+	.blog-post {
+		padding-bottom: 3rem;
+	}
+
+	.crumbs {
+		padding-top: 1.1rem;
+		padding-bottom: 1.1rem;
+		font-size: 0.82rem;
+		color: #8b6f47;
+		border-bottom: 1px solid rgba(217, 119, 6, 0.12);
+	}
+
+	.crumbs a {
+		color: #b45309;
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.crumbs a:hover {
+		text-decoration: underline;
+	}
+
+	.crumbs span[aria-hidden] {
+		margin: 0 0.4rem;
+	}
+
+	.crumb-current {
+		display: inline-block;
+		max-width: 40ch;
+		vertical-align: bottom;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
+	.post-header {
+		padding-top: 1.8rem;
+	}
+
+	.post-tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		margin-bottom: 0.8rem;
+	}
+
+	.tag {
+		background: rgba(217, 119, 6, 0.1);
+		color: #b45309;
+		font-size: 0.72rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		padding: 0.25rem 0.7rem;
+		border-radius: 999px;
+	}
+
+	.post-header h1 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+		line-height: 1.2;
+		color: #1c1410;
+		margin-bottom: 0.6rem;
+	}
+
+	.post-meta {
+		color: #8b6f47;
+		font-size: 0.88rem;
+		margin-bottom: 1.4rem;
+	}
+
+	.container-narrow {
+		max-width: 760px;
+		margin: 0 auto;
+		padding: 0 1.25rem;
+	}
+
+	.post-hero img {
+		width: 100%;
+		height: auto;
+		display: block;
+		border-radius: 16px;
+		box-shadow: 0 10px 30px rgba(28, 20, 16, 0.12);
+	}
+
+	/* ---------- Prose ---------- */
+	.prose {
+		font-size: 1.02rem;
+		line-height: 1.75;
+		color: #37281c;
+	}
+
+	.prose :global(h2) {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: 1.55rem;
+		color: #1c1410;
+		margin: 2.2rem 0 0.8rem;
+		padding-left: 0.75rem;
+		border-left: 4px solid #d97706;
+	}
+
+	.prose :global(h3) {
+		font-size: 1.18rem;
+		color: #1c1410;
+		margin: 1.6rem 0 0.5rem;
+	}
+
+	.prose :global(p) {
+		margin: 0 0 1rem;
+	}
+
+	.prose :global(a) {
+		color: #b45309;
+		font-weight: 600;
+		text-decoration: underline;
+		text-decoration-color: rgba(217, 119, 6, 0.4);
+		text-underline-offset: 3px;
+	}
+
+	.prose :global(a:hover) {
+		color: #d97706;
+	}
+
+	.prose :global(ul),
+	.prose :global(ol) {
+		margin: 0 0 1.2rem;
+		padding-left: 1.4rem;
+	}
+
+	.prose :global(li) {
+		margin-bottom: 0.45rem;
+	}
+
+	.prose :global(li::marker) {
+		color: #d97706;
+		font-weight: 700;
+	}
+
+	.prose :global(table) {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 1.4rem 0;
+		font-size: 0.92rem;
+		background: #fffbf5;
+		border-radius: 12px;
+		overflow: hidden;
+		box-shadow: 0 2px 10px rgba(28, 20, 16, 0.06);
+	}
+
+	.prose :global(th) {
+		background: #fff3dd;
+		color: #7c3f0a;
+		text-align: left;
+		padding: 0.7rem 0.9rem;
+		font-weight: 700;
+	}
+
+	.prose :global(td) {
+		padding: 0.65rem 0.9rem;
+		border-top: 1px solid rgba(217, 119, 6, 0.12);
+	}
+
+	.prose :global(blockquote) {
+		border-left: 4px solid #d97706;
+		background: #fff8ec;
+		padding: 0.9rem 1.2rem;
+		border-radius: 0 12px 12px 0;
+		margin: 1.4rem 0;
+		font-style: italic;
+		color: #5b4632;
+	}
+
+	.prose :global(img) {
+		max-width: 100%;
+		height: auto;
+		border-radius: 12px;
+	}
+
+	/* ---------- FAQ ---------- */
+	.post-faq {
+		margin-top: 2.5rem;
+	}
+
+	.faq-item {
+		border: 1px solid rgba(217, 119, 6, 0.18);
+		border-radius: 12px;
+		background: #fffbf5;
+		margin-bottom: 0.7rem;
+		overflow: hidden;
+	}
+
+	.faq-item summary {
+		cursor: pointer;
+		padding: 0.9rem 1.1rem;
+		font-weight: 700;
+		color: #1c1410;
+		list-style-position: inside;
+	}
+
+	.faq-item[open] summary {
+		border-bottom: 1px solid rgba(217, 119, 6, 0.12);
+	}
+
+	.faq-item p {
+		padding: 0.8rem 1.1rem;
+		margin: 0;
+		color: #4b3c30;
+	}
+
+	/* ---------- CTA ---------- */
+	.post-cta {
+		margin-top: 2.5rem;
+		background: linear-gradient(135deg, #7c2d12, #b45309);
+		border-radius: 18px;
+		padding: 1.6rem 1.5rem;
+		color: #fff;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.2rem;
+		align-items: center;
+		justify-content: space-between;
+		box-shadow: 0 12px 30px rgba(124, 45, 18, 0.25);
+	}
+
+	.post-cta-text h3 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: 1.3rem;
+		margin-bottom: 0.3rem;
+	}
+
+	.post-cta-text p {
+		opacity: 0.92;
+		font-size: 0.95rem;
+	}
+
+	.post-cta-actions {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+
+	.cta-wa,
+	.cta-rooms {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.4rem;
+		border-radius: 999px;
+		font-weight: 700;
+		font-size: 0.95rem;
+		text-decoration: none;
+		transition: all 0.2s ease;
+	}
+
+	.cta-wa {
+		background: #25d366;
+		color: #fff;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	}
+
+	.cta-wa:hover {
+		background: #1fb855;
+		transform: translateY(-1px);
+	}
+
+	.cta-rooms {
+		background: rgba(255, 255, 255, 0.14);
+		color: #fff;
+		border: 1.5px solid rgba(255, 255, 255, 0.4);
+	}
+
+	.cta-rooms:hover {
+		background: rgba(255, 255, 255, 0.24);
+	}
+
+	/* ---------- Related ---------- */
+	.related {
+		margin-top: 2.8rem;
+	}
+
+	.related h2 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: 1.4rem;
+		color: #1c1410;
+		margin-bottom: 1rem;
+	}
+
+	.related-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+		gap: 1rem;
+	}
+
+	.related-card {
+		display: block;
+		text-decoration: none;
+		background: #fffbf5;
+		border: 1px solid rgba(217, 119, 6, 0.15);
+		border-radius: 14px;
+		overflow: hidden;
+		transition: all 0.2s ease;
+	}
+
+	.related-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 8px 20px rgba(28, 20, 16, 0.12);
+		border-color: rgba(217, 119, 6, 0.35);
+	}
+
+	.related-card img {
+		width: 100%;
+		height: 130px;
+		object-fit: cover;
+		display: block;
+	}
+
+	.related-body {
+		padding: 0.75rem 0.9rem 0.9rem;
+	}
+
+	.related-date {
+		font-size: 0.72rem;
+		color: #b45309;
+		font-weight: 600;
+	}
+
+	.related-body h3 {
+		font-size: 0.95rem;
+		line-height: 1.35;
+		color: #1c1410;
+		margin-top: 0.25rem;
+	}
+</style>

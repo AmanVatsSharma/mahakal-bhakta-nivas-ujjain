@@ -5,10 +5,7 @@
 [build.environment]
   NODE_VERSION = "20"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# No SPA fallback: unknown URLs must return Astro's /404.html with a real 404 status.
 
 [[headers]]
   for = "/*"

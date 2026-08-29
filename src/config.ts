@@ -5,7 +5,7 @@
 export const SITE = {
 	name: 'Mahakal Bhakta Nivas',
 	tagline: 'Your Spiritual Home Near Mahakaleshwar Temple',
-	url: 'https://mahakalbhakta.in',
+	url: 'https://www.shrimahakalbhaktniwasujjain.com',
 	base: '/',
 	phone: '+91-9989898989',
 	phoneDisplay: '+91 99898 98989',

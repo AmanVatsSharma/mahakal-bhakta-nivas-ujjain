@@ -4,13 +4,15 @@ interface Props {
 	title?: string;
 	description?: string;
 	canonical?: string;
+	ogImage?: string;
 	bodyClass?: string;
 }
 
 const {
 	title = 'Mahakal Bhakta Nivas - Best Dharmashala Near Mahakaleshwar Temple, Ujjain',
 	description = 'Book your stay at Mahakal Bhakta Nivas, the most trusted dharmashala in Ujjain. Clean rooms, walking distance to Mahakaleshwar Jyotirlinga, affordable prices.',
-	canonical = 'https://mahakalbhaktanivasujjain.in',
+	canonical = 'https://www.shrimahakalbhaktniwasujjain.com/',
+	ogImage = 'https://www.shrimahakalbhaktniwasujjain.com/og-image.jpg',
 	bodyClass = '',
 } = Astro.props;
 ---
@@ -35,7 +37,7 @@ const {
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:url" content={canonical} />
-	<meta property="og:image" content="https://mahakalbhaktanivasujjain.in/og-image.jpg" />
+	<meta property="og:image" content={ogImage} />
 	<meta property="og:locale" content="en_IN" />
 
 	<!-- Twitter -->
@@ -51,7 +53,7 @@ const {
 		"@type": "LodgingBusiness",
 		"name": "Mahakal Bhakta Nivas",
 		"description": description,
-		"url": "https://mahakalbhaktanivasujjain.in",
+		"url": "https://www.shrimahakalbhaktniwasujjain.com",
 		"telephone": "+919989898989",
 		"address": {
 			"@type": "PostalAddress",
@@ -72,7 +74,7 @@ const {
 			"opens": "00:00",
 			"closes": "23:59"
 		},
-		"image": "https://mahakalbhaktanivasujjain.in/hero.webp",
+		"image": ogImage,
 		"priceRange": "₹₹",
 		"sameAs": []
 	})} />
@@ -82,7 +84,7 @@ const {
 		"@context": "https://schema.org",
 		"@type": "BreadcrumbList",
 		"itemListElement": [
-			{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mahakalbhaktanivasujjain.in" }
+			{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.shrimahakalbhaktniwasujjain.com/" }
 		]
 	})} />
 </head>

@@ -1,0 +1,32 @@
+---
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+
+export function getStaticPaths() {
+	return (async () => {
+		const posts = await getCollection('blog');
+
+		return posts.map((post) => {
+			const related = posts
+				.filter((p) => p.id !== post.id)
+				.map((p) => ({
+					post: p,
+					sharedTags: p.data.tags.filter((t) => post.data.tags.includes(t)).length,
+					recency: p.data.pubDate.valueOf(),
+				}))
+				.sort((a, b) => b.sharedTags - a.sharedTags || b.recency - a.recency)
+				.slice(0, 3)
+				.map((x) => x.post as CollectionEntry<'blog'>);
+
+			return {
+				params: { id: post.id },
+				props: { post, related },
+			};
+		});
+	})();
+}
+
+const { post, related } = Astro.props;
+---
+
+<BlogPostLayout post={post} related={related} />

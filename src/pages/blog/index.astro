@@ -1,0 +1,285 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../../config';
+
+export const POSTS_PER_PAGE = 10;
+
+const sorted = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const posts = sorted.slice(0, POSTS_PER_PAGE);
+const totalPages = Math.max(1, Math.ceil(sorted.length / POSTS_PER_PAGE));
+const featured = posts[0];
+
+const fmtDate = (d: Date) => d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' });
+
+const description = 'Guides for Mahakaleshwar pilgrims — Bhasma Aarti booking, temple timings, itineraries, travel tips, and where to stay near Mahakaleshwar Temple, Ujjain.';
+---
+
+<BaseLayout title={`Blog — Mahakaleshwar Pilgrim Guides | ${SITE.name}`} description={description} canonical={`${SITE.url}/blog/`}>
+	<Header />
+
+	<section class="blog-index-hero">
+		<div class="container">
+			<nav class="crumbs" aria-label="Breadcrumb">
+				<a href="/">Home</a> <span aria-hidden="true">›</span> <span class="crumb-current">Blog</span>
+			</nav>
+			<h1>Mahakaleshwar Pilgrim Guides</h1>
+			<p>Practical, up-to-date guides for your Ujjain yatra — aarti bookings, temple timings, trip plans, and honest stay advice from a family that has hosted devotees since 1992.</p>
+		</div>
+	</section>
+
+	<main class="container blog-main">
+		{featured && (
+			<a href={`/blog/${featured.id}/`} class="featured-card">
+				<div class="featured-img">
+					<img src={featured.data.heroImage} alt={featured.data.heroAlt} loading="eager" decoding="async" width="800" height="450" />
+				</div>
+				<div class="featured-body">
+					<span class="featured-label">Latest Guide</span>
+					<h2>{featured.data.title}</h2>
+					<p>{featured.data.description}</p>
+					<span class="featured-meta"><time datetime={featured.data.pubDate.toISOString()}>{fmtDate(featured.data.pubDate)}</time> · {featured.data.tags[0]}</span>
+				</div>
+			</a>
+		)}
+
+		<div class="post-grid">
+			{posts.slice(1).map((post) => (
+				<a href={`/blog/${post.id}/`} class="post-card">
+					<img src={post.data.heroImage} alt={post.data.heroAlt} loading="lazy" decoding="async" width="400" height="225" />
+					<div class="post-card-body">
+						<span class="post-card-date"><time datetime={post.data.pubDate.toISOString()}>{fmtDate(post.data.pubDate)}</time></span>
+						<h3>{post.data.title}</h3>
+						<p>{post.data.description}</p>
+					</div>
+				</a>
+			))}
+		</div>
+
+		{totalPages > 1 && (
+			<nav class="pagination" aria-label="Blog pages">
+				<span class="page-current" aria-current="page">1</span>
+				{Array.from({ length: totalPages - 1 }, (_, i) => (
+					<a href={`/blog/page/${i + 2}/`}>{i + 2}</a>
+				))}
+				<a href="/blog/page/2/" class="page-next">Next ›</a>
+			</nav>
+		)}
+	</main>
+
+	<Footer />
+</BaseLayout>
+
+<style>
+	.blog-index-hero {
+		background: linear-gradient(135deg, #fff8ec, #ffefd6);
+		border-bottom: 1px solid rgba(217, 119, 6, 0.15);
+		padding: 1.1rem 0 2.2rem;
+	}
+
+	.crumbs {
+		font-size: 0.82rem;
+		color: #8b6f47;
+		margin-bottom: 1.2rem;
+	}
+
+	.crumbs a {
+		color: #b45309;
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.crumbs span[aria-hidden] {
+		margin: 0 0.4rem;
+	}
+
+	.blog-index-hero h1 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: clamp(1.8rem, 5vw, 2.6rem);
+		color: #1c1410;
+		margin-bottom: 0.5rem;
+	}
+
+	.blog-index-hero p {
+		max-width: 640px;
+		color: #5b4632;
+		line-height: 1.6;
+	}
+
+	.blog-main {
+		padding: 2rem 1.25rem 3rem;
+	}
+
+	.featured-card {
+		display: grid;
+		grid-template-columns: 1.2fr 1fr;
+		gap: 0;
+		background: #fffbf5;
+		border: 1px solid rgba(217, 119, 6, 0.2);
+		border-radius: 18px;
+		overflow: hidden;
+		text-decoration: none;
+		margin-bottom: 2rem;
+		transition: all 0.2s ease;
+	}
+
+	.featured-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 12px 30px rgba(28, 20, 16, 0.12);
+	}
+
+	.featured-img img {
+		width: 100%;
+		height: 100%;
+		min-height: 260px;
+		object-fit: cover;
+		display: block;
+	}
+
+	.featured-body {
+		padding: 1.6rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.featured-label {
+		color: #b45309;
+		font-size: 0.75rem;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		margin-bottom: 0.5rem;
+	}
+
+	.featured-body h2 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: 1.5rem;
+		color: #1c1410;
+		line-height: 1.25;
+		margin-bottom: 0.6rem;
+	}
+
+	.featured-body p {
+		color: #5b4632;
+		font-size: 0.95rem;
+		line-height: 1.6;
+		margin-bottom: 0.7rem;
+	}
+
+	.featured-meta {
+		color: #8b6f47;
+		font-size: 0.8rem;
+		font-weight: 600;
+	}
+
+	.post-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		gap: 1.3rem;
+	}
+
+	.post-card {
+		display: flex;
+		flex-direction: column;
+		background: #fffbf5;
+		border: 1px solid rgba(217, 119, 6, 0.15);
+		border-radius: 14px;
+		overflow: hidden;
+		text-decoration: none;
+		transition: all 0.2s ease;
+	}
+
+	.post-card:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 8px 20px rgba(28, 20, 16, 0.12);
+		border-color: rgba(217, 119, 6, 0.35);
+	}
+
+	.post-card img {
+		width: 100%;
+		height: 170px;
+		object-fit: cover;
+		display: block;
+	}
+
+	.post-card-body {
+		padding: 1rem 1.1rem 1.2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+	}
+
+	.post-card-date {
+		font-size: 0.72rem;
+		color: #b45309;
+		font-weight: 700;
+	}
+
+	.post-card-body h3 {
+		font-size: 1.05rem;
+		line-height: 1.35;
+		color: #1c1410;
+	}
+
+	.post-card-body p {
+		font-size: 0.88rem;
+		color: #5b4632;
+		line-height: 1.55;
+	}
+
+	.pagination {
+		display: flex;
+		gap: 0.5rem;
+		justify-content: center;
+		margin-top: 2.5rem;
+		align-items: center;
+	}
+
+	.pagination a,
+	.page-current {
+		min-width: 40px;
+		height: 40px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 0.8rem;
+		border-radius: 10px;
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 0.9rem;
+	}
+
+	.pagination a {
+		background: #fffbf5;
+		border: 1.5px solid rgba(217, 119, 6, 0.3);
+		color: #7c3f0a;
+	}
+
+	.pagination a:hover {
+		background: #fff3dd;
+		border-color: #d97706;
+	}
+
+	.page-current {
+		background: #d97706;
+		color: #fff;
+	}
+
+	.page-next {
+		padding: 0 1.1rem;
+	}
+
+	@media (max-width: 768px) {
+		.featured-card {
+			grid-template-columns: 1fr;
+		}
+
+		.featured-img img {
+			min-height: 200px;
+			max-height: 240px;
+		}
+	}
+</style>
