@@ -1,0 +1,311 @@
+---
+import { ROOMS, CONTACT } from '../config';
+
+const waNumber = CONTACT.whatsapp.replace(/\D/g, '');
+---
+
+<dialog id="booking-dialog" class="booking-dialog" aria-labelledby="booking-dialog-title" data-wa={waNumber}>
+	<div class="booking-dialog-box">
+		<button class="dialog-close" type="button" aria-label="Close booking dialog">&times;</button>
+		<h2 id="booking-dialog-title">Book Your Stay</h2>
+		<p class="dialog-sub">Fill in your details — we'll confirm on WhatsApp within minutes.</p>
+
+		<form class="booking-form-dialog" method="dialog" novalidate>
+			<div class="field-row">
+				<label>
+					<span>Check-in</span>
+					<input type="date" name="checkin" required />
+				</label>
+				<label>
+					<span>Check-out</span>
+					<input type="date" name="checkout" required />
+				</label>
+			</div>
+			<div class="field-row">
+				<label>
+					<span>Guests</span>
+					<select name="guests" required>
+						{[1, 2, 3, 4, 5, 6, 8, 10, '10+'].map((g) => (
+							<option value={String(g)}>{g} {g === 1 ? 'Guest' : 'Guests'}</option>
+						))}
+					</select>
+				</label>
+				<label>
+					<span>Room Type</span>
+					<select name="room" required>
+						{ROOMS.map((room) => (
+							<option value={room.name}>{room.name} — {room.priceText}</option>
+						))}
+						<option value="Not sure yet">Not sure yet</option>
+					</select>
+				</label>
+			</div>
+			<div class="field-row">
+				<label>
+					<span>Your Name</span>
+					<input type="text" name="name" placeholder="Full name" required autocomplete="name" />
+				</label>
+				<label>
+					<span>Phone</span>
+					<input type="tel" name="phone" placeholder="10-digit mobile" required autocomplete="tel" inputmode="numeric" pattern="[0-9+ ]{10,15}" />
+				</label>
+			</div>
+			<label class="full-width">
+				<span>Anything else? (optional)</span>
+				<textarea name="notes" rows="2" placeholder="e.g. need early check-in, Bhasma Aarti help…"></textarea>
+			</label>
+
+			<p class="form-error" role="alert" hidden></p>
+
+			<button type="submit" class="btn-send-wa">
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+				Send Booking on WhatsApp
+			</button>
+		</form>
+
+		<p class="dialog-alt">Prefer talking? <a href={`tel:${CONTACT.phone.replace(/[^+\d]/g, '')}`}>Call {CONTACT.phoneDisplay}</a></p>
+	</div>
+</dialog>
+
+<script>
+	function initBookingDialog() {
+		const dialog = document.getElementById('booking-dialog') as HTMLDialogElement | null;
+		if (!dialog) return;
+
+		const form = dialog.querySelector('form') as HTMLFormElement | null;
+		const errorEl = dialog.querySelector('.form-error') as HTMLElement | null;
+		const closeBtn = dialog.querySelector('.dialog-close') as HTMLButtonElement | null;
+
+		const openers = document.querySelectorAll('[data-open-booking]');
+		openers.forEach((btn) => {
+			btn.addEventListener('click', () => {
+				const today = new Date();
+				const tomorrow = new Date(today);
+				tomorrow.setDate(tomorrow.getDate() + 1);
+				const fmt = (d: Date) => d.toISOString().slice(0, 10);
+				const ci = form?.elements.namedItem('checkin') as HTMLInputElement | null;
+				const co = form?.elements.namedItem('checkout') as HTMLInputElement | null;
+				if (ci && !ci.value) ci.value = fmt(today);
+				if (co && !co.value) co.value = fmt(tomorrow);
+				dialog.showModal();
+			});
+		});
+
+		closeBtn?.addEventListener('click', () => dialog.close());
+
+		dialog.addEventListener('click', (e) => {
+			if (e.target === dialog) dialog.close();
+		});
+
+		form?.addEventListener('submit', (e) => {
+			e.preventDefault();
+			if (!form.reportValidity()) return;
+
+			const data = new FormData(form);
+			const name = String(data.get('name') || '').trim();
+			const phone = String(data.get('phone') || '').trim();
+			const checkin = String(data.get('checkin') || '');
+			const checkout = String(data.get('checkout') || '');
+			const guests = String(data.get('guests') || '');
+			const room = String(data.get('room') || '');
+			const notes = String(data.get('notes') || '').trim();
+
+			if (errorEl) {
+				if (checkout <= checkin) {
+					errorEl.textContent = 'Check-out date must be after check-in date.';
+					errorEl.hidden = false;
+					return;
+				}
+				if (!/^[0-9+ ]{10,15}$/.test(phone)) {
+					errorEl.textContent = 'Please enter a valid phone number.';
+					errorEl.hidden = false;
+					return;
+				}
+				errorEl.hidden = true;
+			}
+
+			const lines = [
+				'Namaste! New booking enquiry from the website:',
+				`• Name: ${name}`,
+				`• Phone: ${phone}`,
+				`• Room: ${room}`,
+				`• Guests: ${guests}`,
+				`• Check-in: ${checkin}`,
+				`• Check-out: ${checkout}`,
+			];
+			if (notes) lines.push(`• Notes: ${notes}`);
+
+			const url = `https://wa.me/${dialog.dataset.wa || ''}?text=${encodeURIComponent(lines.join('\n'))}`;
+			window.open(url, '_blank', 'noopener');
+			dialog.close();
+			form.reset();
+		});
+	}
+
+	initBookingDialog();
+</script>
+
+<style>
+	.booking-dialog {
+		border: none;
+		border-radius: 18px;
+		padding: 0;
+		max-width: 560px;
+		width: calc(100vw - 2rem);
+		background: #fffbf5;
+		box-shadow: 0 24px 60px rgba(28, 20, 16, 0.35);
+	}
+
+	.booking-dialog::backdrop {
+		background: rgba(28, 20, 16, 0.6);
+		backdrop-filter: blur(3px);
+	}
+
+	.booking-dialog-box {
+		position: relative;
+		padding: 1.75rem 1.5rem 1.5rem;
+		max-height: 85vh;
+		overflow-y: auto;
+	}
+
+	.dialog-close {
+		position: absolute;
+		top: 0.75rem;
+		right: 0.75rem;
+		width: 36px;
+		height: 36px;
+		border: none;
+		border-radius: 50%;
+		background: rgba(217, 119, 6, 0.1);
+		color: #b45309;
+		font-size: 1.4rem;
+		line-height: 1;
+		cursor: pointer;
+		transition: background 0.2s;
+	}
+
+	.dialog-close:hover {
+		background: rgba(217, 119, 6, 0.2);
+	}
+
+	.booking-dialog h2 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: 1.5rem;
+		color: #1c1410;
+		margin-bottom: 0.25rem;
+		padding-right: 2rem;
+	}
+
+	.dialog-sub {
+		color: #8b6f47;
+		font-size: 0.9rem;
+		margin-bottom: 1.25rem;
+	}
+
+	.booking-form-dialog {
+		display: flex;
+		flex-direction: column;
+		gap: 0.9rem;
+	}
+
+	.field-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 0.9rem;
+	}
+
+	.booking-form-dialog label {
+		display: flex;
+		flex-direction: column;
+		gap: 0.3rem;
+		font-size: 0.78rem;
+		font-weight: 600;
+		color: #4b3c30;
+		text-transform: uppercase;
+		letter-spacing: 0.04em;
+	}
+
+	.full-width {
+		grid-column: 1 / -1;
+	}
+
+	.booking-form-dialog input,
+	.booking-form-dialog select,
+	.booking-form-dialog textarea {
+		font: inherit;
+		font-size: 0.95rem;
+		font-weight: 400;
+		padding: 0.65rem 0.75rem;
+		border: 1.5px solid rgba(217, 119, 6, 0.25);
+		border-radius: 10px;
+		background: #fff;
+		color: #1c1410;
+		text-transform: none;
+		letter-spacing: normal;
+	}
+
+	.booking-form-dialog input:focus,
+	.booking-form-dialog select:focus,
+	.booking-form-dialog textarea:focus {
+		outline: 2px solid #d97706;
+		outline-offset: 1px;
+		border-color: #d97706;
+	}
+
+	.btn-send-wa {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.5rem;
+		margin-top: 0.35rem;
+		padding: 0.9rem 1.5rem;
+		border: none;
+		border-radius: 12px;
+		background: #25d366;
+		color: #fff;
+		font-size: 1rem;
+		font-weight: 700;
+		cursor: pointer;
+		box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+		transition: all 0.2s ease;
+	}
+
+	.btn-send-wa:hover {
+		background: #1fb855;
+		transform: translateY(-1px);
+		box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+	}
+
+	.form-error {
+		color: #b91c1c;
+		font-size: 0.85rem;
+		font-weight: 600;
+	}
+
+	.dialog-alt {
+		margin-top: 1rem;
+		text-align: center;
+		font-size: 0.88rem;
+		color: #8b6f47;
+	}
+
+	.dialog-alt a {
+		color: #b45309;
+		font-weight: 700;
+		text-decoration: none;
+	}
+
+	.dialog-alt a:hover {
+		text-decoration: underline;
+	}
+
+	@media (max-width: 480px) {
+		.booking-dialog-box {
+			padding: 1.4rem 1.1rem 1.2rem;
+		}
+
+		.field-row {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>
