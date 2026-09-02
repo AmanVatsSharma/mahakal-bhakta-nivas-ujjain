@@ -30,6 +30,11 @@ Thumbs.db
 .playwright-mcp/
 *.jpeg
 *.png
+# keep website assets tracked
+!public/**/*.jpeg
+!public/**/*.jpg
+!public/**/*.png
+!src/assets/**
 
 # misc
 *.log
