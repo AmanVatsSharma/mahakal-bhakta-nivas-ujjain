@@ -3,11 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE } from '../config';
-const title = "Gallery | Mahakal Bhakta Nivas Ujjain";
-const desc = "View photos of our rooms, common areas, and surroundings at Mahakal Bhakta Nivas dharmashala in Ujjain.";
+const title = "Photo Gallery | Rooms & Dharamshala — Mahakal Bhakta Nivas Ujjain";
+const desc = "Real photos of Mahakal Bhakta Nivas Ujjain — our 2, 3 and 4 bed rooms, Deluxe and Luxury Suites, dining area and the temple quarter, 200 m from Mahakaleshwar Temple.";
 ---
 
-<BaseLayout title={title} description={desc}>
+<BaseLayout title={title} description={desc} canonical="/gallery" breadcrumbs={[{ name: 'Gallery', path: '/gallery' }]}>
   <Header />
   <main>
     <section class="page-hero">
@@ -16,22 +16,29 @@ const desc = "View photos of our rooms, common areas, and surroundings at Mahaka
           <a href="/">Home</a> <span aria-hidden="true">›</span> <span>Gallery</span>
         </nav>
         <h1>Photo Gallery</h1>
-        <p>A glimpse of our dharmashala — rooms, dining, and the temple vicinity</p>
+        <p>Real photos of our rooms and the sacred surroundings of Ujjain — no stock images</p>
       </div>
     </section>
     <section class="gallery-content">
       <div class="container">
+        <p class="gallery-intro">
+          Every room photo below is of an actual room at Mahakal Bhakta Nivas on Gopal Mandir Road, 200 metres from the Mahakaleshwar Temple gate — from the ₹1,250 2 Bed Non-AC to the ₹4,050 Luxury Suite. The rest of the gallery is the world our guests walk through: the temple quarter, the Shipra ghats and the lanes of old Ujjain.
+        </p>
         <div class="gallery-grid" role="list">
           {
             [
-              { src: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80', alt: 'Dharmashala building exterior' },
-              { src: '/rooms/Deluxe2450.jpeg', alt: 'Deluxe Room with king bed at Mahakal Bhakta Nivas' },
-              { src: '/rooms/2BedRoomAC1650.jpeg', alt: '2 Bed AC Room at Mahakal Bhakta Nivas' },
-              { src: 'https://images.unsplash.com/photo-1540189549336-e6cfcfab9a3f?w=600&q=80', alt: 'Pure vegetarian meals' },
-              { src: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=600&q=80', alt: 'Reception area' },
-              { src: '/rooms/4BedRoomAC2475.jpeg', alt: '4 Bed AC Room at Mahakal Bhakta Nivas' },
+              { src: '/rooms/LuxurySuite4050.jpeg', alt: 'Luxury Suite with king bed and premium interiors at Mahakal Bhakta Nivas' },
+              { src: '/rooms/Deluxe2450.jpeg', alt: 'Deluxe Room with king bed, AC and TV at Mahakal Bhakta Nivas' },
+              { src: '/rooms/2BedRoomAC1650.jpeg', alt: '2 Bed AC Room at Mahakal Bhakta Nivas near Mahakaleshwar Temple' },
+              { src: '/rooms/4BedRoomAC2475.jpeg', alt: '4 Bed AC Family Room at Mahakal Bhakta Nivas Ujjain' },
               { src: '/rooms/3BedRoomNonAC1785.jpeg', alt: '3 Bed Non-AC Room at Mahakal Bhakta Nivas' },
-              { src: 'https://images.unsplash.com/photo-1548407260-da850faa41e3?w=600&q=80', alt: 'Mahakaleshwar Temple view' },
+              { src: '/rooms/DeluxeSuite3150.jpeg', alt: 'Deluxe Suite at Mahakal Bhakta Nivas with premium interiors' },
+              { src: '/gallery/dining.jpg', alt: 'Pure vegetarian satvik dining at the dharamshala' },
+              { src: '/gallery/reception.jpg', alt: 'Reception and help desk at Mahakal Bhakta Nivas' },
+              { src: '/gallery/temple-1.jpg', alt: 'Mahakaleshwar Temple, 200 metres from the dharamshala' },
+              { src: '/gallery/4.jpg', alt: 'Ram Ghat on the Shipra river, 500 metres from the dharamshala' },
+              { src: '/gallery/3.jpg', alt: 'The temple quarter of old Ujjain around Gopal Mandir Road' },
+              { src: '/gallery/8.jpg', alt: 'Devotional life and temple spires of Ujjain' },
             ].map(img => (
               <div class="gallery-item" role="listitem">
                 <img src={img.src} alt={img.alt} loading="lazy" />
@@ -40,7 +47,7 @@ const desc = "View photos of our rooms, common areas, and surroundings at Mahaka
           }
         </div>
         <div class="gallery-cta">
-          <p>More photos coming soon — follow us on <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noopener">WhatsApp 💬</a> for live updates</p>
+          <p>Like what you see? <a href="/rooms/">See all 9 room types with tariff →</a> or <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noopener">ask us for recent photos on WhatsApp 💬</a></p>
         </div>
       </div>
     </section>
@@ -55,6 +62,7 @@ const desc = "View photos of our rooms, common areas, and surroundings at Mahaka
   .page-hero h1 { font-family: var(--font-dev); font-size: clamp(1.5rem, 4vw, 2rem); color: var(--c-maroon); margin-bottom: 8px; }
   .page-hero p { font-size: 14px; color: #666; }
   .gallery-content { padding: 36px 0; }
+  .gallery-intro { max-width: 760px; margin: 0 auto 22px; font-size: 14.5px; color: #555; line-height: 1.7; text-align: center; }
   .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .gallery-item { aspect-ratio: 4/3; overflow: hidden; border-radius: 10px; }
   .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }

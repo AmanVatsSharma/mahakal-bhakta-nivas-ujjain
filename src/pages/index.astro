@@ -7,11 +7,20 @@ import FaqSchema from '../components/FaqSchema.json';
 import { Image } from 'astro:assets';
 import heroBg from '../assets/hero-bg.png';
 
-const pageTitle = `${SITE.name} - Best Dharmashala Near Mahakaleshwar Temple, Ujjain`;
-const pageDescription = SITE.description;
+const pageTitle = `Dharamshala Near Mahakaleshwar Temple | ${SITE.name} Ujjain — Rooms from ₹1,250`;
+const pageDescription = 'Mahakal Bhakta Nivas is a family-run dharamshala 200 m (2-min walk) from Mahakaleshwar Temple, Ujjain. 9 room types ₹1,250–₹4,050 — AC rooms, family rooms & suites with pure veg food, parking and hot water. Book on WhatsApp.';
 const pageUrl = `${SITE.url}/`;
 const ogImage = `${SITE.url}/og-image.jpg`;
 const waLink = `https://wa.me/${CONTACT.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('Namaste! I would like to book a room at Mahakal Bhakta Nivas, Ujjain.')}`;
+
+const TRIP_GUIDES = [
+	{ title: 'Where to Stay Near Mahakaleshwar Temple', desc: 'The honest area guide — why the temple quarter beats every other zone in Ujjain.', href: '/blog/where-to-stay-near-mahakaleshwar-temple/' },
+	{ title: 'How to Book Bhasma Aarti Passes', desc: 'Registration, documents, timings and the strategy for the 4 AM aarti at Mahakal.', href: '/blog/how-to-book-bhasma-aarti-mahakaleshwar/' },
+	{ title: 'One Day in Ujjain: The Perfect Darshan Plan', desc: 'Hour-by-hour plan covering Mahakal, Harsiddhi, Ram Ghat and Kal Bhairav.', href: '/blog/one-day-ujjain-darshan-plan/' },
+	{ title: 'Rooms Near Mahakaleshwar Under ₹1,500', desc: 'Budget picks compared — what ₹1,250 actually gets you 200 m from the gate.', href: '/blog/rooms-near-mahakaleshwar-under-1500/' },
+	{ title: 'Best Time to Visit Mahakaleshwar', desc: 'Month-by-month weather, crowds and festival guidance for your yatra.', href: '/blog/best-time-to-visit-mahakaleshwar/' },
+	{ title: 'Ujjain Trip Budget Guide', desc: 'What a 2-day pilgrimage realistically costs — rooms, food, travel, pooja.', href: '/blog/ujjain-trip-budget-guide/' },
+];
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} canonical={pageUrl} ogImage={ogImage}>
@@ -325,6 +334,27 @@ const waLink = `https://wa.me/${CONTACT.whatsapp.replace(/\D/g, '')}?text=${enco
 		</div>
 	</section>
 
+	<!-- Trip Guides: internal links to our most useful planning resources -->
+	<section class="guides-section" id="guides">
+		<div class="container">
+			<div class="section-header">
+				<span class="section-eyebrow">Plan Your Yatra</span>
+				<h2>Ujjain Travel Guides From Our Desk</h2>
+				<p>Written by our team for pilgrims — darshan planning, aarti booking, budgets and the honest basics of visiting Mahakaleshwar.</p>
+			</div>
+			<div class="guides-grid">
+				{TRIP_GUIDES.map((guide) => (
+					<a href={guide.href} class="guide-card" key={guide.href}>
+						<h3>{guide.title}</h3>
+						<p>{guide.desc}</p>
+						<span class="guide-read">Read the guide →</span>
+					</a>
+				))}
+			</div>
+			<p class="guides-more">Explore all 120+ guides — aarti timings, temple circuits, routes from every major city and festival calendars — in <a href="/blog/">our complete Ujjain blog</a>.</p>
+		</div>
+	</section>
+
 	<!-- FAQ Section -->
 	<section class="faq-section" id="faq">
 		<div class="container">
@@ -443,7 +473,7 @@ const waLink = `https://wa.me/${CONTACT.whatsapp.replace(/\D/g, '')}?text=${enco
 						</div>
 						<div class="form-group">
 							<label for="phone">Phone / WhatsApp *</label>
-							<input type="tel" id="phone" name="phone" required placeholder="+91 98765 43210" />
+							<input type="tel" id="phone" name="phone" required placeholder="+91 98XXX XXXXX" />
 						</div>
 					</div>
 					<div class="form-row">
@@ -470,13 +500,12 @@ const waLink = `https://wa.me/${CONTACT.whatsapp.replace(/\D/g, '')}?text=${enco
 						</div>
 						<div class="form-group">
 							<label for="room">Room Type</label>
-							<select id="room" name="room">
-								<option value="any">Any Available</option>
-								<option value="ac-double">AC Double</option>
-								<option value="ac-triple">AC Triple</option>
-								<option value="ac-family">AC Family Suite</option>
-								<option value="dormitory">Non-AC Dormitory</option>
-							</select>
+						<select id="room" name="room">
+							<option value="any">Any Available</option>
+							{ROOMS.map((room) => (
+								<option value={room.name}>{room.name} — {room.priceText}</option>
+							))}
+						</select>
 						</div>
 					</div>
 					<div class="form-group">
@@ -492,9 +521,84 @@ const waLink = `https://wa.me/${CONTACT.whatsapp.replace(/\D/g, '')}?text=${enco
 
 	<!-- FAQ Schema Script -->
 	<script type="application/ld+json" is:inline set:html={JSON.stringify(FaqSchema)} />
+
+	<!-- WebSite Schema -->
+	<script type="application/ld+json" is:inline set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"name": "Mahakal Bhakta Nivas",
+		"url": SITE.url,
+		"description": "Dharamshala and rooms near Mahakaleshwar Temple, Ujjain — booking, tariffs and complete Ujjain travel guides."
+	})} />
 </BaseLayout>
 
 <style>
+	/* ========== GUIDES ========== */
+	.guides-section {
+		padding: 5rem 0;
+		background: #fdf9f3;
+	}
+
+	.guides-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		gap: 1.5rem;
+		max-width: 1100px;
+		margin: 0 auto;
+	}
+
+	.guide-card {
+		background: white;
+		border-radius: 16px;
+		padding: 1.5rem;
+		text-decoration: none;
+		color: inherit;
+		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+		transition: all 0.3s ease;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.guide-card:hover {
+		transform: translateY(-6px);
+		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+	}
+
+	.guide-card h3 {
+		font-size: 1.05rem;
+		color: #1c1410;
+		margin: 0;
+		line-height: 1.4;
+	}
+
+	.guide-card p {
+		font-size: 0.9rem;
+		color: #6b5d4f;
+		margin: 0;
+		line-height: 1.55;
+		flex-grow: 1;
+	}
+
+	.guide-read {
+		font-size: 0.85rem;
+		font-weight: 600;
+		color: #d97706;
+		margin-top: 0.5rem;
+	}
+
+	.guides-more {
+		text-align: center;
+		margin-top: 2rem;
+		color: #6b5d4f;
+		font-size: 0.95rem;
+	}
+
+	.guides-more a {
+		color: #d97706;
+		font-weight: 600;
+	}
+
 	/* ========== HERO ========== */
 	.hero {
 		position: relative;

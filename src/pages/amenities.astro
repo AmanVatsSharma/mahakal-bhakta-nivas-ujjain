@@ -3,11 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE } from '../config';
-const title = "Amenities | Mahakal Bhakta Nivas Ujjain";
-const desc = "Discover all amenities at Mahakal Bhakta Nivas — pure veg restaurant, free Wi-Fi, 24×7 hot water, CCTV security, and more.";
+const waChat = `https://wa.me/${SITE.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('Namaste! I would like to book a room at Mahakal Bhakta Nivas.')}`;
+const title = "Amenities | Pure Veg Food, Hot Water, Parking — Mahakal Bhakta Nivas Ujjain";
+const desc = "All amenities at Mahakal Bhakta Nivas, 200 m from Mahakaleshwar Temple: pure vegetarian satvik kitchen, 24×7 hot water, free WiFi, parking, power backup, CCTV security, laundry and a travel desk.";
 ---
 
-<BaseLayout title={title} description={desc}>
+<BaseLayout title={title} description={desc} canonical="/amenities" breadcrumbs={[{ name: 'Amenities', path: '/amenities' }]}>
   <Header />
   <main>
     <section class="page-hero">
@@ -50,9 +51,33 @@ const desc = "Discover all amenities at Mahakal Bhakta Nivas — pure veg restau
         </div>
       </div>
     </section>
+    <section class="practical-section">
+      <div class="container">
+        <h2 class="section-title">The Details That Matter on a Temple Trip</h2>
+        <div class="practical-grid">
+          <div class="practical-item">
+            <h3>Check-in 12 PM · Check-out 11 AM</h3>
+            <p>Arriving off a night train for the Bhasma Aarti? Message us ahead — early access is often possible when the schedule allows.</p>
+          </div>
+          <div class="practical-item">
+            <h3>Rooms for every yatra</h3>
+            <p>Nine room types from ₹1,250 — AC and Non-AC, 2 to 4 beds, plus Deluxe and Luxury Suites. See <a href="/rooms/">all rooms and tariff</a>.</p>
+          </div>
+          <div class="practical-item">
+            <h3>Guidance at the desk</h3>
+            <p>Aarti passes, queue timings, temple rules and routes — our team guides you daily. Explore our <a href="/blog/facilities-at-mahakaleshwar-guide/">Mahakaleshwar facilities guide</a> and the full <a href="/blog/">Ujjain travel blog</a>.</p>
+          </div>
+          <div class="practical-item">
+            <h3>Safe for families and elders</h3>
+            <p>CCTV-monitored premises, ground-floor rooms on request, and the temple gate just 200 m away — no daily commute. Tips in our <a href="/blog/ujjain-trip-with-elderly-parents/">yatra-with-parents guide</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="cta-strip">
       <div class="container">
-        <p>Experience all these amenities — <a href={`https://wa.me/SITE.whatsapp`} target="_blank" rel="noopener">Book on WhatsApp 💬</a></p>
+        <p>Experience all these amenities — <a href={waChat} target="_blank" rel="noopener">Book on WhatsApp 💬</a></p>
       </div>
     </section>
   </main>
@@ -78,6 +103,19 @@ const desc = "Discover all amenities at Mahakal Bhakta Nivas — pure veg restau
   .amenity-card h3 { font-size: 14px; color: var(--c-maroon); margin-bottom: 4px; }
   .amenity-card p { font-size: 13px; color: #666; line-height: 1.5; }
   .cta-strip { background: var(--c-maroon); color: #fff; padding: 20px 0; text-align: center; }
+
+  /* Practical section */
+  .practical-section { padding: 44px 0; background: #fff; }
+  .practical-section .section-title { font-family: var(--font-dev); font-size: 1.5rem; color: var(--c-maroon); text-align: center; margin-bottom: 26px; }
+  .practical-grid { display: grid; grid-template-columns: 1fr; gap: 14px; max-width: 900px; margin: 0 auto; }
+  .practical-item { background: var(--c-cream); padding: 18px 20px; border-radius: 12px; border-left: 4px solid var(--c-gold); }
+  .practical-item h3 { font-size: 15px; color: var(--c-maroon); margin-bottom: 6px; }
+  .practical-item p { font-size: 13.5px; color: #555; line-height: 1.6; margin: 0; }
+  .practical-item a { color: var(--c-maroon); font-weight: 600; }
+
+  @media (min-width: 600px) {
+    .practical-grid { grid-template-columns: repeat(2, 1fr); }
+  }
   .cta-strip a { color: var(--c-gold); font-weight: 600; }
 
   @media (min-width: 520px) {

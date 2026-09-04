@@ -2,46 +2,69 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { SITE, CONTACT } from '../config';
+
+const waChat = `https://wa.me/${CONTACT.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent('Namaste! I have a question about staying at Mahakal Bhakta Nivas.')}`;
 
 const faqs = [
   {
     q: 'How far is Mahakal Bhakta Nivas from Mahakaleshwar Temple?',
-    a: 'We are located just 500 meters (approximately 5-7 minutes walk) from the Mahakaleshwar Jyotirlinga Temple. The location is ideal for devotees who want to attend multiple darshans in a day. We also assist with special darshan arrangements and guide bookings.',
+    a: 'We are 200 metres from the Mahakaleshwar Temple gate — a 2 to 3 minute walk on Gopal Mandir Road. You can return to your room between darshans, rest, and head back for the next aarti without any vehicle.',
   },
   {
-    q: 'What are the room rates?',
-    a: 'Our room rates start from ₹350 per night for dormitory beds, ₹600 for Non-AC rooms, ₹1,200 for Deluxe AC rooms, ₹1,800 for Family Suites, and ₹2,500 for our premium Temple View rooms. All prices are per night and include complimentary hot water. We also offer special discounts for group bookings of 10+ rooms.',
+    q: 'What are the room rates per night?',
+    a: 'Rooms start at ₹1,250 (2 Bed Non-AC) and go up to ₹4,050 (Luxury Suite). The full tariff: 2 Bed Non-AC ₹1,250, 2 Bed AC ₹1,650, 3 Bed Non-AC ₹1,785, 3 Bed AC ₹2,050, 4 Bed Non-AC ₹2,100, Deluxe Room ₹2,450, 4 Bed AC ₹2,475, Deluxe Suite ₹3,150 and Luxury Suite ₹4,050 — all per night with attached bathrooms and hot water.',
   },
   {
-    q: 'Is vegetarian food available?',
-    a: 'Yes, we have a pure vegetarian in-house restaurant serving delicious North Indian, Gujarati, and South Indian meals. Our kitchen follows strict sattvic preparation methods. We also offer thali meals, snacks, and prasadam packing services.',
+    q: 'Is vegetarian food available at the dharamshala?',
+    a: 'Yes. Our kitchen serves pure vegetarian satvik meals, and morning tea with prasadam is complimentary. Tell the kitchen your dietary practice — no onion-garlic or Jain preparation — and it will do its best to accommodate.',
   },
   {
-    q: 'How do I make a booking?',
-    a: 'You can book through our website form, call us directly at +91 98765 43210, or send a message on WhatsApp. For advance bookings, we require 30% advance payment. Walk-ins are welcome subject to availability during peak seasons like Simhastha and Mahashivratri.',
+    q: 'How do I book a room?',
+    a: 'The fastest way is WhatsApp — message us your dates, guests and preferred room type and we will confirm availability. You can also call us directly or use the booking form on the homepage. During Sawan Mondays, Nag Panchami and Mahashivratri, book well in advance.',
   },
   {
-    q: 'Do you provide temple guides?',
-    a: 'Yes! We arrange experienced temple guides who can explain the history and significance of Mahakaleshwar Temple and other important sites in Ujjain. The guide service can be booked at the reception or requested in advance via WhatsApp.',
+    q: 'Can you help with Bhasma Aarti passes and darshan arrangements?',
+    a: 'Yes — our desk guides guests through Bhasma Aarti registration and darshan planning, and shares current queue patterns. We do not sell tickets; we help you navigate the official process. Read our Bhasma Aarti booking guide on the blog for the full procedure.',
   },
   {
-    q: 'What is the cancellation policy?',
-    a: 'Free cancellation up to 48 hours before check-in. Cancellations within 48 hours will incur a charge of one night\'s stay. No-shows are charged for the entire booking. During special events like Simhastha, a stricter 7-day cancellation policy applies.',
+    q: 'What are the check-in and check-out times?',
+    a: 'Check-in is from 12:00 PM and check-out is by 11:00 AM. Arriving early or leaving late? Message us in advance — we will arrange it when the room schedule allows.',
   },
   {
     q: 'Is parking available?',
-    a: 'Yes, we have free parking available for cars, bikes, and buses on our premises. Our parking can accommodate up to 30 vehicles. For large group bookings or bus arrivals, please inform us in advance so we can arrange adequate parking space.',
+    a: 'Yes, we have free on-site parking for cars and two-wheelers — a real advantage in the narrow lanes of the old city during festival days.',
   },
   {
-    q: 'Do you arrange darshan tickets?',
-    a: 'We assist our guests with darshan arrangements including helping with online bookings for the Mahakaleshwar Temple, Jyotirlinga darshan, and special pujas. While we don\'t sell tickets directly, our staff at the reception will guide you through the process.',
+    q: 'How do I reach you from Ujjain Railway Station or the airport?',
+    a: 'Ujjain Station is about 3 km away (10-15 minutes by auto). The nearest airport is Indore, around 55-60 km (1.5 hours by taxi). Send us your arrival time on WhatsApp and we will share exact directions with your driver.',
+  },
+  {
+    q: 'Which payment methods do you accept?',
+    a: 'We accept cash, UPI (Google Pay, PhonePe, Paytm) and major debit and credit cards.',
+  },
+  {
+    q: 'Are the rooms suitable for elderly parents and children?',
+    a: 'Yes — we are a family-run dharamshala and most of our guests travel with elders and children. Rooms with attached bathrooms and hot water make stays comfortable, and being 200 m from the temple means no exhausting commutes. Ask us for a ground-floor or easy-access room when booking.',
   },
 ];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
 ---
 
 <BaseLayout
-  title="FAQ - Mahakal Bhakta Nivas Ujjain"
-  description="Frequently asked questions about Mahakal Bhakta Nivas dharmashala in Ujjain. Find answers about booking, room rates, temple distance, food, parking, and more."
+  title="FAQ | Rooms, Booking & Distance — Mahakal Bhakta Nivas Ujjain"
+  description="Answers about staying at Mahakal Bhakta Nivas Ujjain: room rates ₹1,250-₹4,050, 200 m from Mahakaleshwar Temple, pure veg food, parking, check-in times and booking on WhatsApp."
+  canonical="/faq"
+  breadcrumbs={[{ name: 'FAQ', path: '/faq' }]}
 >
   <Header />
 
@@ -51,7 +74,7 @@ const faqs = [
         <span class="section-label">FAQ</span>
         <h1 class="heading-display heading-lg section-title">Frequently Asked Questions</h1>
         <p class="section-subtitle">
-          Everything you need to know about staying at Mahakal Bhakta Nivas in Ujjain.
+          Everything you need to know about staying at Mahakal Bhakta Nivas, 200 m from Mahakaleshwar Temple, Ujjain.
         </p>
       </div>
 
@@ -77,8 +100,8 @@ const faqs = [
           Our team is available 24/7 to help you plan your spiritual journey to Ujjain.
         </p>
         <div style="display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap">
-          <a href="tel:+919876543210" class="btn btn-dark btn-lg">Call: +91 98765 43210</a>
-          <a href="https://wa.me/919876543210" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">Chat on WhatsApp</a>
+          <a href={`tel:${CONTACT.phone}`} class="btn btn-dark btn-lg">Call: {CONTACT.phoneDisplay}</a>
+          <a href={waChat} class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">Chat on WhatsApp</a>
         </div>
       </div>
     </div>
@@ -87,15 +110,17 @@ const faqs = [
   <Footer />
 
   <div class="floating-cta">
-    <a href="https://wa.me/919876543210" class="btn btn-whatsapp" target="_blank" rel="noopener">
+    <a href={waChat} class="btn btn-whatsapp" target="_blank" rel="noopener">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
       </svg>
       WhatsApp
     </a>
-    <a href="tel:+919876543210" class="btn btn-call">Call</a>
+    <a href={`tel:${CONTACT.phone}`} class="btn btn-call">Call</a>
     <a href="#faq" class="btn btn-primary">FAQ</a>
   </div>
+
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
 
   <script>
     document.querySelectorAll('.faq-question').forEach(btn => {

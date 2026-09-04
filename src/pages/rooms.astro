@@ -3,11 +3,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE, CONTACT, ROOMS } from '../config';
 const waNumber = SITE.whatsapp.replace(/\D/g, '');
 const waLink = (text: string) => `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
-const pageTitle = "Rooms & Accommodation - Mahakal Bhakta Nivas | Budget to Luxury Rooms in Ujjain";
-const pageDescription = "View our 9 room types at Mahakal Bhakta Nivas Ujjain — from the 2 Bed Non-AC Room (₹1,250) to the Luxury Suite (₹4,050). All rooms near Mahakaleshwar Temple with attached bathrooms, hot water, and pure veg food.";
+const pageTitle = "Rooms Near Mahakaleshwar Temple ₹1,250–₹4,050 | Mahakal Bhakta Nivas Ujjain";
+const pageDescription = "All 9 room types at Mahakal Bhakta Nivas — 2, 3 & 4 bed rooms (AC and Non-AC), Deluxe Room, Deluxe Suite and Luxury Suite from ₹1,250 to ₹4,050 per night, 200 m from Mahakaleshwar Temple. Attached bathrooms, hot water, pure veg food.";
+const ROOM_FAQS = [
+	{
+		q: 'What is the cheapest room near Mahakaleshwar Temple?',
+		a: 'Our 2 Bed Non-AC Room is ₹1,250 per night — two clean beds, attached bathroom and hot water, 200 m from the temple gate. For cool-season visits (October to February) it is the best value in the temple quarter.',
+	},
+	{
+		q: 'Do you have AC rooms near Mahakaleshwar Temple?',
+		a: 'Yes — six of our nine room types have air conditioning: 2 Bed AC (₹1,650), 3 Bed AC (₹2,050), 4 Bed AC (₹2,475), Deluxe Room (₹2,450), Deluxe Suite (₹3,150) and Luxury Suite (₹4,050). All AC rooms also have 24/7 power backup.',
+	},
+	{
+		q: 'Which rooms suit a family of 4-6 near the temple?',
+		a: 'Our 4 Bed Rooms (Non-AC ₹2,100, AC ₹2,475) comfortably sleep four, and larger families often combine a 3 Bed and a 2 Bed room next to each other. Every room has an attached bathroom — no shared facilities.',
+	},
+	{
+		q: 'What are the check-in and check-out times?',
+		a: 'Check-in is from 12:00 PM and check-out is by 11:00 AM. Early check-in or late check-out can often be arranged — message us on WhatsApp before your arrival and we will confirm.',
+	},
+	{
+		q: 'Is food available at the dharamshala?',
+		a: 'Yes, we serve pure vegetarian satvik meals with complimentary morning tea and prasadam. Tell the kitchen your dietary practice (no onion-garlic, Jain preparation) and it will do its best to accommodate.',
+	},
+	{
+		q: 'Can I book a group block of rooms?',
+		a: 'Yes — temple trusts, bhajan mandalis, weddings and yatra groups regularly block a mix of our 2, 3 and 4 bed rooms. Message us on WhatsApp with your dates and headcount for a combined quote.',
+	},
+];
 ---
 
-<BaseLayout title={pageTitle} description={pageDescription} canonical="/rooms">
+<BaseLayout title={pageTitle} description={pageDescription} canonical="/rooms" breadcrumbs={[{ name: 'Rooms & Tariff', path: '/rooms' }]}>
     <main>
         <!-- Rooms Hero -->
         <section class="rooms-hero">
@@ -48,6 +74,39 @@ const pageDescription = "View our 9 room types at Mahakal Bhakta Nivas Ujjain �
                                 </div>
                             </div>
                         </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        <!-- Room Guides: deep-dive links -->
+        <section class="guides-band">
+            <div class="container">
+                <h2 class="section-title">Choosing Your Room: Our Detailed Guides</h2>
+                <p class="section-intro">Not sure which room fits your trip? These guides break down every option by budget, family size and season.</p>
+                <div class="guides-links">
+                    <a href="/blog/where-to-stay-near-mahakaleshwar-temple/">Where to Stay Near Mahakaleshwar Temple</a>
+                    <a href="/blog/ac-rooms-near-mahakaleshwar-temple/">AC Rooms Near the Temple</a>
+                    <a href="/blog/family-rooms-near-mahakaleshwar-temple/">Family Rooms (3 &amp; 4 Bed) Guide</a>
+                    <a href="/blog/rooms-near-mahakaleshwar-under-2500/">Rooms Under ₹2,500 Ranked</a>
+                    <a href="/blog/luxury-room-near-mahakaleshwar/">Luxury Suites Explained</a>
+                    <a href="/blog/group-booking-ujjain-dharamshala/">Group Bookings for 10-50 Devotees</a>
+                    <a href="/blog/non-ac-rooms-near-mahakaleshwar/">Non-AC Rooms: The Winter Value Pick</a>
+                    <a href="/blog/dharamshala-vs-hotel-ujjain/">Dharamshala vs Hotel in Ujjain</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rooms FAQ -->
+        <section class="faq-band">
+            <div class="container">
+                <h2 class="section-title">Rooms &amp; Tariff FAQs</h2>
+                <div class="faq-list">
+                    {ROOM_FAQS.map((faq) => (
+                        <details class="faq-item">
+                            <summary>{faq.q}</summary>
+                            <p>{faq.a}</p>
+                        </details>
                     ))}
                 </div>
             </div>
@@ -142,9 +201,107 @@ const pageDescription = "View our 9 room types at Mahakal Bhakta Nivas Ujjain �
             </div>
         </section>
     </main>
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": ROOM_FAQS.map((f) => ({
+            "@type": "Question",
+            "name": f.q,
+            "acceptedAnswer": { "@type": "Answer", "text": f.a }
+        }))
+    })} />
 </BaseLayout>
 
 <style>
+    /* Room guides band */
+    .guides-band {
+        padding: var(--space-12) 0;
+        background: var(--cream);
+    }
+
+    .guides-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-3);
+        justify-content: center;
+        max-width: 900px;
+        margin: var(--space-6) auto 0;
+    }
+
+    .guides-links a {
+        background: white;
+        border: 1px solid var(--gray-100, rgba(0,0,0,0.08));
+        color: var(--primary-900, #1c1410);
+        padding: var(--space-3) var(--space-4);
+        border-radius: var(--radius-full);
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.25s ease;
+    }
+
+    .guides-links a:hover {
+        background: var(--primary-900, #1c1410);
+        color: var(--cream, #fdf9f3);
+    }
+
+    /* Rooms FAQ band */
+    .faq-band {
+        padding: var(--space-12) 0;
+        background: white;
+    }
+
+    .faq-list {
+        max-width: 760px;
+        margin: var(--space-8) auto 0;
+        display: grid;
+        gap: var(--space-3);
+    }
+
+    .faq-item {
+        background: var(--cream, #fdf9f3);
+        border-radius: var(--radius-lg, 12px);
+        padding: var(--space-4) var(--space-5);
+        border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .faq-item summary {
+        font-weight: 600;
+        color: var(--primary-900, #1c1410);
+        cursor: pointer;
+        font-size: 0.95rem;
+        list-style: none;
+        position: relative;
+        padding-right: 1.5rem;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+        display: none;
+    }
+
+    .faq-item summary::after {
+        content: "+";
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: var(--primary-700, #8b6f47);
+        font-size: 1.2rem;
+        line-height: 1;
+    }
+
+    .faq-item[open] summary::after {
+        content: "−";
+    }
+
+    .faq-item p {
+        margin: var(--space-3) 0 0;
+        color: var(--gray-600, #555);
+        font-size: 0.9rem;
+        line-height: 1.65;
+    }
+
     .rooms-hero {
         padding: var(--space-16) 0;
         background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-800) 100%);

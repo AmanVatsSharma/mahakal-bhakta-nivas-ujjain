@@ -1,11 +1,17 @@
 ---
 import '../styles/global.css';
+interface Crumb {
+	name: string;
+	path: string;
+}
 interface Props {
 	title?: string;
 	description?: string;
 	canonical?: string;
 	ogImage?: string;
 	bodyClass?: string;
+	breadcrumbs?: Crumb[];
+	noindex?: boolean;
 }
 
 const {
@@ -14,7 +20,16 @@ const {
 	canonical = 'https://www.shrimahakalbhaktniwasujjain.com/',
 	ogImage = 'https://www.shrimahakalbhaktniwasujjain.com/og-image.jpg',
 	bodyClass = '',
+	breadcrumbs = [],
+	noindex = false,
 } = Astro.props;
+
+const SITE_URL = 'https://www.shrimahakalbhaktniwasujjain.com';
+const MAPS_URL = 'https://www.google.com/maps?q=Mahakal+Bhakta+Nivas,+Gopal+Mandir+Road,+Ujjain,+Madhya+Pradesh+456006';
+const crumbList = [
+	{ '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+	...breadcrumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 2, name: c.name, item: `${SITE_URL}${c.path}` })),
+];
 ---
 
 <!doctype html>
@@ -28,12 +43,15 @@ const {
 	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 	<link rel="apple-touch-icon" href="/favicon.svg">
 	<meta name="description" content={description} />
+	<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1'} />
+	<meta name="theme-color" content="#1c1410" />
 
 	<!-- Canonical URL -->
 	<link rel="canonical" href={canonical} />
 
 	<!-- Open Graph -->
 	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="Mahakal Bhakta Nivas" />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:url" content={canonical} />
@@ -50,11 +68,14 @@ const {
 	<!-- Schema.org JSON-LD for LodgingBusiness -->
 	<script type="application/ld+json" is:inline set:html={JSON.stringify({
 		"@context": "https://schema.org",
-		"@type": "LodgingBusiness",
+		"@type": ["LodgingBusiness", "Hotel"],
+		"@id": `${SITE_URL}/#lodging`,
 		"name": "Mahakal Bhakta Nivas",
-		"description": description,
-		"url": "https://www.shrimahakalbhaktniwasujjain.com",
+		"alternateName": "Mahakal Bhakta Niwas Ujjain",
+		"description": "Family-run dharamshala on Gopal Mandir Road, 200 metres (2-3 minute walk) from Mahakaleshwar Jyotirlinga Temple, Ujjain. Nine room types from ₹1,250 to ₹4,050 per night with pure vegetarian food, hot water, free WiFi and parking.",
+		"url": SITE_URL,
 		"telephone": "+919989898989",
+		"email": "info@mahakalbhakta.in",
 		"address": {
 			"@type": "PostalAddress",
 			"streetAddress": "Near Mahakaleshwar Temple, Gopal Mandir Road",
@@ -68,14 +89,40 @@ const {
 			"latitude": "23.1829",
 			"longitude": "75.7686"
 		},
+		"hasMap": MAPS_URL,
 		"openingHoursSpecification": {
 			"@type": "OpeningHoursSpecification",
 			"dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
 			"opens": "00:00",
 			"closes": "23:59"
 		},
-		"image": ogImage,
-		"priceRange": "₹₹",
+		"checkinTime": "12:00",
+		"checkoutTime": "11:00",
+		"image": [
+			`${SITE_URL}/og-image.jpg`,
+			`${SITE_URL}/rooms/LuxurySuite4050.jpeg`,
+			`${SITE_URL}/rooms/Deluxe2450.jpeg`,
+			`${SITE_URL}/gallery/temple-1.jpg`
+		],
+		"priceRange": "₹1,250 - ₹4,050",
+		"currenciesAccepted": "INR",
+		"paymentAccepted": "Cash, UPI, Credit Card, Debit Card",
+		"amenityFeature": [
+			{ "@type": "LocationFeatureSpecification", "name": "Pure vegetarian meals", "value": true },
+			{ "@type": "LocationFeatureSpecification", "name": "Attached bathrooms with hot water", "value": true },
+			{ "@type": "LocationFeatureSpecification", "name": "Free WiFi", "value": true },
+			{ "@type": "LocationFeatureSpecification", "name": "Free parking", "value": true },
+			{ "@type": "LocationFeatureSpecification", "name": "24/7 power backup", "value": true },
+			{ "@type": "LocationFeatureSpecification", "name": "Family rooms", "value": true },
+			{ "@type": "LocationFeatureSpecification", "name": "Air conditioning (select rooms)", "value": true },
+			{ "@type": "LocationFeatureSpecification", "name": "CCTV security", "value": true }
+		],
+		"contactPoint": {
+			"@type": "ContactPoint",
+			"telephone": "+919989898989",
+			"contactType": "reservations",
+			"availableLanguage": ["Hindi", "English"]
+		},
 		"sameAs": []
 	})} />
 
@@ -83,9 +130,7 @@ const {
 	<script type="application/ld+json" is:inline set:html={JSON.stringify({
 		"@context": "https://schema.org",
 		"@type": "BreadcrumbList",
-		"itemListElement": [
-			{ "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.shrimahakalbhaktniwasujjain.com/" }
-		]
+		"itemListElement": crumbList
 	})} />
 </head>
 <body class={bodyClass}>

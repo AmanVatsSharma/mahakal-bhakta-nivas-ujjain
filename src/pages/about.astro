@@ -3,7 +3,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../config';
 ---
 
-<BaseLayout title={`About Us | ${SITE.name}`} description={`Learn about Mahakal Bhakta Nivas — our story, mission, and commitment to providing the best accommodation near Mahakaleshwar Temple, Ujjain.`}>
+<BaseLayout
+	title={`About Us | ${SITE.name} — Family-Run Dharamshala 200 m From Mahakaleshwar`}
+	description={`The story of Mahakal Bhakta Nivas — a family-run dharamshala on Gopal Mandir Road, 200 metres from Mahakaleshwar Temple, Ujjain. Clean rooms from ₹1,250, pure veg meals and honest guidance for pilgrims.`}
+	canonical="/about"
+	breadcrumbs={[{ name: 'About Us', path: '/about' }]}
+>
 	<div class="page-wrapper">
 		<div class="container">
 			<nav class="breadcrumb" aria-label="Breadcrumb">
@@ -28,13 +33,59 @@ import { SITE } from '../config';
 					<h2>Our Story</h2>
 					<p>Mahakal Bhakta Nivas was established with a singular vision: to provide clean, affordable, and peaceful accommodation for devotees visiting the Mahakaleshwar Jyotirlinga in Ujjain.</p>
 					<p>For over 15 years, we have welcomed thousands of pilgrims from across India and abroad. Our family-run dharmashala is known for its cleanliness, warmth, and proximity to the temple — making it the preferred choice for devotees seeking a comfortable stay during their spiritual journey.</p>
+					<p>When a family arrives at 2 AM for the Bhasma Aarti, or an elderly couple needs a quiet room between two darshans, the value of staying 200 metres from the gate becomes obvious. That is the hospitality we practise every day.</p>
 				</div>
 				<div>
 					<h2>Our Mission</h2>
 					<p>We believe that every pilgrim deserves a restful, hygienic, and spiritually uplifting place to stay — without breaking the bank.</p>
-					<p>From solo travellers to large family groups, we offer a range of rooms and services to make your Ujjain visit memorable and hassle-free.</p>
+					<p>From solo travellers to large family groups, we offer nine room types — from the 2 Bed Non-AC at ₹1,250 to the Luxury Suite at ₹4,050 — so that every devotee finds a room that fits their yatra and their budget.</p>
+					<p>Honest tariffs, no hidden charges, and straightforward guidance on darshan and aartis: our mission is to be the trustworthy base for your Ujjain pilgrimage.</p>
 				</div>
 			</div>
+		</div>
+	</section>
+
+	<section class="about-section about-alt">
+		<div class="container">
+			<div class="about-grid">
+				<div>
+					<h2>What 200 Metres Really Means</h2>
+					<p>Most of Ujjain's accommodation sits a drive away from the temple. We are on Gopal Mandir Road, a 2-3 minute walk from the Mahakaleshwar gate — which changes the shape of your entire day.</p>
+					<p>You can return to your room after the morning aarti for tea and a shower, rest through the afternoon heat, and walk back for the Sandhya Aarti. No autos, no parking stress, no exhausted elders. During festival nights when the city's traffic freezes, our guests simply walk home.</p>
+					<p>Ram Ghat on the Shipra is ~500 m away, Harsiddhi Temple about 1 km — the sacred core of Ujjain is on your doorstep. Our <a href="/blog/ujjain-city-orientation-guide/">city orientation guide</a> explains the layout in detail.</p>
+				</div>
+				<div>
+					<h2>The Satvik Kitchen</h2>
+					<p>Pilgrimage travel is easier when the kitchen is trustworthy. Our pure vegetarian kitchen serves satvik meals with complimentary morning tea and prasadam.</p>
+					<p>Travelling with dietary practices — no onion and garlic, Jain preparation? Tell the kitchen and it will do its best to accommodate. Early dinner before a night aarti or a packed breakfast before a long queue: ask, and we will arrange what the day needs.</p>
+					<p>Food safety matters especially with children and elders on a temple trip — that is why most of our guests eat in rather than out. Read more in our <a href="/blog/dharamshala-with-veg-food-ujjain/">dharamshala-with-food guide</a>.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="about-promise">
+		<div class="container">
+			<h2>Our Promise to Every Guest</h2>
+			<div class="promise-grid">
+				<div class="promise-item">
+					<h3>Clean, honest rooms</h3>
+					<p>Nine room types, transparent tariffs from ₹1,250 to ₹4,050, attached bathrooms and 24/7 hot water in every room.</p>
+				</div>
+				<div class="promise-item">
+					<h3>Walking-distance darshan</h3>
+					<p>200 m from the temple gate — the closest comfortable base for the Bhasma Aarti and every darshan after it.</p>
+				</div>
+				<div class="promise-item">
+					<h3>Guidance, not guesswork</h3>
+					<p>From aarti passes to queue timings to travel routes, our desk gives straight answers — and our blog of 120+ guides is written by the same team.</p>
+				</div>
+				<div class="promise-item">
+					<h3>Every kind of pilgrim</h3>
+					<p>Solo travellers, families with infants, elderly parents on wheelchairs, yatra groups of fifty — we have hosted them all, and we keep rooms and plans ready for each.</p>
+				</div>
+			</div>
+			<p class="promise-cta">See the rooms for yourself — <a href="/rooms/">rooms and tariff from ₹1,250</a>, or start with <a href="/blog/where-to-stay-near-mahakaleshwar-temple/">where to stay near Mahakaleshwar</a>.</p>
 		</div>
 	</section>
 </BaseLayout>
@@ -87,6 +138,10 @@ import { SITE } from '../config';
 		background: white;
 	}
 
+	.about-section.about-alt {
+		background: #fdf9f3;
+	}
+
 	.about-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -107,6 +162,62 @@ import { SITE } from '../config';
 		color: #4b3c30;
 		line-height: 1.7;
 		margin-bottom: 1rem;
+	}
+
+	.about-grid a {
+		color: #d97706;
+		font-weight: 600;
+	}
+
+	.about-promise {
+		padding: 4rem 1.5rem;
+		background: white;
+	}
+
+	.about-promise h2 {
+		font-family: 'Playfair Display', Georgia, serif;
+		font-size: 1.8rem;
+		color: #1c1410;
+		text-align: center;
+		margin: 0 0 2rem;
+	}
+
+	.promise-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 1.5rem;
+		max-width: 1000px;
+		margin: 0 auto;
+	}
+
+	.promise-item {
+		background: #fdf9f3;
+		padding: 1.5rem;
+		border-radius: 14px;
+	}
+
+	.promise-item h3 {
+		font-size: 1.05rem;
+		color: #1c1410;
+		margin: 0 0 0.5rem;
+	}
+
+	.promise-item p {
+		font-size: 0.92rem;
+		color: #4b3c30;
+		line-height: 1.65;
+		margin: 0;
+	}
+
+	.promise-cta {
+		text-align: center;
+		margin-top: 2rem;
+		color: #4b3c30;
+	}
+
+	.promise-cta a {
+		color: #d97706;
+		font-weight: 600;
 	}
 
 	@media (max-width: 640px) {

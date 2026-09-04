@@ -3,11 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE, POOJAS, FESTIVALS } from '../config';
-const title = "Pooja & Seva at Mahakaleshwar Temple | Mahakal Bhakta Nivas";
-const desc = "Book Mahamrityunjaya Jaap, Rudrabhishek, Laghurudri and temple sevas at Mahakaleshwar Temple. Mahakal Bhakta Nivas helps arrange all POOJAS for pilgrims.";
+const title = "Pooja & Seva at Mahakaleshwar | Rudrabhishek, Mahamrityunjaya Jaap — Ujjain";
+const desc = "Arrange Rudrabhishek (₹1,100), Mahamrityunjaya Jaap (₹500), Laghurudri (₹300) and Maha Aarti Prasad at Mahakaleshwar Temple through the desk at Mahakal Bhakta Nivas, 200 m from the temple.";
 ---
 
-<BaseLayout title={title} description={desc}>
+<BaseLayout title={title} description={desc} canonical="/pooja-seva" breadcrumbs={[{ name: 'Pooja & Seva', path: '/pooja-seva' }]}>
   <Header />
   <main>
     <section class="page-hero">
@@ -41,6 +41,30 @@ const desc = "Book Mahamrityunjaya Jaap, Rudrabhishek, Laghurudri and temple sev
         </div>
       </div>
     </section>
+    <section class="how-section">
+      <div class="container">
+        <h2>How Pooja Booking Works</h2>
+        <p class="section-intro">Simple, transparent, and arranged around your darshan plan.</p>
+        <div class="how-grid">
+          <div class="how-step">
+            <span class="how-num">1</span>
+            <h3>Message us your sankalp</h3>
+            <p>WhatsApp us the pooja name, your name and gotra, and your travel dates. We confirm the slot and what to bring.</p>
+          </div>
+          <div class="how-step">
+            <span class="how-num">2</span>
+            <h3>We coordinate with the temple</h3>
+            <p>Our desk coordinates with the temple priests and counters — you focus on your yatra, not paperwork.</p>
+          </div>
+          <div class="how-step">
+            <span class="how-num">3</span>
+            <h3>Attend with your family</h3>
+            <p>Being 200 m from the gate, you walk over at the arranged time — no early commutes, no waiting around.</p>
+          </div>
+        </div>
+        <p class="how-note">Temple-counter poojas and Bhasma Aarti passes follow the temple's own official process — our <a href="/blog/abhishek-pooja-booking-mahakaleshwar/">abhishek booking guide</a> and <a href="/blog/how-to-book-bhasma-aarti-mahakaleshwar/">Bhasma Aarti guide</a> explain it step by step. Deeper reads: <a href="/blog/mahamrityunjaya-jaap-ujjain/">Mahamrityunjaya Jaap</a> and <a href="/blog/kaal-sarp-dosh-pooja-ujjain/">Kaal Sarp Dosh pooja in Ujjain</a>.</p>
+      </div>
+    </section>
     <section class="FESTIVALS-section">
       <div class="container">
         <h2>Major Festivals at Ujjain</h2>
@@ -58,6 +82,34 @@ const desc = "Book Mahamrityunjaya Jaap, Rudrabhishek, Laghurudri and temple sev
     </section>
   </main>
   <Footer />
+
+  <!-- Service/Offer Schema for pooja offerings -->
+  <script type="application/ld+json" is:inline set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Pooja and Seva offerings at Mahakaleshwar Temple arranged by Mahakal Bhakta Nivas",
+    "itemListElement": POOJAS.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "item": {
+        "@type": "Service",
+        "name": `${p.name} at Mahakaleshwar Temple, Ujjain`,
+        "description": p.desc,
+        "provider": {
+          "@type": "LodgingBusiness",
+          "name": "Mahakal Bhakta Nivas",
+          "url": SITE.url
+        },
+        "areaServed": "Ujjain, Madhya Pradesh",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "INR",
+          "price": p.price.replace(/[^\d]/g, ''),
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    }))
+  })} />
 </BaseLayout>
 
 <style>
@@ -92,6 +144,22 @@ const desc = "Book Mahamrityunjaya Jaap, Rudrabhishek, Laghurudri and temple sev
   .festival-card h3 { font-size: 15px; color: var(--c-maroon); margin-bottom: 4px; }
   .festival-date { font-size: 12.5px; color: #888; margin-bottom: 6px; }
   .festival-card p { font-size: 13.5px; color: #555; }
+
+  /* How it works */
+  .how-section { padding: 44px 0; background: #fff; }
+  .how-section h2 { font-family: var(--font-dev); font-size: 1.6rem; color: var(--c-maroon); text-align: center; margin-bottom: 8px; }
+  .how-grid { display: grid; grid-template-columns: 1fr; gap: 14px; max-width: 900px; margin: 24px auto 0; }
+  .how-step { background: var(--c-cream); padding: 18px 20px; border-radius: 12px; display: flex; gap: 14px; align-items: flex-start; }
+  .how-num { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--c-maroon); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; }
+  .how-step h3 { font-size: 15px; color: var(--c-maroon); margin-bottom: 4px; }
+  .how-step p { font-size: 13.5px; color: #555; line-height: 1.6; margin: 0; }
+  .how-note { max-width: 760px; margin: 22px auto 0; font-size: 13.5px; color: #777; line-height: 1.65; text-align: center; }
+  .how-note a { color: var(--c-maroon); font-weight: 600; }
+
+  @media (min-width: 600px) {
+    .how-grid { grid-template-columns: repeat(3, 1fr); }
+    .how-step { flex-direction: column; }
+  }
 
   @media (min-width: 600px) {
     .POOJAS-grid { grid-template-columns: repeat(2, 1fr); }
