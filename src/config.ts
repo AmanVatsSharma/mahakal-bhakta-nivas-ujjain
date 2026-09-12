@@ -7,10 +7,10 @@ export const SITE = {
 	tagline: 'Your Spiritual Home Near Mahakaleshwar Temple',
 	url: 'https://www.shrimahakalbhaktniwasujjain.com',
 	base: '/',
-	phone: '+91-9989898989',
-	phoneDisplay: '+91 99898 98989',
+	phone: '+91-7024204628',
+	phoneDisplay: '+91 70242 04628',
 	email: 'info@mahakalbhakta.in',
-	whatsapp: '+919989898989',
+	whatsapp: '+917024204628',
 	address: 'Near Mahakaleshwar Temple, Gopal Mandir Road, Ujjain, MP 456006',
 	defaultImage: '/og-default.jpg',
 	description: 'Mahakal Bhakta Nivas is the most trusted dharmashala in Ujjain — clean, affordable, and just a 2-minute walk from Mahakaleshwar Jyotirlinga. Book online now!',
@@ -31,9 +31,9 @@ export const SITE = {
 };
 
 export const CONTACT = {
-	phone: '+91-9989898989',
-	phoneDisplay: '+91 99898 98989',
-	whatsapp: '+919989898989',
+	phone: '+91-7024204628',
+	phoneDisplay: '+91 70242 04628',
+	whatsapp: '+917024204628',
 	email: 'info@mahakalbhakta.in',
 	address: 'Near Mahakaleshwar Temple, Gopal Mandir Road, Ujjain, MP 456006',
 	coordinates: { lat: 23.1829, lng: 75.7686 },

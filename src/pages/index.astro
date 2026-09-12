@@ -4,8 +4,6 @@ import { SITE, CONTACT, STATS, ROOMS, AMENITIES, TESTIMONIALS, FAQ_DATA, GALLERY
 import Header from '../components/Header.astro';
 import BookingDialog from '../components/BookingDialog.astro';
 import FaqSchema from '../components/FaqSchema.json';
-import { Image } from 'astro:assets';
-import heroBg from '../assets/hero-bg.png';
 
 const pageTitle = `Dharamshala Near Mahakaleshwar Temple | ${SITE.name} Ujjain — Rooms from ₹1,250`;
 const pageDescription = 'Mahakal Bhakta Nivas is a family-run dharamshala 200 m (2-min walk) from Mahakaleshwar Temple, Ujjain. 9 room types ₹1,250–₹4,050 — AC rooms, family rooms & suites with pure veg food, parking and hot water. Book on WhatsApp.';
@@ -26,29 +24,30 @@ const TRIP_GUIDES = [
 <BaseLayout title={pageTitle} description={pageDescription} canonical={pageUrl} ogImage={ogImage}>
 	<Header />
 
-	<!-- Hero Section: full poster, natural aspect ratio, never cropped — click opens WhatsApp booking -->
-	<section class="hero" id="home" aria-label="Mahakal Bhakta Nivas introduction poster">
+	<!-- Hero Section: banner with CTA buttons overlaid -->
+	<section class="hero" id="home" aria-label="Mahakal Bhakta Nivas introduction">
 		<h1 class="sr-only">Dharamshala &amp; Rooms Near Mahakaleshwar Temple, Ujjain — Mahakal Bhakta Nivas</h1>
 		<a class="hero-bg hero-link" href={waLink} target="_blank" rel="noopener noreferrer" aria-label="Book a room on WhatsApp — Mahakal Bhakta Nivas, Ujjain">
-			<Image src={heroBg} alt="Mahakal Bhakta Nivas Ujjain — rooms and dharamshala near Mahakaleshwar Jyotirlinga temple" widths={[640, 960, 1280, 1600, 2000]} sizes="100vw" loading="eager" fetchpriority="high" />
+			<img src="/hero-banner.png" alt="Mahakal Bhakta Nivas Ujjain — rooms and dharamshala near Mahakaleshwar Jyotirlinga temple" class="hero-banner-img" />
 		</a>
-	</section>
 
-	<!-- Booking CTA bar: Book Now (dialog) + Call Now -->
-	<section class="hero-cta-bar" aria-label="Book or call">
-		<div class="container hero-cta-inner">
-			<button type="button" class="cta-btn cta-book" data-open-booking>
-				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
-				Book Now
-				<span class="cta-note">choose dates &amp; guests</span>
-			</button>
-			<a href={`tel:${CONTACT.phone.replace(/[^+\d]/g, '')}`} class="cta-btn cta-call">
-				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-				Call Now
-				<span class="cta-note">{CONTACT.phoneDisplay}</span>
-			</a>
+		<!-- CTA Buttons overlaid on banner -->
+		<div class="hero-cta-overlay">
+			<div class="container hero-cta-inner">
+				<button type="button" class="cta-btn cta-book" data-open-booking>
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+					Book Now
+					<span class="cta-note">choose dates &amp; guests</span>
+				</button>
+				<a href={`tel:${CONTACT.phone.replace(/[^+\d]/g, '')}`} class="cta-btn cta-call">
+					<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+					Call Now
+					<span class="cta-note">{CONTACT.phoneDisplay}</span>
+				</a>
+			</div>
 		</div>
 	</section>
+
 	<BookingDialog />
 
 	<!-- Trust / Stats Band -->
@@ -628,17 +627,23 @@ const TRIP_GUIDES = [
 		outline-offset: -3px;
 	}
 
-	.hero-bg img {
+	.hero-banner-img {
 		display: block;
 		width: 100%;
 		height: auto;
 	}
 
-	/* ========== HERO CTA BAR ========== */
-	.hero-cta-bar {
-		background: linear-gradient(135deg, #fff8ec, #ffefd6);
-		border-bottom: 1px solid rgba(217, 119, 6, 0.15);
-		padding: 0.9rem 0;
+	/* ========== HERO CTA OVERLAY ========== */
+	.hero-cta-overlay {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 10;
+		padding: 1.5rem 1rem 1.5rem;
+		background: linear-gradient(to top, rgba(28,20,16,0.82) 0%, rgba(28,20,16,0.45) 60%, transparent 100%);
+		display: flex;
+		justify-content: center;
 	}
 
 	.hero-cta-inner {
@@ -646,15 +651,16 @@ const TRIP_GUIDES = [
 		gap: 0.9rem;
 		justify-content: center;
 		align-items: stretch;
+		flex-wrap: wrap;
 	}
 
 	.cta-btn {
-		display: flex;
+		display: inline-flex;
 		align-items: center;
 		justify-content: center;
 		gap: 0.55rem;
-		min-width: 220px;
-		padding: 0.8rem 1.6rem;
+		min-width: 200px;
+		padding: 0.85rem 1.6rem;
 		border-radius: 999px;
 		font-size: 1.05rem;
 		font-weight: 700;
@@ -684,6 +690,7 @@ const TRIP_GUIDES = [
 		background: linear-gradient(135deg, #d97706, #b45309);
 		transform: translateY(-2px);
 		box-shadow: 0 6px 18px rgba(217, 119, 6, 0.45);
+		color: #fff;
 	}
 
 	.cta-call {
@@ -696,6 +703,7 @@ const TRIP_GUIDES = [
 		border-color: #d97706;
 		background: #fff8ec;
 		transform: translateY(-2px);
+		color: #1c1410;
 	}
 
 	.cta-call .cta-note {
@@ -704,9 +712,14 @@ const TRIP_GUIDES = [
 	}
 
 	@media (max-width: 560px) {
+		.hero-cta-overlay {
+			padding: 1rem 0.75rem 1.25rem;
+		}
+
 		.hero-cta-inner {
 			flex-direction: column;
 			gap: 0.6rem;
+			align-items: stretch;
 		}
 
 		.cta-btn {
