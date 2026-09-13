@@ -861,31 +861,31 @@ const TRIP_GUIDES = [
 
 	.rooms-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-		gap: 2rem;
-		max-width: 1100px;
+		grid-template-columns: 1fr;
+		max-width: 420px;
 		margin: 0 auto;
 	}
 
 	.room-card {
 		background: white;
-		border-radius: 16px;
+		border-radius: 20px;
 		overflow: hidden;
-		box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+		box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 		transition: all 0.3s ease;
 		display: flex;
 		flex-direction: column;
+		position: relative;
 	}
 
 	.room-card:hover {
-		transform: translateY(-6px);
-		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+		transform: translateY(-4px);
+		box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
 	}
 
 	.room-image {
 		position: relative;
 		width: 100%;
-		height: 200px;
+		height: 220px;
 		overflow: hidden;
 	}
 
@@ -902,14 +902,17 @@ const TRIP_GUIDES = [
 
 	.room-badge {
 		position: absolute;
-		top: 12px;
-		left: 12px;
-		background: #d97706;
+		top: 14px;
+		left: 14px;
+		background: linear-gradient(135deg, #d97706, #b45309);
 		color: white;
-		padding: 0.3rem 0.9rem;
+		padding: 0.35rem 1rem;
 		border-radius: 20px;
 		font-size: 0.78rem;
-		font-weight: 600;
+		font-weight: 700;
+		letter-spacing: 0.02em;
+		box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+		backdrop-filter: blur(4px);
 	}
 
 	.room-details {
@@ -920,9 +923,10 @@ const TRIP_GUIDES = [
 	}
 
 	.room-details h3 {
-		font-size: 1.2rem;
+		font-size: 1.25rem;
 		color: #1c1410;
-		margin: 0 0 0.25rem;
+		margin: 0 0 0.3rem;
+		font-weight: 700;
 	}
 
 	.room-meta {
@@ -949,10 +953,14 @@ const TRIP_GUIDES = [
 	.room-features li {
 		font-size: 0.82rem;
 		color: #4b3c30;
-		list-style: none;
 		display: inline-flex;
 		align-items: center;
-		gap: 0.25rem;
+		gap: 0.35rem;
+		padding: 0.35rem 0.75rem;
+		background: #fefaf4;
+		border-radius: 8px;
+		border: 1px solid #f5e6cc;
+		font-weight: 500;
 	}
 
 	.room-features li::before {
@@ -982,10 +990,28 @@ const TRIP_GUIDES = [
 	}
 
 	.room-price-row .btn {
-		padding: 0.5rem 1.2rem;
-		font-size: 0.85rem;
-		font-weight: 600;
+		padding: 0.6rem 1.4rem;
+		font-size: 0.88rem;
+		font-weight: 700;
 		border-radius: 999px;
+		background: #25d366;
+		color: white;
+		border: none;
+		cursor: pointer;
+		text-decoration: none;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.35rem;
+		transition: all 0.25s ease;
+		white-space: nowrap;
+		box-shadow: 0 2px 10px rgba(37, 211, 102, 0.35);
+	}
+
+	.room-price-row .btn:hover {
+		background: #1ebc57;
+		transform: translateY(-2px);
+		box-shadow: 0 6px 16px rgba(37, 211, 102, 0.45);
+		color: white;
 	}
 
 	/* ========== AMENITIES ========== */
