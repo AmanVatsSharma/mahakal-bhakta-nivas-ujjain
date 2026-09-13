@@ -1,22 +1,34 @@
----
-title: 'Ganesh Chaturthi in Ujjain: Ten Days of Bappa in the Temple City'
-description: 'Ganesh Chaturthi in Ujjain brings Chintaman Ganesh darshan, household sthapana, pandal walks and immersion processions. Plan ten days of Bappa with this local guide.'
+---title: 'Ganesh Chaturthi in Ujjain: Ten Days of Bappa in the Temple City'
+description: Ganesh Chaturthi in Ujjain brings Chintaman Ganesh darshan, household
+  sthapana, pandal walks and immersion processions. Plan ten days of Bappa with this
+  local guide.
 pubDate: 2026-09-09
-heroImage: '/gallery/5.jpg'
-heroAlt: 'Ganesh idol decorated with marigold garlands for Ganesh Chaturthi in Ujjain'
-tags: ['ujjain', 'festivals']
-keywords: ['ganesh chaturthi ujjain', 'chintaman ganesh chaturthi']
+heroImage: /gallery/5.jpg
+heroAlt: Ganesh idol decorated with marigold garlands for Ganesh Chaturthi in Ujjain
+tags:
+- ujjain
+- festivals
+keywords:
+- ganesh chaturthi ujjain
+- chintaman ganesh chaturthi
 faq:
-  - q: 'When is Ganesh Chaturthi celebrated in Ujjain?'
-    a: 'Ganesh Chaturthi falls on the Shukla Chaturthi of the lunar month of Bhadrapada. Since it is a lunar date, confirm the exact day with a panchang each year.'
-  - q: 'Which Ganesh temple is most famous in Ujjain?'
-    a: 'Chintaman Ganesh, just outside the old city, is the most beloved Ganesh shrine of Ujjain. Devotees traditionally seek his darshan before starting major work or a pilgrimage.'
-  - q: 'How long does Ganesh Chaturthi last?'
-    a: 'Household and pandal installations typically run ten days, ending with immersion processions on Anant Chaturdashi. Daily darshan and aarti continue through the period.'
-  - q: 'Is Ujjain crowded during Ganesh Chaturthi?'
-    a: 'The first day and the immersion day see the biggest spikes around Chintaman Ganesh and the procession routes. Plan extra travel time on those days.'
-  - q: 'Can we do Mahakal darshan during Ganesh Chaturthi?'
-    a: 'Yes, both temples can be covered on the same trip. Many families take an early Mahakal darshan and then visit Chintaman Ganesh, or split them across two mornings.'
+- q: When is Ganesh Chaturthi celebrated in Ujjain?
+  a: Ganesh Chaturthi falls on the Shukla Chaturthi of the lunar month of Bhadrapada.
+    Since it is a lunar date, confirm the exact day with a panchang each year.
+- q: Which Ganesh temple is most famous in Ujjain?
+  a: Chintaman Ganesh, just outside the old city, is the most beloved Ganesh shrine
+    of Ujjain. Devotees traditionally seek his darshan before starting major work
+    or a pilgrimage.
+- q: How long does Ganesh Chaturthi last?
+  a: Household and pandal installations typically run ten days, ending with immersion
+    processions on Anant Chaturdashi. Daily darshan and aarti continue through the
+    period.
+- q: Is Ujjain crowded during Ganesh Chaturthi?
+  a: The first day and the immersion day see the biggest spikes around Chintaman Ganesh
+    and the procession routes. Plan extra travel time on those days.
+- q: Can we do Mahakal darshan during Ganesh Chaturthi?
+  a: Yes, both temples can be covered on the same trip. Many families take an early
+    Mahakal darshan and then visit Chintaman Ganesh, or split them across two mornings.
 ---
 
 Every temple city keeps a household god, and Ujjain's is elephant-headed. When **Ganesh Chaturthi in Ujjain** arrives — on the Shukla Chaturthi of Bhadrapada — the god of beginnings takes over the city for ten days: in homes, on street corners, and at the shrine devotees consider the city's oldest blessing, **Chintaman Ganesh**.

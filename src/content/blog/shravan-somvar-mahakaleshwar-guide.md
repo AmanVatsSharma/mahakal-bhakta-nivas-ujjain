@@ -1,20 +1,36 @@
----
-title: 'Shravan Somvar at Mahakaleshwar: Complete Sawan Month Guide'
-description: 'Shravan month at Mahakaleshwar Ujjain — Sawan Somvar crowds, aarti timings, kanwar yatra, what to expect each Monday, and how to plan stay and darshan.'
+---title: 'Shravan Somvar at Mahakaleshwar: Complete Sawan Month Guide'
+description: Shravan month at Mahakaleshwar Ujjain — Sawan Somvar crowds, aarti timings,
+  kanwar yatra, what to expect each Monday, and how to plan stay and darshan.
 pubDate: 2026-07-23
-heroImage: '/gallery/2.jpg'
-heroAlt: 'Monsoon season room ready for Shravan Somvar pilgrims in Ujjain'
-tags: ['festivals', 'shravan', 'mahakaleshwar', 'travel-planning']
-keywords: ['shravan somvar mahakaleshwar', 'sawan month ujjain', 'kanwar yatra ujjain', 'sawan somvar darshan']
+heroImage: /gallery/2.jpg
+heroAlt: Monsoon season room ready for Shravan Somvar pilgrims in Ujjain
+tags:
+- festivals
+- shravan
+- mahakaleshwar
+- travel-planning
+keywords:
+- shravan somvar mahakaleshwar
+- sawan month ujjain
+- kanwar yatra ujjain
+- sawan somvar darshan
 faq:
-  - q: 'Why is Shravan month special at Mahakaleshwar?'
-    a: 'Shravan (Jul-Aug) is the holiest month for Shiva worship, and its Mondays (Somvar) are the most auspicious days for Mahakal darshan. Devotees, including kanwariyas carrying Ganga water, converge on Ujjain in very large numbers.'
-  - q: 'How crowded are Sawan Mondays at Mahakaleshwar?'
-    a: 'Extremely — the heaviest recurring crowds of the year outside Mahashivratri. Darshan queues can take several hours, and the temple quarter is pedestrian-heavy through the day and night.'
-  - q: 'What should I carry for Shravan Somvar darshan?'
-    a: 'Rain protection (monsoon season), dry footwear alternatives, minimal belongings, water, and patience. Book rooms well in advance — walking-distance stays fill first.'
-  - q: 'Are aarti timings different in Shravan?'
-    a: 'Bhasma Aarti continues daily through Shravan with peak demand; special decorations and extended darshan hours are common on Somvars. Check the official portal notice for each Monday changes.'
+- q: Why is Shravan month special at Mahakaleshwar?
+  a: Shravan (Jul-Aug) is the holiest month for Shiva worship, and its Mondays (Somvar)
+    are the most auspicious days for Mahakal darshan. Devotees, including kanwariyas
+    carrying Ganga water, converge on Ujjain in very large numbers.
+- q: How crowded are Sawan Mondays at Mahakaleshwar?
+  a: Extremely — the heaviest recurring crowds of the year outside Mahashivratri.
+    Darshan queues can take several hours, and the temple quarter is pedestrian-heavy
+    through the day and night.
+- q: What should I carry for Shravan Somvar darshan?
+  a: Rain protection (monsoon season), dry footwear alternatives, minimal belongings,
+    water, and patience. Book rooms well in advance — walking-distance stays fill
+    first.
+- q: Are aarti timings different in Shravan?
+  a: Bhasma Aarti continues daily through Shravan with peak demand; special decorations
+    and extended darshan hours are common on Somvars. Check the official portal notice
+    for each Monday changes.
 ---
 
 When the monsoon fills the Shipra, Shravan arrives — and with it the most intense month in Mahakal's calendar. Sawan turns Ujjain's temple quarter into a continuous flow of devotees: saffron-clad kanwariyas carrying Ganga water, families observing Somvar vrat, newlyweds beginning married life with Mahakal's blessings. If this is your Shravan, here is the complete picture.

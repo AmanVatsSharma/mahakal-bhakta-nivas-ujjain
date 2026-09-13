@@ -1,20 +1,34 @@
----
-title: '2-Day Ujjain Temple Trip: Complete Itinerary With Stay, Aartis & Food'
-description: 'The perfect 2-day Ujjain itinerary — Bhasma Aarti, Mahakaleshwar darshan, Mahakal Lok, Kal Bhairav, Ram Ghat, Sandhya Aarti, with timings, food stops and where to stay.'
+---title: '2-Day Ujjain Temple Trip: Complete Itinerary With Stay, Aartis & Food'
+description: The perfect 2-day Ujjain itinerary — Bhasma Aarti, Mahakaleshwar darshan,
+  Mahakal Lok, Kal Bhairav, Ram Ghat, Sandhya Aarti, with timings, food stops and
+  where to stay.
 pubDate: 2026-08-13
-heroImage: '/gallery/8.jpg'
-heroAlt: 'Devotees walking through the temple quarter of Ujjain'
-tags: ['travel-planning', 'itinerary', 'ujjain', 'mahakaleshwar']
-keywords: ['2 day ujjain itinerary', 'ujjain temple trip plan', 'ujjain darshan plan', 'ujjain 2 days trip']
+heroImage: /gallery/8.jpg
+heroAlt: Devotees walking through the temple quarter of Ujjain
+tags:
+- travel-planning
+- itinerary
+- ujjain
+- mahakaleshwar
+keywords:
+- 2 day ujjain itinerary
+- ujjain temple trip plan
+- ujjain darshan plan
+- ujjain 2 days trip
 faq:
-  - q: 'Is 2 days enough for Ujjain darshan?'
-    a: 'Yes — 2 days covers Mahakaleshwar darshan, one major aarti, Mahakal Lok, Kal Bhairav, Ram Ghat and the main nearby temples comfortably, without rushing.'
-  - q: 'What is the best 2-day plan for Ujjain?'
-    a: 'Day 1: arrive, evening Mahakal darshan + Sandhya Aarti + Mahakal Lok. Day 2: Bhasma Aarti (if booked) or morning darshan, then Ram Ghat, Harsiddhi, Chintaman Ganesh and Kal Bhairav before departure.'
-  - q: 'Where should I stay for a 2-day Ujjain trip?'
-    a: 'Stay near the Mahakaleshwar temple quarter both nights — it keeps early-morning aarti and evening ghats walkable. Dharamshalas from ₹600 make the short stay economical.'
-  - q: 'Which temples are must-visit around Ujjain?'
-    a: 'Mahakaleshwar (Jyotirlinga), Kal Bhairav, Harsiddhi Shakti Peeth, Chintaman Ganesh, Ram Ghat on the Shipra, and — if time allows — Mangalnath and Sandipani Ashram.'
+- q: Is 2 days enough for Ujjain darshan?
+  a: Yes — 2 days covers Mahakaleshwar darshan, one major aarti, Mahakal Lok, Kal
+    Bhairav, Ram Ghat and the main nearby temples comfortably, without rushing.
+- q: What is the best 2-day plan for Ujjain?
+  a: 'Day 1: arrive, evening Mahakal darshan + Sandhya Aarti + Mahakal Lok. Day 2:
+    Bhasma Aarti (if booked) or morning darshan, then Ram Ghat, Harsiddhi, Chintaman
+    Ganesh and Kal Bhairav before departure.'
+- q: Where should I stay for a 2-day Ujjain trip?
+  a: Stay near the Mahakaleshwar temple quarter both nights — it keeps early-morning
+    aarti and evening ghats walkable. Dharamshalas from ₹600 make the short stay economical.
+- q: Which temples are must-visit around Ujjain?
+  a: Mahakaleshwar (Jyotirlinga), Kal Bhairav, Harsiddhi Shakti Peeth, Chintaman Ganesh,
+    Ram Ghat on the Shipra, and — if time allows — Mangalnath and Sandipani Ashram.
 ---
 
 Two days is the sweet spot for Ujjain: enough for Bhasma Aarti, unhurried darshan, the evening river ghats, and the city's other great temples — without the fatigue of a rushed day-trip. This is the itinerary our guests follow most often, tuned around real temple timings.

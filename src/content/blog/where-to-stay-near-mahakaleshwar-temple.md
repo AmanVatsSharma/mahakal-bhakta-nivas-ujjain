@@ -1,20 +1,35 @@
----
-title: 'Where to Stay Near Mahakaleshwar Temple: Dharamshala vs Hotel vs Guest House'
-description: 'Honest comparison of staying near Mahakaleshwar Temple — dharamshala vs hotel vs guest house vs bhakta nivas: prices, distance, food, and which fits your yatra.'
+---title: 'Where to Stay Near Mahakaleshwar Temple: Dharamshala vs Hotel vs Guest House'
+description: 'Honest comparison of staying near Mahakaleshwar Temple — dharamshala
+  vs hotel vs guest house vs bhakta nivas: prices, distance, food, and which fits
+  your yatra.'
 pubDate: 2026-08-25
-heroImage: '/gallery/1.jpg'
-heroAlt: 'Clean dormitory room at a dharamshala near Mahakaleshwar Temple, Ujjain'
-tags: ['booking', 'stay', 'ujjain', 'travel-planning']
-keywords: ['stay near mahakaleshwar temple', 'dharamshala vs hotel ujjain', 'where to stay in ujjain', 'bhakta nivas ujjain']
+heroImage: /gallery/1.jpg
+heroAlt: Clean dormitory room at a dharamshala near Mahakaleshwar Temple, Ujjain
+tags:
+- booking
+- stay
+- ujjain
+- travel-planning
+keywords:
+- stay near mahakaleshwar temple
+- dharamshala vs hotel ujjain
+- where to stay in ujjain
+- bhakta nivas ujjain
 faq:
-  - q: 'What is a bhakta nivas or dharamshala?'
-    a: 'A dharamshala (also called bhakta nivas or yatri niwas) is pilgrim accommodation — simple, clean, affordable rooms run for devotees, usually within walking distance of the temple, often with pure vegetarian food.'
-  - q: 'Is a dharamshala near Mahakaleshwar cheaper than a hotel?'
-    a: 'Yes, typically 40–70% cheaper. Dharamshala rooms near the temple start around ₹600/night, while hotel rooms in the same zone usually start around ₹1,500–2,500.'
-  - q: 'Should I book accommodation in advance for Ujjain?'
-    a: 'For regular days, a few days ahead is enough. For Mondays, Mahashivratri, Shravan month, and especially Kumbh 2028, book weeks in advance — walking-distance rooms sell out first.'
-  - q: 'How far should I stay from Mahakaleshwar Temple?'
-    a: 'Within 500 m – 1 km is ideal. It lets you walk to early-morning aarti, avoid parking stress, and return for rest during the day.'
+- q: What is a bhakta nivas or dharamshala?
+  a: A dharamshala (also called bhakta nivas or yatri niwas) is pilgrim accommodation
+    — simple, clean, affordable rooms run for devotees, usually within walking distance
+    of the temple, often with pure vegetarian food.
+- q: Is a dharamshala near Mahakaleshwar cheaper than a hotel?
+  a: Yes, typically 40–70% cheaper. Dharamshala rooms near the temple start around
+    ₹600/night, while hotel rooms in the same zone usually start around ₹1,500–2,500.
+- q: Should I book accommodation in advance for Ujjain?
+  a: For regular days, a few days ahead is enough. For Mondays, Mahashivratri, Shravan
+    month, and especially Kumbh 2028, book weeks in advance — walking-distance rooms
+    sell out first.
+- q: How far should I stay from Mahakaleshwar Temple?
+  a: Within 500 m – 1 km is ideal. It lets you walk to early-morning aarti, avoid
+    parking stress, and return for rest during the day.
 ---
 
 Every Ujjain pilgrim asks the same question after booking aarti passes: *where should we sleep?* The answer shapes your whole trip — especially with a 4 AM Bhasma Aarti on the agenda. Here is an honest comparison of your four realistic options near Mahakaleshwar Temple.

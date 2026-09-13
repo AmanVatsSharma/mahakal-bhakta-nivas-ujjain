@@ -1,22 +1,35 @@
----
-title: 'A Heritage Walk Through Old Ujjain: Lanes, Havelis and Hidden Shrines'
-description: 'An Ujjain heritage walk through the old city — Gopal Mandir Road lanes, havelis and sweet shops, Ram Ghat, Bhartrihari Cave steps and the pooja bazaars in 2 hours.'
+---title: 'A Heritage Walk Through Old Ujjain: Lanes, Havelis and Hidden Shrines'
+description: An Ujjain heritage walk through the old city — Gopal Mandir Road lanes,
+  havelis and sweet shops, Ram Ghat, Bhartrihari Cave steps and the pooja bazaars
+  in 2 hours.
 pubDate: 2026-09-10
-heroImage: '/gallery/7.jpg'
-heroAlt: 'Traditional carved doorway in an old lane of Ujjain'
-tags: ['ujjain', 'heritage', 'walking-tour']
-keywords: ['ujjain heritage walk', 'old ujjain', 'ujjain old city']
+heroImage: /gallery/7.jpg
+heroAlt: Traditional carved doorway in an old lane of Ujjain
+tags:
+- ujjain
+- heritage
+- walking-tour
+keywords:
+- ujjain heritage walk
+- old ujjain
+- ujjain old city
 faq:
-  - q: 'How long does an Ujjain heritage walk take?'
-    a: 'A comfortable route through the old city takes 90 to 120 minutes at an unhurried pace. Add extra time for tea, sweets, shopping and photographs.'
-  - q: 'Where should an old Ujjain walk start?'
-    a: 'Gopal Mandir Road is the ideal base, sitting close to the Mahakaleshwar gate with the temple quarter and river lanes unfolding within minutes on foot.'
-  - q: 'What will I see on an Ujjain old city walk?'
-    a: 'Expect carved haveli doorways, wooden bracket eaves, pooja bazaars, old sweet shops, lane shrines and the open riverfront at Ram Ghat with the Bhartrihari Cave steps nearby.'
-  - q: 'When is the best time for the walk?'
-    a: 'Early morning, roughly sunrise to 9 am, offers cool air, opening shops and aarti energy near the ghats. Evenings also work but with thicker crowds.'
-  - q: 'Is the old city walkable for seniors?'
-    a: 'Yes, with pauses. The core lanes are level and compact, and tea shops make natural rest stops. The longer Gopal Mandir leg is optional and can be done by auto.'
+- q: How long does an Ujjain heritage walk take?
+  a: A comfortable route through the old city takes 90 to 120 minutes at an unhurried
+    pace. Add extra time for tea, sweets, shopping and photographs.
+- q: Where should an old Ujjain walk start?
+  a: Gopal Mandir Road is the ideal base, sitting close to the Mahakaleshwar gate
+    with the temple quarter and river lanes unfolding within minutes on foot.
+- q: What will I see on an Ujjain old city walk?
+  a: Expect carved haveli doorways, wooden bracket eaves, pooja bazaars, old sweet
+    shops, lane shrines and the open riverfront at Ram Ghat with the Bhartrihari Cave
+    steps nearby.
+- q: When is the best time for the walk?
+  a: Early morning, roughly sunrise to 9 am, offers cool air, opening shops and aarti
+    energy near the ghats. Evenings also work but with thicker crowds.
+- q: Is the old city walkable for seniors?
+  a: Yes, with pauses. The core lanes are level and compact, and tea shops make natural
+    rest stops. The longer Gopal Mandir leg is optional and can be done by auto.
 ---
 
 The old city is where Ujjain stops being a destination and becomes an experience. Wedged between the Mahakaleshwar temple and the Shipra, **old Ujjain** is a fabric of lanes where carved doors survive beside mobile recharge shops, and the smell of ghee-laden sweets drifts over pooja bazaars that have sold the same garlands for generations. An **Ujjain heritage walk** through this quarter takes 90 to 120 unhurried minutes — and rewards you more than any taxi circuit ever could.

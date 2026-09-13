@@ -1,20 +1,36 @@
----
-title: 'Vikram Kirti Mandir Ujjain: Museum of the City of Vikramaditya'
-description: 'Vikram Kirti Mandir in Ujjain is the city museum of the Vikramaditya legacy — manuscripts, the living Vikram Samvat calendar heritage and a calm stop near Ram Ghat.'
+---title: 'Vikram Kirti Mandir Ujjain: Museum of the City of Vikramaditya'
+description: Vikram Kirti Mandir in Ujjain is the city museum of the Vikramaditya
+  legacy — manuscripts, the living Vikram Samvat calendar heritage and a calm stop
+  near Ram Ghat.
 pubDate: 2026-09-03
-heroImage: '/gallery/6.jpg'
-heroAlt: 'The Vikram Kirti Mandir cultural institute and museum building near Ram Ghat in Ujjain'
-tags: ['ujjain', 'heritage', 'museums']
-keywords: ['vikram kirti mandir ujjain', 'vikramaditya ujjain', 'ujjain museum']
+heroImage: /gallery/6.jpg
+heroAlt: The Vikram Kirti Mandir cultural institute and museum building near Ram Ghat
+  in Ujjain
+tags:
+- ujjain
+- heritage
+- museums
+keywords:
+- vikram kirti mandir ujjain
+- vikramaditya ujjain
+- ujjain museum
 faq:
-  - q: 'What is Vikram Kirti Mandir in Ujjain?'
-    a: 'It is a cultural institute and museum of the 20th-century Scindia era, established in memory of emperor Vikramaditya. It stands near Ram Ghat and houses a small museum with manuscripts and cultural displays.'
-  - q: 'Who was Vikramaditya and why is he linked to Ujjain?'
-    a: 'Vikramaditya is the legendary emperor whose throne and court tradition places in Ujjain, the ancient Avantika. The Vikram Samvat calendar, traditionally credited to him, still runs through religious and civic life across India.'
-  - q: 'What can visitors see inside this Ujjain museum?'
-    a: 'Expect a compact collection of manuscripts, sculpture and artifacts, along with displays on the heritage of Ujjain. The institute also hosts cultural events, so the experience varies with what is on during your visit.'
-  - q: 'How much time should I plan for a visit?'
-    a: 'About 45 minutes to an hour covers the museum at a relaxed pace. Pair it with Ram Ghat and the Vedh Shala observatory for a full heritage morning within a short drive or an easy walk.'
+- q: What is Vikram Kirti Mandir in Ujjain?
+  a: It is a cultural institute and museum of the 20th-century Scindia era, established
+    in memory of emperor Vikramaditya. It stands near Ram Ghat and houses a small
+    museum with manuscripts and cultural displays.
+- q: Who was Vikramaditya and why is he linked to Ujjain?
+  a: Vikramaditya is the legendary emperor whose throne and court tradition places
+    in Ujjain, the ancient Avantika. The Vikram Samvat calendar, traditionally credited
+    to him, still runs through religious and civic life across India.
+- q: What can visitors see inside this Ujjain museum?
+  a: Expect a compact collection of manuscripts, sculpture and artifacts, along with
+    displays on the heritage of Ujjain. The institute also hosts cultural events,
+    so the experience varies with what is on during your visit.
+- q: How much time should I plan for a visit?
+  a: About 45 minutes to an hour covers the museum at a relaxed pace. Pair it with
+    Ram Ghat and the Vedh Shala observatory for a full heritage morning within a short
+    drive or an easy walk.
 ---
 
 Every city keeps one quiet room where it stores its memory. In Ujjain, that room is the **Vikram Kirti Mandir** — the cultural institute and museum established in memory of **emperor Vikramaditya**, the legendary king whose name still opens the calendar on millions of Indian lips. It stands near Ram Ghat, modest and easy to miss between the temple crowds and the river, and it rewards exactly the kind of traveller a pilgrimage town tends to rush: the one who pauses. This guide covers what this **Ujjain museum** holds, what **Vikramaditya** means to this city, and how to fold the visit into a temple-heavy day without losing momentum.

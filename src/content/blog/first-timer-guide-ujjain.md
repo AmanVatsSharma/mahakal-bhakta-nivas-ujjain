@@ -1,22 +1,39 @@
----
-title: 'Ujjain for First-Timers: The Only Guide You Need Before Your First Mahakal Trip'
-description: 'First time in Ujjain? This beginner travel guide covers one-day vs two-day plans, the one aarti to choose, where to stay near the Mahakaleshwar gate, and five first-timer mistakes.'
+---title: 'Ujjain for First-Timers: The Only Guide You Need Before Your First Mahakal
+  Trip'
+description: First time in Ujjain? This beginner travel guide covers one-day vs two-day
+  plans, the one aarti to choose, where to stay near the Mahakaleshwar gate, and five
+  first-timer mistakes.
 pubDate: 2026-09-09
-heroImage: '/gallery/8.jpg'
-heroAlt: 'First-time visitor view of the Mahakal Lok corridor at Mahakaleshwar'
-tags: ['ujjain', 'travel-guide', 'first-timer']
-keywords: ['ujjain first time', 'ujjain travel guide', 'first time mahakaleshwar']
+heroImage: /gallery/8.jpg
+heroAlt: First-time visitor view of the Mahakal Lok corridor at Mahakaleshwar
+tags:
+- ujjain
+- travel-guide
+- first-timer
+keywords:
+- ujjain first time
+- ujjain travel guide
+- first time mahakaleshwar
 faq:
-  - q: 'How many days are enough for a first Ujjain trip?'
-    a: 'One well-planned day covers Mahakaleshwar darshan and two or three nearby temples. Two days let you add bhasma aarti, the ghats and the wider temple circuit without rushing.'
-  - q: 'Can first-timers attend bhasma aarti?'
-    a: 'Yes, if you register in advance with ID and photo and can manage the pre-dawn queue. If that sounds hard, the evening sandhya aarti is the easier first-time choice.'
-  - q: 'Where should first-time visitors stay in Ujjain?'
-    a: 'Stay within walking distance of the Mahakaleshwar gate on Gopal Mandir Road. A room 200 m from the gate removes transport, parking and early-morning logistics entirely.'
-  - q: 'What should I wear for Mahakaleshwar darshan?'
-    a: 'Simple, modest, traditionally styled clothing. Avoid shorts and sleeveless outfits, keep footwear easy to remove, and leave leather items and electronics in your room.'
-  - q: 'Is one day enough for Mahakaleshwar darshan?'
-    a: 'Yes. With a room near the gate and an early start, first-timers comfortably do darshan, prasad and a couple of nearby temples in a single day.'
+- q: How many days are enough for a first Ujjain trip?
+  a: One well-planned day covers Mahakaleshwar darshan and two or three nearby temples.
+    Two days let you add bhasma aarti, the ghats and the wider temple circuit without
+    rushing.
+- q: Can first-timers attend bhasma aarti?
+  a: Yes, if you register in advance with ID and photo and can manage the pre-dawn
+    queue. If that sounds hard, the evening sandhya aarti is the easier first-time
+    choice.
+- q: Where should first-time visitors stay in Ujjain?
+  a: Stay within walking distance of the Mahakaleshwar gate on Gopal Mandir Road.
+    A room 200 m from the gate removes transport, parking and early-morning logistics
+    entirely.
+- q: What should I wear for Mahakaleshwar darshan?
+  a: Simple, modest, traditionally styled clothing. Avoid shorts and sleeveless outfits,
+    keep footwear easy to remove, and leave leather items and electronics in your
+    room.
+- q: Is one day enough for Mahakaleshwar darshan?
+  a: Yes. With a room near the gate and an early start, first-timers comfortably do
+    darshan, prasad and a couple of nearby temples in a single day.
 ---
 
 So this is your **first time in Ujjain**. The city of Mahakal can feel like a lot at once — aartis with registration passes, a temple the size of a fortress, ghats, parikramas, and a hundred voices telling you what not to miss. This **ujjain travel guide for first-timers** compresses everything you genuinely need before a **first time Mahakaleshwar** trip into one page. Read it once; plan in twenty minutes.

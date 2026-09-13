@@ -27,9 +27,7 @@ const TRIP_GUIDES = [
 	<!-- Hero Section: banner with CTA buttons overlaid -->
 	<section class="hero" id="home" aria-label="Mahakal Bhakta Nivas introduction">
 		<h1 class="sr-only">Dharamshala &amp; Rooms Near Mahakaleshwar Temple, Ujjain — Mahakal Bhakta Nivas</h1>
-		<a class="hero-bg hero-link" href={waLink} target="_blank" rel="noopener noreferrer" aria-label="Book a room on WhatsApp — Mahakal Bhakta Nivas, Ujjain">
-			<img src="/hero-banner.png" alt="Mahakal Bhakta Nivas Ujjain — rooms and dharamshala near Mahakaleshwar Jyotirlinga temple" class="hero-banner-img" />
-		</a>
+		<img src="/hero-banner.png" alt="Mahakal Bhakta Nivas Ujjain — rooms and dharamshala near Mahakaleshwar Jyotirlinga temple" class="hero-banner-img" />
 
 		<!-- CTA Buttons overlaid on banner -->
 		<div class="hero-cta-overlay">
@@ -639,11 +637,11 @@ const TRIP_GUIDES = [
 		transform: translate(-50%, -50%);
 		z-index: 10;
 		display: flex;
-		gap: 1rem;
+		gap: 0.85rem;
 		justify-content: center;
 		align-items: center;
-		flex-wrap: wrap;
-		max-width: 580px;
+		flex-wrap: nowrap;
+		max-width: 520px;
 		width: calc(100% - 2rem);
 	}
 
@@ -690,11 +688,11 @@ const TRIP_GUIDES = [
 		color: #1c1410;
 	}
 
-	@media (max-width: 560px) {
+	@media (max-width: 480px) {
 		.hero-cta-overlay {
 			flex-direction: column;
-			top: 75%;
 			gap: 0.75rem;
+			max-width: 280px;
 		}
 
 		.hero-cta-btn {
@@ -1681,7 +1679,34 @@ const TRIP_GUIDES = [
 		}
 
 		.rooms-grid {
-			grid-template-columns: 1fr;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1rem;
+		}
+
+		.room-card {
+			border-radius: 12px;
+		}
+
+		.room-card img {
+			height: 160px;
+		}
+
+		.room-card-body {
+			padding: 1rem;
+		}
+
+		.room-card-body h3 {
+			font-size: 1rem;
+		}
+
+		.room-card-body p {
+			font-size: 0.85rem;
+		}
+
+		.room-card-meta {
+			flex-direction: column;
+			gap: 0.4rem;
+			font-size: 0.8rem;
 		}
 
 		.amenities-grid {

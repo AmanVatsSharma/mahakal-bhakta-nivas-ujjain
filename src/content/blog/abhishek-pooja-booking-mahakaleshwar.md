@@ -1,20 +1,35 @@
----
-title: 'Abhishek & Pooja Booking at Mahakaleshwar: Types, Costs and Process'
-description: 'How to book abhishek and pooja at Mahakaleshwar Temple — Rudrabhishek and other sevas, approximate costs, online process, documents, and common mistakes.'
+---title: 'Abhishek & Pooja Booking at Mahakaleshwar: Types, Costs and Process'
+description: How to book abhishek and pooja at Mahakaleshwar Temple — Rudrabhishek
+  and other sevas, approximate costs, online process, documents, and common mistakes.
 pubDate: 2026-08-15
-heroImage: '/gallery/7.jpg'
-heroAlt: 'Temple premises with devotees proceeding for pooja in Ujjain'
-tags: ['booking', 'pooja', 'mahakaleshwar', 'ujjain']
-keywords: ['mahakaleshwar abhishek booking', 'rudrabhishek ujjain', 'pooja booking mahakaleshwar', 'mahakal seva booking']
+heroImage: /gallery/7.jpg
+heroAlt: Temple premises with devotees proceeding for pooja in Ujjain
+tags:
+- booking
+- pooja
+- mahakaleshwar
+- ujjain
+keywords:
+- mahakaleshwar abhishek booking
+- rudrabhishek ujjain
+- pooja booking mahakaleshwar
+- mahakal seva booking
 faq:
-  - q: 'How do I book abhishek at Mahakaleshwar?'
-    a: 'Abhishek and other sevas are bookable through the official temple portal (shrimahakaleshwar.mp.gov.in) under Pujan/Abhishek services. Choose the seva, date, and provide devotee details with photo ID.'
-  - q: 'What does Rudrabhishek cost at Mahakaleshwar?'
-    a: 'Costs vary by seva type and are revised periodically. Check the current fee list on the official portal at the time of booking — treat any agent quoting far higher amounts as a red flag.'
-  - q: 'Can pooja be booked on behalf of family members?'
-    a: 'Yes — book with the name of the devotee performing or sponsoring the pooja, and carry that person ID (and yours). Each participating devotee generally needs ID.'
-  - q: 'Do I need to book pooja in advance?'
-    a: 'For specific sevas on specific dates (birthdays, anniversaries, Shravan Somvar), yes — book as early as the portal allows. On ordinary weekdays, availability is usually easier.'
+- q: How do I book abhishek at Mahakaleshwar?
+  a: Abhishek and other sevas are bookable through the official temple portal (shrimahakaleshwar.mp.gov.in)
+    under Pujan/Abhishek services. Choose the seva, date, and provide devotee details
+    with photo ID.
+- q: What does Rudrabhishek cost at Mahakaleshwar?
+  a: Costs vary by seva type and are revised periodically. Check the current fee list
+    on the official portal at the time of booking — treat any agent quoting far higher
+    amounts as a red flag.
+- q: Can pooja be booked on behalf of family members?
+  a: Yes — book with the name of the devotee performing or sponsoring the pooja, and
+    carry that person ID (and yours). Each participating devotee generally needs ID.
+- q: Do I need to book pooja in advance?
+  a: For specific sevas on specific dates (birthdays, anniversaries, Shravan Somvar),
+    yes — book as early as the portal allows. On ordinary weekdays, availability is
+    usually easier.
 ---
 
 Beyond darshan and aarti, Mahakaleshwar offers devotees the chance to personally perform **abhishek** — the ritual bathing of the Shiva linga — and sponsor specific pujas. For many families this is the emotional core of the yatra: a Mundan-and-abhishek for a child's first birthday, a Rudrabhishek for a parent's health, a simple milk abhishek as thanks. Here is how the booking actually works.

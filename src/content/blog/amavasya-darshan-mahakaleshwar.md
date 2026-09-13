@@ -1,20 +1,35 @@
----
-title: 'Amavasya at Mahakaleshwar: The New-Moon Darshan of the Ancestors'
-description: 'Amavasya darshan at Mahakaleshwar and Ujjain — the new moon day for ancestral peace, tarpan at Ram Ghat, Hariyali Amavasya melas and honest crowd advice.'
+---title: 'Amavasya at Mahakaleshwar: The New-Moon Darshan of the Ancestors'
+description: Amavasya darshan at Mahakaleshwar and Ujjain — the new moon day for ancestral
+  peace, tarpan at Ram Ghat, Hariyali Amavasya melas and honest crowd advice.
 pubDate: 2026-09-04
-heroImage: '/gallery/4.jpg'
-heroAlt: 'Oil lamps floating on the Shipra river during Amavasya evening rituals in Ujjain'
-tags: ['ujjain', 'temples', 'faith']
-keywords: ['amavasya darshan ujjain', 'mahakal amavasya', 'pitr darshan amavasya']
+heroImage: /gallery/4.jpg
+heroAlt: Oil lamps floating on the Shipra river during Amavasya evening rituals in
+  Ujjain
+tags:
+- ujjain
+- temples
+- faith
+keywords:
+- amavasya darshan ujjain
+- mahakal amavasya
+- pitr darshan amavasya
 faq:
-  - q: 'Why is Amavasya special at Mahakaleshwar?'
-    a: 'The new moon, or Amavasya, is traditionally the day of the ancestors, and darshan of Mahakal on this day is held to bring peace to departed family members. Many families time their Ujjain trip to an Amavasya for this reason.'
-  - q: 'What is the traditional Amavasya sequence in Ujjain?'
-    a: 'Devotees first perform tarpan for the ancestors at Ram Ghat on the Shipra, and then proceed for Mahakal darshan. Doing the ghat rituals before the temple darshan is the customary order.'
-  - q: 'What is Hariyali Amavasya in Ujjain?'
-    a: 'Hariyali Amavasya is the new moon of the green monsoon that falls in Shravan, and it draws a large mela of pilgrims to the temple and the ghats. Shravan Amavasya similarly brings big festive crowds.'
-  - q: 'Is Amavasya a good day for first time visitors?'
-    a: 'It is deeply significant but physically demanding, since crowds swell from early morning. If a peaceful first darshan matters more to you, pick an ordinary weekday and save the Amavasya experience for a later visit.'
+- q: Why is Amavasya special at Mahakaleshwar?
+  a: The new moon, or Amavasya, is traditionally the day of the ancestors, and darshan
+    of Mahakal on this day is held to bring peace to departed family members. Many
+    families time their Ujjain trip to an Amavasya for this reason.
+- q: What is the traditional Amavasya sequence in Ujjain?
+  a: Devotees first perform tarpan for the ancestors at Ram Ghat on the Shipra, and
+    then proceed for Mahakal darshan. Doing the ghat rituals before the temple darshan
+    is the customary order.
+- q: What is Hariyali Amavasya in Ujjain?
+  a: Hariyali Amavasya is the new moon of the green monsoon that falls in Shravan,
+    and it draws a large mela of pilgrims to the temple and the ghats. Shravan Amavasya
+    similarly brings big festive crowds.
+- q: Is Amavasya a good day for first time visitors?
+  a: It is deeply significant but physically demanding, since crowds swell from early
+    morning. If a peaceful first darshan matters more to you, pick an ordinary weekday
+    and save the Amavasya experience for a later visit.
 ---
 
 Once a month, the moon disappears from the sky — and in Ujjain, the city leans toward its ancestors. **Amavasya**, the new moon, is traditionally the day of the *pitrs*, the departed, and for countless families an **Amavasya darshan at Mahakaleshwar** is not routine temple-going but a duty of love: tarpan at the ghats, then darshan of the lord of time, performed in the name of a father, a mother, a grandparent. This guide to **Mahakal Amavasya** explains the tradition, the customary sequence, the big festival amavasyas, and how to plan the day without being overwhelmed by it.

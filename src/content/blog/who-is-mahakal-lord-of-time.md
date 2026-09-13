@@ -1,20 +1,35 @@
----
-title: 'Who Is Mahakal? The Meaning of the Lord of Time in Ujjain'
-description: 'Who is Mahakal? The meaning of the lord of time in Ujjain — Shiva as the conqueror of time and death, the swayambhu shrine, and the ash symbolism of the Bhasma Aarti.'
+---title: Who Is Mahakal? The Meaning of the Lord of Time in Ujjain
+description: Who is Mahakal? The meaning of the lord of time in Ujjain — Shiva as
+  the conqueror of time and death, the swayambhu shrine, and the ash symbolism of
+  the Bhasma Aarti.
 pubDate: 2026-09-03
-heroImage: '/gallery/8.jpg'
-heroAlt: 'Flower offerings and a brass lamp glowing before a Shivling in a temple of Ujjain'
-tags: ['ujjain', 'temples', 'faith']
-keywords: ['who is mahakal', 'mahakal bhagwan', 'lord of time shiva ujjain']
+heroImage: /gallery/8.jpg
+heroAlt: Flower offerings and a brass lamp glowing before a Shivling in a temple of
+  Ujjain
+tags:
+- ujjain
+- temples
+- faith
+keywords:
+- who is mahakal
+- mahakal bhagwan
+- lord of time shiva ujjain
 faq:
-  - q: 'Who is Mahakal in Hindu tradition?'
-    a: 'Mahakal is Shiva in his form as the lord of time, from maha meaning great and kala meaning time. The name marks the deity who stands beyond time and death rather than within them.'
-  - q: 'Why is Mahakal worshipped in Ujjain specifically?'
-    a: 'Tradition holds that Ujjain, the ancient Avantika, is the seat where time itself is worshipped, anchored by the swayambhu linga of Mahakaleshwar. Old Hindu geography also placed its prime meridian through the city.'
-  - q: 'How is the Bhasma Aarti connected to Mahakal as time?'
-    a: 'The ash applied in the Bhasma Aarti is the visible sermon of the name — all things return to ash and time, and the one who remains is Mahakal. The dawn ritual turns that philosophy into something you watch and feel.'
-  - q: 'Is Mahakal the same as Shiva?'
-    a: 'Yes, Mahakal is Shiva honoured as the ruler of time, presiding deity of Ujjain. Mahakaleshwar also stands first in the traditional list of the twelve jyotirlingas.'
+- q: Who is Mahakal in Hindu tradition?
+  a: Mahakal is Shiva in his form as the lord of time, from maha meaning great and
+    kala meaning time. The name marks the deity who stands beyond time and death rather
+    than within them.
+- q: Why is Mahakal worshipped in Ujjain specifically?
+  a: Tradition holds that Ujjain, the ancient Avantika, is the seat where time itself
+    is worshipped, anchored by the swayambhu linga of Mahakaleshwar. Old Hindu geography
+    also placed its prime meridian through the city.
+- q: How is the Bhasma Aarti connected to Mahakal as time?
+  a: The ash applied in the Bhasma Aarti is the visible sermon of the name — all things
+    return to ash and time, and the one who remains is Mahakal. The dawn ritual turns
+    that philosophy into something you watch and feel.
+- q: Is Mahakal the same as Shiva?
+  a: Yes, Mahakal is Shiva honoured as the ruler of time, presiding deity of Ujjain.
+    Mahakaleshwar also stands first in the traditional list of the twelve jyotirlingas.
 ---
 
 Stand in the queue at Mahakaleshwar before dawn and you will hear the name chanted like a heartbeat: *Mahakal, Mahakal, Mahakal*. But **who is Mahakal**? The question sounds simple, and the answer is one of the profoundest ideas in Hindu thought — the reason this city in Malwa became, of all things, **the city where time itself is worshipped**. This guide unpacks the meaning of **Mahakal bhagwan**, the philosophy behind the **lord of time in Ujjain**, and why understanding the name changes how a darshan feels.

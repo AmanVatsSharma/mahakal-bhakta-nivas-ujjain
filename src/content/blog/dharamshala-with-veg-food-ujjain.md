@@ -1,22 +1,35 @@
----
-title: 'Dharamshala With Pure Veg Food Near Mahakaleshwar: Why the Kitchen Decides Your Trip'
-description: 'A dharamshala with food in Ujjain changes the whole trip: satvik meals, no onion no garlic options, early dinner before night aartis and complimentary morning tea with prasadam.'
+---title: 'Dharamshala With Pure Veg Food Near Mahakaleshwar: Why the Kitchen Decides
+  Your Trip'
+description: 'A dharamshala with food in Ujjain changes the whole trip: satvik meals,
+  no onion no garlic options, early dinner before night aartis and complimentary morning
+  tea with prasadam.'
 pubDate: 2026-09-08
-heroImage: '/gallery/5.jpg'
-heroAlt: 'Fresh pure veg satvik thali served at a dharamshala dining hall in Ujjain'
-tags: ['ujjain', 'food', 'stay']
-keywords: ['dharamshala with food ujjain', 'veg hotel ujjain', 'satvik food ujjain']
+heroImage: /gallery/5.jpg
+heroAlt: Fresh pure veg satvik thali served at a dharamshala dining hall in Ujjain
+tags:
+- ujjain
+- food
+- stay
+keywords:
+- dharamshala with food ujjain
+- veg hotel ujjain
+- satvik food ujjain
 faq:
-  - q: 'Is food available inside the dharamshala in Ujjain?'
-    a: 'At Mahakal Bhakta Nivas, yes. Our pure veg kitchen serves meals to resident guests, and morning tea with prasadam is complimentary with every room.'
-  - q: 'Is the food satvik?'
-    a: 'Yes, the kitchen is pure vegetarian and satvik by default. Tell the kitchen your dietary practice and it will try to accommodate.'
-  - q: 'Can I get food without onion and garlic?'
-    a: 'Onion-free and garlic-free preparation is common practice in Malwa kitchens. Mention it while booking or at breakfast and the kitchen will try to accommodate.'
-  - q: 'What time should we eat dinner before the night aarti?'
-    a: 'Aim to finish dinner by about 7 PM on aarti evenings so you can walk to the temple relaxed rather than rushed.'
-  - q: 'Is the food safe for young children and elders?'
-    a: 'Home-style pure veg food from one trusted kitchen is the low-risk option in a temple town — simple, freshly cooked and not street-side.'
+- q: Is food available inside the dharamshala in Ujjain?
+  a: At Mahakal Bhakta Nivas, yes. Our pure veg kitchen serves meals to resident guests,
+    and morning tea with prasadam is complimentary with every room.
+- q: Is the food satvik?
+  a: Yes, the kitchen is pure vegetarian and satvik by default. Tell the kitchen your
+    dietary practice and it will try to accommodate.
+- q: Can I get food without onion and garlic?
+  a: Onion-free and garlic-free preparation is common practice in Malwa kitchens.
+    Mention it while booking or at breakfast and the kitchen will try to accommodate.
+- q: What time should we eat dinner before the night aarti?
+  a: Aim to finish dinner by about 7 PM on aarti evenings so you can walk to the temple
+    relaxed rather than rushed.
+- q: Is the food safe for young children and elders?
+  a: Home-style pure veg food from one trusted kitchen is the low-risk option in a
+    temple town — simple, freshly cooked and not street-side.
 ---
 
 Searches for a **dharamshala with food in Ujjain** are smarter than they look. Pilgrims quickly discover that on a darshan trip, the room is half the stay — the kitchen is the other half. Where you eat decides how your mornings start, whether you can keep vrat discipline intact, whether elders and children stay well, and how easily you flow from dinner into the night aartis. A **veg hotel in Ujjain** with its own pure vegetarian kitchen is not a small amenity; it is the operating system of the whole trip. We run exactly that kind of kitchen at our dharamshala on Gopal Mandir Road, 200 m from the Mahakaleshwar gate — here is why it matters more than most travellers expect.

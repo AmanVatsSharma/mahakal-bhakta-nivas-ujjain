@@ -1,22 +1,36 @@
----
-title: 'Sandhya Aarti at Mahakaleshwar: The Evening Darshan Families Should Not Miss'
-description: 'Sandhya aarti at Mahakaleshwar is the family-friendly evening darshan — lamps, an illuminated corridor and a 5 to 8 PM plan that suits elders and children alike.'
+---title: 'Sandhya Aarti at Mahakaleshwar: The Evening Darshan Families Should Not Miss'
+description: Sandhya aarti at Mahakaleshwar is the family-friendly evening darshan
+  — lamps, an illuminated corridor and a 5 to 8 PM plan that suits elders and children
+  alike.
 pubDate: 2026-09-07
-heroImage: '/gallery/6.jpg'
-heroAlt: 'Evening lamps glowing during sandhya aarti at Mahakaleshwar temple'
-tags: ['ujjain', 'sandhya-aarti', 'evening-darshan']
-keywords: ['sandhya aarti mahakaleshwar', 'evening aarti ujjain', 'mahakal evening darshan']
+heroImage: /gallery/6.jpg
+heroAlt: Evening lamps glowing during sandhya aarti at Mahakaleshwar temple
+tags:
+- ujjain
+- sandhya-aarti
+- evening-darshan
+keywords:
+- sandhya aarti mahakaleshwar
+- evening aarti ujjain
+- mahakal evening darshan
 faq:
-  - q: 'What time is sandhya aarti at Mahakaleshwar?'
-    a: 'The sandhya aarti is held in the evening, and exact timings shift with the season. Check the timings board or temple notice on the day of your visit.'
-  - q: 'Do I need a pass for sandhya aarti?'
-    a: 'No special pass like the bhasma aarti registration is needed for the evening aarti. It is part of regular evening darshan, though queues are longer on Mondays and festivals.'
-  - q: 'Is the evening aarti suitable for elderly devotees?'
-    a: 'Yes. The timing avoids the pre-dawn wake-up, the walk is manageable, and family members can accompany elders through the corridor approach.'
-  - q: 'How is sandhya aarti different from bhasma aarti?'
-    a: 'Bhasma aarti is a pre-dawn ritual with a registration pass where the linga is bathed and sacred ash is offered. Sandhya aarti is an evening lamp aarti open with regular darshan.'
-  - q: 'Where can a family eat pure veg food after the evening aarti?'
-    a: 'Our dharamshala on Gopal Mandir Road, 200 m from the temple gate, serves pure veg food, so dinner is a short walk after the aarti ends.'
+- q: What time is sandhya aarti at Mahakaleshwar?
+  a: The sandhya aarti is held in the evening, and exact timings shift with the season.
+    Check the timings board or temple notice on the day of your visit.
+- q: Do I need a pass for sandhya aarti?
+  a: No special pass like the bhasma aarti registration is needed for the evening
+    aarti. It is part of regular evening darshan, though queues are longer on Mondays
+    and festivals.
+- q: Is the evening aarti suitable for elderly devotees?
+  a: Yes. The timing avoids the pre-dawn wake-up, the walk is manageable, and family
+    members can accompany elders through the corridor approach.
+- q: How is sandhya aarti different from bhasma aarti?
+  a: Bhasma aarti is a pre-dawn ritual with a registration pass where the linga is
+    bathed and sacred ash is offered. Sandhya aarti is an evening lamp aarti open
+    with regular darshan.
+- q: Where can a family eat pure veg food after the evening aarti?
+  a: Our dharamshala on Gopal Mandir Road, 200 m from the temple gate, serves pure
+    veg food, so dinner is a short walk after the aarti ends.
 ---
 
 Not every family can wake at 1:30 AM — and thankfully, not every aarti demands it. **Sandhya aarti at Mahakaleshwar** is the evening ritual that gives you everything pilgrims come for — lamps, chanting, the Lord of Time in full evening glow — at an hour when grandparents and toddlers are still functional. If you are planning **mahakal evening darshan**, this is the aarti to build your evening around.

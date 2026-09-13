@@ -1,22 +1,36 @@
----
-title: 'Ujjain vs Varanasi: Which Shiva City Should You Visit First?'
-description: 'Ujjain vs Varanasi compared honestly — Bhasma Aarti vs Ganga Aarti, pace, crowds and travel logistics — to help you choose which Shiva city to visit first.'
+---title: 'Ujjain vs Varanasi: Which Shiva City Should You Visit First?'
+description: Ujjain vs Varanasi compared honestly — Bhasma Aarti vs Ganga Aarti, pace,
+  crowds and travel logistics — to help you choose which Shiva city to visit first.
 pubDate: 2026-09-10
-heroImage: '/gallery/8.jpg'
-heroAlt: 'A quiet evening lane in the old temple quarter of Ujjain'
-tags: ['ujjain', 'travel-tips', 'comparison']
-keywords: ['ujjain vs varanasi', 'kashi vs ujjain', 'mahakaleshwar vs kashi vishwanath']
+heroImage: /gallery/8.jpg
+heroAlt: A quiet evening lane in the old temple quarter of Ujjain
+tags:
+- ujjain
+- travel-tips
+- comparison
+keywords:
+- ujjain vs varanasi
+- kashi vs ujjain
+- mahakaleshwar vs kashi vishwanath
 faq:
-  - q: 'Which city is better, Ujjain or Varanasi?'
-    a: 'Both are supreme Shiva cities and neither diminishes the other. Choose Ujjain for the Bhasma Aarti and a compact walkable temple quarter; choose Varanasi for the grandeur of the Ganga ghats.'
-  - q: 'Can I visit both Ujjain and Varanasi in one trip?'
-    a: 'Yes, many pilgrims combine them. The cities are connected by direct trains, and a comfortable plan allows two to three days in each.'
-  - q: 'Is Ujjain less crowded than Varanasi?'
-    a: 'For most of the year Ujjain feels calmer, with a cleaner small-city pace. Both cities surge during festivals and melas.'
-  - q: 'What makes Bhasma Aarti at Mahakaleshwar special?'
-    a: 'Bhasma Aarti is the pre-dawn ritual in which Mahakal is honoured with sacred ash. It is unique to Mahakaleshwar and needs prior registration and very early arrival.'
-  - q: 'How many days are enough for Ujjain?'
-    a: 'Two days cover the Mahakaleshwar temple, the ghats, Harsiddhi, Gopal Mandir and the old city at a relaxed pace. Add a third day for nearby sites like Kalidasa-linked spots.'
+- q: Which city is better, Ujjain or Varanasi?
+  a: Both are supreme Shiva cities and neither diminishes the other. Choose Ujjain
+    for the Bhasma Aarti and a compact walkable temple quarter; choose Varanasi for
+    the grandeur of the Ganga ghats.
+- q: Can I visit both Ujjain and Varanasi in one trip?
+  a: Yes, many pilgrims combine them. The cities are connected by direct trains, and
+    a comfortable plan allows two to three days in each.
+- q: Is Ujjain less crowded than Varanasi?
+  a: For most of the year Ujjain feels calmer, with a cleaner small-city pace. Both
+    cities surge during festivals and melas.
+- q: What makes Bhasma Aarti at Mahakaleshwar special?
+  a: Bhasma Aarti is the pre-dawn ritual in which Mahakal is honoured with sacred
+    ash. It is unique to Mahakaleshwar and needs prior registration and very early
+    arrival.
+- q: How many days are enough for Ujjain?
+  a: Two days cover the Mahakaleshwar temple, the ghats, Harsiddhi, Gopal Mandir and
+    the old city at a relaxed pace. Add a third day for nearby sites like Kalidasa-linked
+    spots.
 ---
 
 It is the great pilgrimage question of north India: **Ujjain vs Varanasi**. One is the eternal Kashi on the Ganga, carrying the claim of the oldest living city on earth; the other is the meridian city of time on the Shipra, home of Mahakal and the Bhasma Aarti. **Kashi vs Ujjain** is not a fight with a winner — it is a choice about which door to walk through first.

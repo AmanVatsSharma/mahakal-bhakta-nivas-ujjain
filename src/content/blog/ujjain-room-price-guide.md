@@ -1,22 +1,35 @@
----
-title: 'Ujjain Room Prices Explained: What a Night Near Mahakal Really Costs'
-description: 'Ujjain room price guide: typical temple-quarter bands from budget to premium, what moves rates on Somvar and festival dates, hidden charges to ask about and a fixed tariff table.'
+---title: 'Ujjain Room Prices Explained: What a Night Near Mahakal Really Costs'
+description: 'Ujjain room price guide: typical temple-quarter bands from budget to
+  premium, what moves rates on Somvar and festival dates, hidden charges to ask about
+  and a fixed tariff table.'
 pubDate: 2026-09-07
-heroImage: '/rooms/Deluxe2450.jpeg'
-heroAlt: 'Deluxe room with premium bedding and attached bathroom near Mahakaleshwar Temple Ujjain'
-tags: ['ujjain', 'budget', 'stay']
-keywords: ['ujjain room price', 'ujjain hotel price per night', 'room rent in ujjain']
+heroImage: /rooms/Deluxe2450.jpeg
+heroAlt: Deluxe room with premium bedding and attached bathroom near Mahakaleshwar
+  Temple Ujjain
+tags:
+- ujjain
+- budget
+- stay
+keywords:
+- ujjain room price
+- ujjain hotel price per night
+- room rent in ujjain
 faq:
-  - q: 'What is the average room rent in Ujjain near the temple?'
-    a: 'Typical temple-quarter bands as of 2026 are budget ₹800–1,500, mid-range ₹1,500–2,500 and premium ₹2,500–4,500 per night. Verify current rates when booking.'
-  - q: 'Do Ujjain room prices rise during Shravan and Mahashivratri?'
-    a: 'Demand peaks on Somvar dates, Shravan Mondays, Mahashivratri and long weekends, and some properties revise rates. Ours stays at the printed fixed tariff.'
-  - q: 'What hidden charges should I ask about?'
-    a: 'Ask about extra-person charges, hot water timing, early check-in fees, parking fees and GST treatment. Always get the all-inclusive total before you pay.'
-  - q: 'Is a dharamshala cheaper than a hotel in Ujjain?'
-    a: 'Usually yes for an equivalent room size, and meals from an in-house pure veg kitchen add further savings over restaurant eating every day.'
-  - q: 'What does a family of four pay per night near Mahakaleshwar?'
-    a: 'At our fixed tariff a 4 Bed Non-AC room is ₹2,100 and a 4 Bed AC room is ₹2,475 per night — roughly ₹520 to ₹620 per person.'
+- q: What is the average room rent in Ujjain near the temple?
+  a: Typical temple-quarter bands as of 2026 are budget ₹800–1,500, mid-range ₹1,500–2,500
+    and premium ₹2,500–4,500 per night. Verify current rates when booking.
+- q: Do Ujjain room prices rise during Shravan and Mahashivratri?
+  a: Demand peaks on Somvar dates, Shravan Mondays, Mahashivratri and long weekends,
+    and some properties revise rates. Ours stays at the printed fixed tariff.
+- q: What hidden charges should I ask about?
+  a: Ask about extra-person charges, hot water timing, early check-in fees, parking
+    fees and GST treatment. Always get the all-inclusive total before you pay.
+- q: Is a dharamshala cheaper than a hotel in Ujjain?
+  a: Usually yes for an equivalent room size, and meals from an in-house pure veg
+    kitchen add further savings over restaurant eating every day.
+- q: What does a family of four pay per night near Mahakaleshwar?
+  a: At our fixed tariff a 4 Bed Non-AC room is ₹2,100 and a 4 Bed AC room is ₹2,475
+    per night — roughly ₹520 to ₹620 per person.
 ---
 
 Every traveller asks the same first question — what is a fair **Ujjain room price**? — and the honest answer has two layers: the typical bands in the market, and the fine print that decides what you actually pay at checkout. This guide gives you both, plus our own fixed tariff as a worked example, so you can judge any **ujjain hotel price per night** quote you receive. We run a dharamshala on Gopal Mandir Road, 200 m from the Mahakaleshwar gate, and we would rather you understand this market than take any single quote — including ours — on faith.

@@ -1,22 +1,40 @@
----
-title: 'Mangalnath Temple Ujjain: Birthplace of Mars & Mangal Dosh Pooja'
-description: 'Mangalnath Temple Ujjain is regarded as the birthplace of Mars and the home of Mangal Dosh shanti pooja on the Shipra. Tuesday tips, pooja basics and how to reach.'
+---title: 'Mangalnath Temple Ujjain: Birthplace of Mars & Mangal Dosh Pooja'
+description: Mangalnath Temple Ujjain is regarded as the birthplace of Mars and the
+  home of Mangal Dosh shanti pooja on the Shipra. Tuesday tips, pooja basics and how
+  to reach.
 pubDate: 2026-09-01
-heroImage: '/gallery/7.jpg'
-heroAlt: 'Mangalnath Temple Ujjain on the bank of the Shipra river at sunrise'
-tags: ['ujjain', 'temples', 'astrology', 'faith']
-keywords: ['mangalnath temple ujjain', 'mangal dosh puja ujjain', 'mangalnath mandir timing']
+heroImage: /gallery/7.jpg
+heroAlt: Mangalnath Temple Ujjain on the bank of the Shipra river at sunrise
+tags:
+- ujjain
+- temples
+- astrology
+- faith
+keywords:
+- mangalnath temple ujjain
+- mangal dosh puja ujjain
+- mangalnath mandir timing
 faq:
-  - q: 'What is Mangalnath Temple in Ujjain famous for?'
-    a: 'Puranic astronomy regards this riverside spot as the birthplace of Mangal, the planet Mars. It is the main centre in Ujjain for Mangal Dosh shanti pooja, so devotees with a troubled Mars placement in their horoscope come here from across India.'
-  - q: 'How far is Mangalnath from Mahakaleshwar Temple?'
-    a: 'About 4 to 5 km, across the Shipra river from the main city — roughly 15 to 20 minutes by auto or e-rickshaw from the temple quarter.'
-  - q: 'Which day is best for visiting Mangalnath mandir?'
-    a: 'Tuesday, the day of Mars, is the peak day for pooja and darshan. Expect queues on Tuesdays; other weekdays are far quieter and pooja can usually be arranged faster.'
-  - q: 'What is Mangal Dosh shanti pooja?'
-    a: 'It is a remedial pooja performed for a challenging placement of Mars in a horoscope, believed to affect marriage and temperament. Priests at Mangalnath perform it daily; bring your kundli and agree on the dakshina and format at the counter before you begin.'
-  - q: 'Can Mangalnath be combined with other sights?'
-    a: 'Yes. It sits on the same side of the Shipra as Kaliadeh Palace, so a single auto trip can comfortably cover Mangalnath in the morning and Kaliadeh afterwards.'
+- q: What is Mangalnath Temple in Ujjain famous for?
+  a: Puranic astronomy regards this riverside spot as the birthplace of Mangal, the
+    planet Mars. It is the main centre in Ujjain for Mangal Dosh shanti pooja, so
+    devotees with a troubled Mars placement in their horoscope come here from across
+    India.
+- q: How far is Mangalnath from Mahakaleshwar Temple?
+  a: About 4 to 5 km, across the Shipra river from the main city — roughly 15 to 20
+    minutes by auto or e-rickshaw from the temple quarter.
+- q: Which day is best for visiting Mangalnath mandir?
+  a: Tuesday, the day of Mars, is the peak day for pooja and darshan. Expect queues
+    on Tuesdays; other weekdays are far quieter and pooja can usually be arranged
+    faster.
+- q: What is Mangal Dosh shanti pooja?
+  a: It is a remedial pooja performed for a challenging placement of Mars in a horoscope,
+    believed to affect marriage and temperament. Priests at Mangalnath perform it
+    daily; bring your kundli and agree on the dakshina and format at the counter before
+    you begin.
+- q: Can Mangalnath be combined with other sights?
+  a: Yes. It sits on the same side of the Shipra as Kaliadeh Palace, so a single auto
+    trip can comfortably cover Mangalnath in the morning and Kaliadeh afterwards.
 ---
 
 Of all the temples in Ujjain, this is the one that people arrive carrying a horoscope. **Mangalnath Temple Ujjain** stands on the bank of the **Shipra**, across the river from the main city, at a spot that **puranic astronomy regards as the birthplace of Mangal — the planet Mars**. For devotees, it is the address of the planet itself; for anyone curious about how deeply sky and faith are woven together in this city, it is one of the most interesting hours you can spend here.

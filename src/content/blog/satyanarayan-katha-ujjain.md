@@ -1,22 +1,35 @@
----
-title: 'Satyanarayan Katha in Ujjain: Arranging the Katha on Your Pilgrimage'
-description: 'Planning a Satyanarayan Katha in Ujjain? Learn the Purnima and Ekadashi timing, how to arrange a priest, satvik meals and pairing the katha with Mahakal darshan.'
+---title: 'Satyanarayan Katha in Ujjain: Arranging the Katha on Your Pilgrimage'
+description: Planning a Satyanarayan Katha in Ujjain? Learn the Purnima and Ekadashi
+  timing, how to arrange a priest, satvik meals and pairing the katha with Mahakal
+  darshan.
 pubDate: 2026-09-08
-heroImage: '/gallery/6.jpg'
-heroAlt: 'Family seated around a kalash and diya for Satyanarayan Katha at a Ujjain stay'
-tags: ['ujjain', 'pooja']
-keywords: ['satyanarayan katha ujjain', 'satyanarayan pooja ujjain']
+heroImage: /gallery/6.jpg
+heroAlt: Family seated around a kalash and diya for Satyanarayan Katha at a Ujjain
+  stay
+tags:
+- ujjain
+- pooja
+keywords:
+- satyanarayan katha ujjain
+- satyanarayan pooja ujjain
 faq:
-  - q: 'When should Satyanarayan Katha be performed?'
-    a: 'Tradition recommends Purnima, the full moon, or any Ekadashi of the lunar fortnight. Since dates follow the panchang, confirm the exact day with your priest or a local calendar.'
-  - q: 'Can we arrange Satyanarayan Katha during a short Ujjain trip?'
-    a: 'Yes. A katha with prasad typically takes a few hours in a single morning, so it pairs well with Mahakal darshan on the same trip. Our desk can help you connect with local priests.'
-  - q: 'What prasad is traditional for the katha?'
-    a: 'Sheera, a halwa of wheat or semolina cooked with sugar and ghee, is the classic offering. It is distributed to everyone present after the katha concludes.'
-  - q: 'Is the katha suitable for children and elders?'
-    a: 'Very much so. The katha is a listening ritual built on storytelling, song and prasad, and many families make it their first shared observance on a pilgrimage.'
-  - q: 'Do we need to fast before the katha?'
-    a: 'Many families keep a light fast until the katha ends, but the practice is flexible. Agree on the format with your priest when you fix the muhurat.'
+- q: When should Satyanarayan Katha be performed?
+  a: Tradition recommends Purnima, the full moon, or any Ekadashi of the lunar fortnight.
+    Since dates follow the panchang, confirm the exact day with your priest or a local
+    calendar.
+- q: Can we arrange Satyanarayan Katha during a short Ujjain trip?
+  a: Yes. A katha with prasad typically takes a few hours in a single morning, so
+    it pairs well with Mahakal darshan on the same trip. Our desk can help you connect
+    with local priests.
+- q: What prasad is traditional for the katha?
+  a: Sheera, a halwa of wheat or semolina cooked with sugar and ghee, is the classic
+    offering. It is distributed to everyone present after the katha concludes.
+- q: Is the katha suitable for children and elders?
+  a: Very much so. The katha is a listening ritual built on storytelling, song and
+    prasad, and many families make it their first shared observance on a pilgrimage.
+- q: Do we need to fast before the katha?
+  a: Many families keep a light fast until the katha ends, but the practice is flexible.
+    Agree on the format with your priest when you fix the muhurat.
 ---
 
 There is a moment on many Indian journeys when the purpose of travel quietly changes — when the trip stops being sightseeing and becomes thanksgiving. For thousands of families, that shift is marked by one ritual: the **Satyanarayan Katha**. And a growing number choose to arrange this **Satyanarayan katha in Ujjain**, woven into a pilgrimage that already includes Mahakal darshan.

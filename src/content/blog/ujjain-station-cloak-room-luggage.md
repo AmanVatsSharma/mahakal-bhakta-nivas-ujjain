@@ -1,22 +1,37 @@
----
-title: 'Cloak Room & Luggage Storage in Ujjain: Travel Light Into the Temple'
-description: 'Ujjain station cloak room basics, temple locker realities, and the smarter move — check into a room 200 m from the Mahakaleshwar gate before you queue for darshan.'
+---title: 'Cloak Room & Luggage Storage in Ujjain: Travel Light Into the Temple'
+description: Ujjain station cloak room basics, temple locker realities, and the smarter
+  move — check into a room 200 m from the Mahakaleshwar gate before you queue for
+  darshan.
 pubDate: 2026-09-10
-heroImage: '/gallery/2.jpg'
-heroAlt: 'Pilgrims with light bags walking toward Mahakaleshwar temple gate'
-tags: ['ujjain', 'travel-tips', 'luggage']
-keywords: ['ujjain station cloak room', 'luggage storage ujjain', 'cloak room mahakaleshwar']
+heroImage: /gallery/2.jpg
+heroAlt: Pilgrims with light bags walking toward Mahakaleshwar temple gate
+tags:
+- ujjain
+- travel-tips
+- luggage
+keywords:
+- ujjain station cloak room
+- luggage storage ujjain
+- cloak room mahakaleshwar
 faq:
-  - q: 'Does Ujjain station have a cloak room?'
-    a: 'Yes, Ujjain junction has a cloak room for luggage storage at a nominal charge, and bags typically need to be lockable. Verify current timings and rules at the station on your travel day.'
-  - q: 'Can I take a big suitcase inside Mahakaleshwar temple?'
-    a: 'No. Temple lockers are meant for phones and small items, not suitcases. Large bags make security slow and queues painful, so store them before you enter.'
-  - q: 'Are lockers available at the temple?'
-    a: 'Yes, lockers are available near the entrance, but they are sized for mobiles and small electronics. Plan as if everything larger stays outside the complex.'
-  - q: 'I arrive before the 12 PM check-in. Where do I keep my bags?'
-    a: 'Ask us in advance about early luggage storage at the reception. Even before your room is ready, a bag kept 200 m from the gate is the most convenient storage in Ujjain.'
-  - q: 'Is the station cloak room safe for luggage?'
-    a: 'Railway cloak rooms are generally reliable when you use a sturdy lock and follow the deposit process. Still, carry valuables and documents with you, not in stored bags.'
+- q: Does Ujjain station have a cloak room?
+  a: Yes, Ujjain junction has a cloak room for luggage storage at a nominal charge,
+    and bags typically need to be lockable. Verify current timings and rules at the
+    station on your travel day.
+- q: Can I take a big suitcase inside Mahakaleshwar temple?
+  a: No. Temple lockers are meant for phones and small items, not suitcases. Large
+    bags make security slow and queues painful, so store them before you enter.
+- q: Are lockers available at the temple?
+  a: Yes, lockers are available near the entrance, but they are sized for mobiles
+    and small electronics. Plan as if everything larger stays outside the complex.
+- q: I arrive before the 12 PM check-in. Where do I keep my bags?
+  a: Ask us in advance about early luggage storage at the reception. Even before your
+    room is ready, a bag kept 200 m from the gate is the most convenient storage in
+    Ujjain.
+- q: Is the station cloak room safe for luggage?
+  a: Railway cloak rooms are generally reliable when you use a sturdy lock and follow
+    the deposit process. Still, carry valuables and documents with you, not in stored
+    bags.
 ---
 
 Here is the scene every seasoned Mahakal pilgrim has witnessed: a family standing at the temple security gate with two suitcases, one stroller and a duffel, negotiating with guards who — quite rightly — will not let any of it through. **Luggage is the silent saboteur of darshan.** This guide covers the **ujjain station cloak room**, the realities of the **cloak room near mahakaleshwar**, and the option that beats both.

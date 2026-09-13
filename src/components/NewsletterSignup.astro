@@ -1,0 +1,36 @@
+---
+interface Props {
+  heading?: string;
+  subtext?: string;
+}
+
+const { heading = "Get Ujjain Travel Tips & Exclusive Booking Offers", subtext = "Join our community of Mahakaleshwar pilgrims. Monthly tips on darshan, stay, festivals, and room booking alerts." } = Astro.props;
+---
+
+<section class="newsletter-signup" id="newsletter">
+  <div class="newsletter-inner">
+    <div class="newsletter-text">
+      <h3 class="newsletter-heading">{heading}</h3>
+      <p class="newsletter-subtext">{subtext}</p>
+      <ul class="newsletter-benefits">
+        <li>Darshan timing alerts (Bhasma Aarti slots opening)</li>
+        <li>Festival booking windows (Mahashivratri, Shravan, Kumbh)</li>
+        <li>Room tariff updates and last-minute availability</li>
+        <li>Travel guides for new routes and special occasions</li>
+      </ul>
+    </div>
+    <div class="newsletter-form-wrap">
+      <form class="newsletter-form" action="https://api.web3forms.com/api/v1/forms/submit" method="POST" data-animate="fade-up">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY" />
+        <input type="hidden" name="subject" value="Newsletter Signup — Mahakal Bhakta Nivas" />
+        <input type="hidden" name="from_name" value="Mahakal Bhakta Nivas Website" />
+        <div class="newsletter-fields">
+          <input type="text" name="name" placeholder="Your name" required aria-label="Your name" />
+          <input type="tel" name="phone" placeholder="WhatsApp number" required aria-label="WhatsApp number" />
+          <button type="submit" class="btn btn-primary">Join WhatsApp Updates</button>
+        </div>
+        <p class="newsletter-privacy">We respect your privacy. Unsubscribe anytime. No spam — only relevant Mahakaleshwar travel tips.</p>
+      </form>
+    </div>
+  </div>
+</section>

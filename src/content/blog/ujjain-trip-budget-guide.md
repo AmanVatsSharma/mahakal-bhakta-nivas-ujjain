@@ -1,20 +1,34 @@
----
-title: 'Ujjain Mahakal Trip Budget: Real Cost Breakdown for Every Traveller'
-description: 'Honest Ujjain trip budget — what a 1-2 day Mahakal yatra really costs for budget couples, families and seniors: travel, rooms, food, darshan and extras.'
+---title: 'Ujjain Mahakal Trip Budget: Real Cost Breakdown for Every Traveller'
+description: 'Honest Ujjain trip budget — what a 1-2 day Mahakal yatra really costs
+  for budget couples, families and seniors: travel, rooms, food, darshan and extras.'
 pubDate: 2026-07-04
-heroImage: '/gallery/5.jpg'
-heroAlt: 'Simple pure vegetarian thali — the budget pilgrim staple in Ujjain'
-tags: ['travel-planning', 'budget', 'ujjain']
-keywords: ['ujjain trip budget', 'ujjain trip cost', 'mahakaleshwar trip budget', 'ujjain darshan cost']
+heroImage: /gallery/5.jpg
+heroAlt: Simple pure vegetarian thali — the budget pilgrim staple in Ujjain
+tags:
+- travel-planning
+- budget
+- ujjain
+keywords:
+- ujjain trip budget
+- ujjain trip cost
+- mahakaleshwar trip budget
+- ujjain darshan cost
 faq:
-  - q: 'How much does a 2-day Ujjain trip cost?'
-    a: 'For a budget couple: roughly Rs 2,500-4,000 all-in (room Rs 800-1,200, food Rs 600-800, local autos Rs 200-300, plus travel to reach Ujjain). Families taking AC rooms spend around Rs 5,000-7,000 for the same plan.'
-  - q: 'What is the room cost near Mahakaleshwar Temple?'
-    a: 'Dharamshala rooms run from about Rs 600 (dormitory) to Rs 1,500 (AC double); family rooms go higher. Hotels typically start at Rs 1,500-2,500. See our rooms page for current tariff.'
-  - q: 'Does Mahakaleshwar darshan cost money?'
-    a: 'General darshan is free. Optional paid items: Bhasma Aarti booking (about Rs 200 online as of 2026), Sheeghra Darshan, sevas like Rudrabhishek — all at portal-notified rates.'
-  - q: 'What is the food cost per day in Ujjain?'
-    a: 'Pure-veg thalis run Rs 80-150; breakfast (poha-jalebi with tea) Rs 30-60. A couple eats well on Rs 400-600 per day; families on Rs 700-1,000.'
+- q: How much does a 2-day Ujjain trip cost?
+  a: 'For a budget couple: roughly Rs 2,500-4,000 all-in (room Rs 800-1,200, food
+    Rs 600-800, local autos Rs 200-300, plus travel to reach Ujjain). Families taking
+    AC rooms spend around Rs 5,000-7,000 for the same plan.'
+- q: What is the room cost near Mahakaleshwar Temple?
+  a: Dharamshala rooms run from about Rs 600 (dormitory) to Rs 1,500 (AC double);
+    family rooms go higher. Hotels typically start at Rs 1,500-2,500. See our rooms
+    page for current tariff.
+- q: Does Mahakaleshwar darshan cost money?
+  a: 'General darshan is free. Optional paid items: Bhasma Aarti booking (about Rs
+    200 online as of 2026), Sheeghra Darshan, sevas like Rudrabhishek — all at portal-notified
+    rates.'
+- q: What is the food cost per day in Ujjain?
+  a: Pure-veg thalis run Rs 80-150; breakfast (poha-jalebi with tea) Rs 30-60. A couple
+    eats well on Rs 400-600 per day; families on Rs 700-1,000.
 ---
 
 A Mahakal yatra is one of India's most affordable pilgrimages — the temple itself asks nothing for darshan, the city eats you well for thali prices, and rooms near the sanctum start at ₹600. But budgets still leak in predictable places. Here is the honest math, line by line.

@@ -1,22 +1,38 @@
----
-title: 'Vikramaditya of Ujjain: The Legendary King and His Eternal Calendar'
-description: 'Vikramaditya and Ujjain are bound by legend and by the Vikram Samvat calendar — his justice, his throne, the Baital tales, and how to walk his capital today.'
+---title: 'Vikramaditya of Ujjain: The Legendary King and His Eternal Calendar'
+description: Vikramaditya and Ujjain are bound by legend and by the Vikram Samvat
+  calendar — his justice, his throne, the Baital tales, and how to walk his capital
+  today.
 pubDate: 2026-09-09
-heroImage: '/gallery/8.jpg'
-heroAlt: 'Old street lane in the temple quarter of Ujjain at dusk'
-tags: ['ujjain', 'history', 'culture']
-keywords: ['vikramaditya ujjain', 'vikram samvat', 'king vikramaditya history']
+heroImage: /gallery/8.jpg
+heroAlt: Old street lane in the temple quarter of Ujjain at dusk
+tags:
+- ujjain
+- history
+- culture
+keywords:
+- vikramaditya ujjain
+- vikram samvat
+- king vikramaditya history
 faq:
-  - q: 'Who was King Vikramaditya of Ujjain?'
-    a: 'Vikramaditya is the legendary emperor of Ujjain, celebrated for justice, courage and patronage of learning. Tradition ties the Simhasan Battisi and Baital Pachisi story cycles to his court.'
-  - q: 'What is Vikram Samvat and why does it still matter?'
-    a: 'Vikram Samvat is a Hindu calendar era traditionally dated to 57 BCE. It is still used across India for festivals, panchangs and religious dates, which makes it a living legacy of the king.'
-  - q: 'Is Vikramaditya a historical figure or a legend?'
-    a: 'Scholars debate the historical identity behind the legends, and many stories are folklore. Tradition holds firmly that Ujjain was his capital, and the city celebrates him to this day.'
-  - q: 'Where can I experience the Vikramaditya legacy in Ujjain?'
-    a: 'Visit Vikram Kirti Mandir for manuscripts and exhibits, and the Vedh Shala observatory for the timekeeping heritage of the city. Both sit a short ride from the temple quarter.'
-  - q: 'How far is Mahakal Bhakta Nivas from the Mahakaleshwar Temple gate?'
-    a: 'About 200 meters — a two to three minute walk along Gopal Mandir Road. Ram Ghat is roughly 500 meters further on.'
+- q: Who was King Vikramaditya of Ujjain?
+  a: Vikramaditya is the legendary emperor of Ujjain, celebrated for justice, courage
+    and patronage of learning. Tradition ties the Simhasan Battisi and Baital Pachisi
+    story cycles to his court.
+- q: What is Vikram Samvat and why does it still matter?
+  a: Vikram Samvat is a Hindu calendar era traditionally dated to 57 BCE. It is still
+    used across India for festivals, panchangs and religious dates, which makes it
+    a living legacy of the king.
+- q: Is Vikramaditya a historical figure or a legend?
+  a: Scholars debate the historical identity behind the legends, and many stories
+    are folklore. Tradition holds firmly that Ujjain was his capital, and the city
+    celebrates him to this day.
+- q: Where can I experience the Vikramaditya legacy in Ujjain?
+  a: Visit Vikram Kirti Mandir for manuscripts and exhibits, and the Vedh Shala observatory
+    for the timekeeping heritage of the city. Both sit a short ride from the temple
+    quarter.
+- q: How far is Mahakal Bhakta Nivas from the Mahakaleshwar Temple gate?
+  a: About 200 meters — a two to three minute walk along Gopal Mandir Road. Ram Ghat
+    is roughly 500 meters further on.
 ---
 
 Every traditional calendar hanging in a Ujjain shop carries a quiet tribute to one king. Beside the familiar year sits a second, larger number — the **Vikram Samvat** year, counted from an era traditionally dated to 57 BCE. The emperor behind that number is **Vikramaditya of Ujjain**, and no ruler anywhere is remembered quite the way this city remembers him: not as a forgotten name in a textbook, but as a living presence ticking inside time itself.

@@ -1,22 +1,35 @@
----
-title: 'Poha-Jalebi in Ujjain: The Breakfast of Pilgrims'
-description: 'Poha-jalebi is the taste of Ujjain — soft flattened rice with sev, onion and lemon beside hot jalebi, often with rabri. Find it in temple lanes and Freeganj for ₹20–60.'
+---title: 'Poha-Jalebi in Ujjain: The Breakfast of Pilgrims'
+description: Poha-jalebi is the taste of Ujjain — soft flattened rice with sev, onion
+  and lemon beside hot jalebi, often with rabri. Find it in temple lanes and Freeganj
+  for ₹20–60.
 pubDate: 2026-09-09
-heroImage: '/gallery/5.jpg'
-heroAlt: 'Plate of poha topped with sev and onion beside hot jalebi at a stall in Ujjain'
-tags: ['ujjain', 'food']
-keywords: ['poha jalebi ujjain', 'ujjain famous food', 'what to eat ujjain']
+heroImage: /gallery/5.jpg
+heroAlt: Plate of poha topped with sev and onion beside hot jalebi at a stall in Ujjain
+tags:
+- ujjain
+- food
+keywords:
+- poha jalebi ujjain
+- ujjain famous food
+- what to eat ujjain
 faq:
-  - q: 'What is poha-jalebi?'
-    a: 'Poha is flattened rice tempered with turmeric and mustard seeds, topped with sev, onion, coriander and lemon. Jalebi is a hot syrup-soaked spiral sweet, often served with thick rabri on top.'
-  - q: 'Where can I find the best poha-jalebi in Ujjain?'
-    a: 'The lanes around Mahakaleshwar temple and the Freeganj market area are full of stalls serving fresh plates through the morning. Follow the crowd; busy stalls usually turn over the freshest batches.'
-  - q: 'How much does poha-jalebi cost in Ujjain?'
-    a: 'A typical plate runs ₹20–60 depending on portion and whether you add rabri. Prices vary by stall, so treat this as a rough guide and verify on the spot.'
-  - q: 'Is poha-jalebi spicy?'
-    a: 'Poha itself is mild; the heat comes from the sev and chopped green chilli, which you can ask to skip. The jalebi-rabri side is sweet rather than spicy.'
-  - q: 'Can we eat poha-jalebi before Bhasma Aarti?'
-    a: 'Many devotees eat light before the early aarti, so a small poha plate works well. Eat modestly, carry water, and save the full jalebi-rabri treat for after darshan.'
+- q: What is poha-jalebi?
+  a: Poha is flattened rice tempered with turmeric and mustard seeds, topped with
+    sev, onion, coriander and lemon. Jalebi is a hot syrup-soaked spiral sweet, often
+    served with thick rabri on top.
+- q: Where can I find the best poha-jalebi in Ujjain?
+  a: The lanes around Mahakaleshwar temple and the Freeganj market area are full of
+    stalls serving fresh plates through the morning. Follow the crowd; busy stalls
+    usually turn over the freshest batches.
+- q: How much does poha-jalebi cost in Ujjain?
+  a: A typical plate runs ₹20–60 depending on portion and whether you add rabri. Prices
+    vary by stall, so treat this as a rough guide and verify on the spot.
+- q: Is poha-jalebi spicy?
+  a: Poha itself is mild; the heat comes from the sev and chopped green chilli, which
+    you can ask to skip. The jalebi-rabri side is sweet rather than spicy.
+- q: Can we eat poha-jalebi before Bhasma Aarti?
+  a: Many devotees eat light before the early aarti, so a small poha plate works well.
+    Eat modestly, carry water, and save the full jalebi-rabri treat for after darshan.
 ---
 
 Ask a pilgrim returning from Ujjain what they remember of the city, and between the aarti and the bells, one taste will surface: breakfast. **Poha-jalebi in Ujjain** is not a dish; it is a civic institution — the meal that fuels the queue at dawn and deserves a slot in your itinerary beside any temple.

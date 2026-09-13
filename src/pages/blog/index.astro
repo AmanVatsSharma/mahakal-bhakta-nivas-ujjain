@@ -7,7 +7,11 @@ import { SITE } from '../../config';
 
 export const POSTS_PER_PAGE = 10;
 
-const sorted = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const sorted = (await getCollection('blog')).sort((a, b) => {
+	const da = a.data.pubDate ? a.data.pubDate.valueOf() : 0;
+	const db = b.data.pubDate ? b.data.pubDate.valueOf() : 0;
+	return db - da;
+});
 const posts = sorted.slice(0, POSTS_PER_PAGE);
 const totalPages = Math.max(1, Math.ceil(sorted.length / POSTS_PER_PAGE));
 const featured = posts[0];
@@ -40,7 +44,7 @@ const description = 'Guides for Mahakaleshwar pilgrims — Bhasma Aarti booking,
 					<span class="featured-label">Latest Guide</span>
 					<h2>{featured.data.title}</h2>
 					<p>{featured.data.description}</p>
-					<span class="featured-meta"><time datetime={featured.data.pubDate.toISOString()}>{fmtDate(featured.data.pubDate)}</time> · {featured.data.tags[0]}</span>
+					<span class="featured-meta"><time datetime={featured.data.pubDate ? featured.data.pubDate.toISOString() : ''}>{featured.data.pubDate ? fmtDate(featured.data.pubDate) : 'Coming Soon'}</time> · {featured.data.tags[0]}</span>
 				</div>
 			</a>
 		)}
@@ -50,7 +54,7 @@ const description = 'Guides for Mahakaleshwar pilgrims — Bhasma Aarti booking,
 				<a href={`/blog/${post.id}/`} class="post-card">
 					<img src={post.data.heroImage} alt={post.data.heroAlt} loading="lazy" decoding="async" width="400" height="225" />
 					<div class="post-card-body">
-						<span class="post-card-date"><time datetime={post.data.pubDate.toISOString()}>{fmtDate(post.data.pubDate)}</time></span>
+						<span class="post-card-date"><time datetime={post.data.pubDate ? post.data.pubDate.toISOString() : ''}>{post.data.pubDate ? fmtDate(post.data.pubDate) : 'Coming Soon'}</time></span>
 						<h3>{post.data.title}</h3>
 						<p>{post.data.description}</p>
 					</div>

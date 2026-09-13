@@ -1,20 +1,35 @@
----
-title: 'Shipra River & Ram Ghat Ujjain: Aarti Timings, Significance & the Mahakal Connection'
-description: 'Ram Ghat Ujjain guide — Shipra aarti timings, ritual bathing significance, boat rides, best visiting hours, photography tips and the river Mahakal connection.'
+---title: 'Shipra River & Ram Ghat Ujjain: Aarti Timings, Significance & the Mahakal
+  Connection'
+description: Ram Ghat Ujjain guide — Shipra aarti timings, ritual bathing significance,
+  boat rides, best visiting hours, photography tips and the river Mahakal connection.
 pubDate: 2026-07-21
-heroImage: '/gallery/4.jpg'
-heroAlt: 'Ram Ghat on the Shipra river with evening aarti lamps, Ujjain'
-tags: ['ujjain', 'sightseeing', 'ram-ghat', 'mahakaleshwar']
-keywords: ['ram ghat ujjain aarti', 'shipra river aarti timing', 'ram ghat ujjain guide', 'shipra snan significance']
+heroImage: /gallery/4.jpg
+heroAlt: Ram Ghat on the Shipra river with evening aarti lamps, Ujjain
+tags:
+- ujjain
+- sightseeing
+- ram-ghat
+- mahakaleshwar
+keywords:
+- ram ghat ujjain aarti
+- shipra river aarti timing
+- ram ghat ujjain guide
+- shipra snan significance
 faq:
-  - q: 'What are Ram Ghat aarti timings in Ujjain?'
-    a: 'Ram Ghat hosts morning and evening aartis on the Shipra — the evening aarti around sunset is the most popular. Times shift with the seasons; the ghats themselves are open through the day.'
-  - q: 'Why is the Shipra river sacred?'
-    a: 'The Shipra is Ujjain sacred river — bathing in it is believed to purify and grant merit, and it is the axis of the Simhastha Kumbh, when planetary alignments make its waters specially sanctified.'
-  - q: 'Is boating available at Ram Ghat?'
-    a: 'Yes, boat rides operate in normal seasons and water levels — a classic way to view the ghat skyline and the evening aarti from the water.'
-  - q: 'How far is Ram Ghat from Mahakaleshwar Temple?'
-    a: 'Ram Ghat is within the old temple quarter, a short walk or quick auto ride from the Mahakaleshwar complex — most visitors pair them in one evening.'
+- q: What are Ram Ghat aarti timings in Ujjain?
+  a: Ram Ghat hosts morning and evening aartis on the Shipra — the evening aarti around
+    sunset is the most popular. Times shift with the seasons; the ghats themselves
+    are open through the day.
+- q: Why is the Shipra river sacred?
+  a: The Shipra is Ujjain sacred river — bathing in it is believed to purify and grant
+    merit, and it is the axis of the Simhastha Kumbh, when planetary alignments make
+    its waters specially sanctified.
+- q: Is boating available at Ram Ghat?
+  a: Yes, boat rides operate in normal seasons and water levels — a classic way to
+    view the ghat skyline and the evening aarti from the water.
+- q: How far is Ram Ghat from Mahakaleshwar Temple?
+  a: Ram Ghat is within the old temple quarter, a short walk or quick auto ride from
+    the Mahakaleshwar complex — most visitors pair them in one evening.
 ---
 
 The Shipra is the reason Ujjain exists where it does. Along her banks the city's ghats rise like stone hymns, and chief among them stands **Ram Ghat** — the spiritual waterfront where the day ends in firelight on water. No Ujjain trip is complete without at least one unhurried hour here.

@@ -1,22 +1,37 @@
----
-title: 'Ujjain–Omkareshwar–Maheshwar: The Perfect 3-Day MP Temple Circuit'
-description: 'A 3-day Madhya Pradesh temple circuit: two days of aartis and darshan in Ujjain, then Omkareshwar or Maheshwar, with transport legs, night halts and packing tips.'
+---title: 'Ujjain–Omkareshwar–Maheshwar: The Perfect 3-Day MP Temple Circuit'
+description: 'A 3-day Madhya Pradesh temple circuit: two days of aartis and darshan
+  in Ujjain, then Omkareshwar or Maheshwar, with transport legs, night halts and packing
+  tips.'
 pubDate: 2026-09-06
-heroImage: '/gallery/4.jpg'
-heroAlt: 'Boats resting on the Narmada river below an island temple town'
-tags: ['ujjain', 'travel', 'madhya-pradesh', 'itinerary']
-keywords: ['ujjain omkareshwar maheshwar itinerary', '3 days madhya pradesh temples', 'mp temple circuit']
+heroImage: /gallery/4.jpg
+heroAlt: Boats resting on the Narmada river below an island temple town
+tags:
+- ujjain
+- travel
+- madhya-pradesh
+- itinerary
+keywords:
+- ujjain omkareshwar maheshwar itinerary
+- 3 days madhya pradesh temples
+- mp temple circuit
 faq:
-  - q: 'How many days are needed for Ujjain, Omkareshwar and Maheshwar?'
-    a: 'Three days fit the classic circuit: two days in Ujjain for darshan and aartis, then one day for Omkareshwar or Maheshwar. Add a fourth day to do both comfortably.'
-  - q: 'How far is Omkareshwar from Ujjain?'
-    a: 'Omkareshwar is about 140 km from Ujjain, roughly a 3 hour drive each way, so an early start lets you return the same evening.'
-  - q: 'What is the best order for the circuit?'
-    a: 'Finish your Ujjain darshan first, including a pre-dawn aarti, then travel onwards. Omkareshwar and Maheshwar can be done in either order depending on your route home.'
-  - q: 'Where should we sleep each night?'
-    a: 'Sleep both Ujjain nights close to the temple gate, then either return from Omkareshwar the same evening or take a night at Maheshwar before heading home.'
-  - q: 'Is this circuit suitable for elderly parents?'
-    a: 'Yes, with a hired car and early starts. Keep temple walking blocks short, schedule a rest hour after each darshan, and choose a stay within walking distance of the gate.'
+- q: How many days are needed for Ujjain, Omkareshwar and Maheshwar?
+  a: 'Three days fit the classic circuit: two days in Ujjain for darshan and aartis,
+    then one day for Omkareshwar or Maheshwar. Add a fourth day to do both comfortably.'
+- q: How far is Omkareshwar from Ujjain?
+  a: Omkareshwar is about 140 km from Ujjain, roughly a 3 hour drive each way, so
+    an early start lets you return the same evening.
+- q: What is the best order for the circuit?
+  a: Finish your Ujjain darshan first, including a pre-dawn aarti, then travel onwards.
+    Omkareshwar and Maheshwar can be done in either order depending on your route
+    home.
+- q: Where should we sleep each night?
+  a: Sleep both Ujjain nights close to the temple gate, then either return from Omkareshwar
+    the same evening or take a night at Maheshwar before heading home.
+- q: Is this circuit suitable for elderly parents?
+  a: Yes, with a hired car and early starts. Keep temple walking blocks short, schedule
+    a rest hour after each darshan, and choose a stay within walking distance of the
+    gate.
 ---
 
 If Madhya Pradesh has a classic first pilgrimage, this is it. A **Ujjain–Omkareshwar–Maheshwar itinerary** strings together the fierce Lord of Time, a Jyotirlinga island shaped like Om, and a queen's riverine capital — three moods of the same Malwa heartland, all within about **3 hours of each other by road**. Three days is the sweet spot for this **3-day Madhya Pradesh temples** plan: unhurried enough for two aartis, tight enough to fit one precious chunk of leave. This **MP temple circuit** guide gives you the day-by-day shape, the transport legs, and the night-by-night logic of where to sleep.

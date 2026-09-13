@@ -10,7 +10,11 @@ const POSTS_PER_PAGE = 10;
 export function getStaticPaths() {
 	return (async () => {
 		const POSTS_PER_PAGE_LOCAL = 10;
-		const sorted = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+		const sorted = (await getCollection('blog')).sort((a, b) => {
+			const da = a.data.pubDate ? a.data.pubDate.valueOf() : 0;
+			const db = b.data.pubDate ? b.data.pubDate.valueOf() : 0;
+			return db - da;
+		});
 		const totalPages = Math.max(1, Math.ceil(sorted.length / POSTS_PER_PAGE_LOCAL));
 		// Pages 2..N only — page 1 is /blog/index.astro (avoids duplicate URL)
 		return Array.from({ length: Math.max(0, totalPages - 1) }, (_, i) => ({
@@ -42,7 +46,7 @@ const fmtDate = (d: Date) => d.toLocaleDateString('en-IN', { day: 'numeric', mon
 				<a href={`/blog/${post.id}/`} class="post-card">
 					<img src={post.data.heroImage} alt={post.data.heroAlt} loading="lazy" decoding="async" width="400" height="225" />
 					<div class="post-card-body">
-						<span class="post-card-date"><time datetime={post.data.pubDate.toISOString()}>{fmtDate(post.data.pubDate)}</time></span>
+						<span class="post-card-date"><time datetime={post.data.pubDate ? post.data.pubDate.toISOString() : ''}>{post.data.pubDate ? fmtDate(post.data.pubDate) : 'Coming Soon'}</time></span>
 						<h2>{post.data.title}</h2>
 						<p>{post.data.description}</p>
 					</div>

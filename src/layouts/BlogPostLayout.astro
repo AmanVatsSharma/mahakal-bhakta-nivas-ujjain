@@ -13,9 +13,11 @@ export interface Props {
 const { post, related } = Astro.props;
 const { Content } = await render(post);
 const { title, description, pubDate, updatedDate, heroImage, heroAlt, tags, faq } = post.data;
+const pubDateObj = pubDate ? new Date(pubDate) : null;
+const updatedDateObj = updatedDate ? new Date(updatedDate) : null;
 
 const url = `${SITE.url}/blog/${post.id}/`;
-const ogImage = heroImage.startsWith('http') ? heroImage : `${SITE.url}${heroImage}`;
+const ogImage = (heroImage && heroImage.startsWith('http')) ? heroImage : `${SITE.url}${heroImage || '/og-default.jpg'}`;
 const waNumber = CONTACT.whatsapp.replace(/\D/g, '');
 const waLink = `https://wa.me/${waNumber}?text=${encodeURIComponent(`Namaste! I read your article "${title}" and would like to book a room at Mahakal Bhakta Nivas, Ujjain.`)}`;
 
@@ -29,8 +31,8 @@ const jsonLd = [
 		headline: title,
 		description,
 		image: ogImage,
-		datePublished: pubDate.toISOString(),
-		dateModified: (updatedDate ?? pubDate).toISOString(),
+		datePublished: (pubDateObj ? pubDateObj.toISOString() : new Date().toISOString()),
+		dateModified: (updatedDateObj ?? pubDateObj ?? new Date()).toISOString(),
 		mainEntityOfPage: { '@type': 'WebPage', '@id': url },
 		author: { '@type': 'Organization', name: SITE.name, url: SITE.url },
 		publisher: {
@@ -49,15 +51,15 @@ const jsonLd = [
 			{ '@type': 'ListItem', position: 3, name: title, item: url },
 		],
 	},
-	...(faq.length
+	...(faq && faq.length
 		? [
 				{
 					'@context': 'https://schema.org',
 					'@type': 'FAQPage',
 					mainEntity: faq.map((f) => ({
 						'@type': 'Question',
-						name: f.q,
-						acceptedAnswer: { '@type': 'Answer', text: f.a },
+						name: f.q || f.question || '',
+						acceptedAnswer: { '@type': 'Answer', text: f.a || f.answer || '' },
 					})),
 				},
 			]
@@ -81,7 +83,7 @@ const jsonLd = [
 			</div>
 			<h1>{title}</h1>
 			<p class="post-meta">
-				<time datetime={pubDate.toISOString()}>{fmtDate(pubDate)}</time>
+				<time datetime={pubDate ? pubDate.toISOString() : ""}>{pubDate ? fmtDate(pubDate) : ""}</time>
 				{updatedDate && <span> · Updated <time datetime={updatedDate.toISOString()}>{fmtDate(updatedDate)}</time></span>}
 				<span> · By {SITE.name}</span>
 			</p>
@@ -125,7 +127,7 @@ const jsonLd = [
 							<a href={`/blog/${r.id}/`} class="related-card">
 								<img src={r.data.heroImage} alt={r.data.heroAlt} loading="lazy" decoding="async" width="400" height="225" />
 								<div class="related-body">
-									<span class="related-date"><time datetime={r.data.pubDate.toISOString()}>{fmtDate(r.data.pubDate)}</time></span>
+									<span class="related-date"><time datetime={r.data.pubDate ? r.data.pubDate.toISOString() : ""}>{r.data.pubDate ? fmtDate(new Date(r.data.pubDate)) : ""}</time></span>
 									<h3>{r.data.title}</h3>
 								</div>
 							</a>
