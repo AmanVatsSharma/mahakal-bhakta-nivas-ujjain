@@ -11,8 +11,8 @@ export function getStaticPaths() {
 	return (async () => {
 		const POSTS_PER_PAGE_LOCAL = 10;
 		const sorted = (await getCollection('blog')).sort((a, b) => {
-			const da = a.data.pubDate ? a.data.pubDate.valueOf() : 0;
-			const db = b.data.pubDate ? b.data.pubDate.valueOf() : 0;
+			const da = a.data.pubDate ? new Date(a.data.pubDate).valueOf() : 0;
+			const db = b.data.pubDate ? new Date(b.data.pubDate).valueOf() : 0;
 			return db - da;
 		});
 		const totalPages = Math.max(1, Math.ceil(sorted.length / POSTS_PER_PAGE_LOCAL));
@@ -46,7 +46,7 @@ const fmtDate = (d: Date) => d.toLocaleDateString('en-IN', { day: 'numeric', mon
 				<a href={`/blog/${post.id}/`} class="post-card">
 					<img src={post.data.heroImage} alt={post.data.heroAlt} loading="lazy" decoding="async" width="400" height="225" />
 					<div class="post-card-body">
-						<span class="post-card-date"><time datetime={post.data.pubDate ? post.data.pubDate.toISOString() : ''}>{post.data.pubDate ? fmtDate(post.data.pubDate) : 'Coming Soon'}</time></span>
+						<span class="post-card-date"><time datetime={post.data.pubDate ? new Date(post.data.pubDate).toISOString() : ''}>{post.data.pubDate ? fmtDate(new Date(post.data.pubDate)) : 'Coming Soon'}</time></span>
 						<h2>{post.data.title}</h2>
 						<p>{post.data.description}</p>
 					</div>

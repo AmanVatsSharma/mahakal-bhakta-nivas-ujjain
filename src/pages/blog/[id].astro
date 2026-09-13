@@ -12,7 +12,7 @@ export function getStaticPaths() {
 				.map((p) => ({
 					post: p,
 					sharedTags: p.data.tags.filter((t) => post.data.tags.includes(t)).length,
-					recency: p.data.pubDate ? p.data.pubDate.valueOf() : 0,
+					recency: p.data.pubDate ? new Date(p.data.pubDate).valueOf() : 0,
 				}))
 				.sort((a, b) => b.sharedTags - a.sharedTags || b.recency - a.recency)
 				.slice(0, 3)

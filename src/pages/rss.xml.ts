@@ -3,10 +3,10 @@ import { getCollection } from 'astro:content';
 import { SITE } from '../config';
 
 const xmlEscape = (s: string) =>
-	s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+	(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
 export const GET: APIRoute = async () => {
-	const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+	const posts = (await getCollection('blog')).sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
 
 	const items = posts
 		.map((post) => {
@@ -16,7 +16,7 @@ export const GET: APIRoute = async () => {
       <link>${url}</link>
       <guid isPermaLink="true">${url}</guid>
       <description>${xmlEscape(post.data.description)}</description>
-      <pubDate>${post.data.pubDate.toUTCString()}</pubDate>
+      <pubDate>${new Date(post.data.pubDate).toUTCString()}</pubDate>
 ${post.data.tags.map((t) => `      <category>${xmlEscape(t)}</category>`).join('\n')}
     </item>`;
 		})

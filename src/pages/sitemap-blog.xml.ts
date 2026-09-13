@@ -4,20 +4,25 @@ import { SITE } from '../config';
 
 const POSTS_PER_PAGE = 10;
 
+const safeDate = (d: string | Date | null | undefined): string => {
+	const t = d && d !== '' ? new Date(d).valueOf() : NaN;
+	return Number.isNaN(t) ? new Date().toISOString().slice(0, 10) : new Date(t).toISOString().slice(0, 10);
+};
+
 export const GET: APIRoute = async () => {
-	const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+	const posts = (await getCollection('blog')).sort((a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf());
 	const totalPages = Math.max(1, Math.ceil(posts.length / POSTS_PER_PAGE));
 
 	const urls: Array<{ loc: string; lastmod: string }> = [
 		// Blog index + pagination pages
 		...Array.from({ length: totalPages }, (_, i) => ({
 			loc: `${SITE.url}/blog/${i > 0 ? `page/${i + 1}/` : ''}`,
-			lastmod: posts[0] ? posts[0].data.pubDate.toISOString().slice(0, 10) : new Date().toISOString().slice(0, 10),
+			lastmod: posts[0] ? safeDate(posts[0].data.pubDate) : safeDate(new Date()),
 		})),
 		// Posts
 		...posts.map((post) => ({
 			loc: `${SITE.url}/blog/${post.id}/`,
-			lastmod: (post.data.updatedDate ?? post.data.pubDate).toISOString().slice(0, 10),
+			lastmod: safeDate(post.data.updatedDate ?? post.data.pubDate),
 		})),
 	];
 

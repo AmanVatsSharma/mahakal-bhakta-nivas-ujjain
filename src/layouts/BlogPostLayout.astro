@@ -83,8 +83,8 @@ const jsonLd = [
 			</div>
 			<h1>{title}</h1>
 			<p class="post-meta">
-				<time datetime={pubDate ? pubDate.toISOString() : ""}>{pubDate ? fmtDate(pubDate) : ""}</time>
-				{updatedDate && <span> · Updated <time datetime={updatedDate.toISOString()}>{fmtDate(updatedDate)}</time></span>}
+				<time datetime={pubDate ? new Date(pubDate).toISOString() : ""}>{pubDate ? fmtDate(new Date(pubDate)) : ""}</time>
+				{updatedDate && <span> · Updated <time datetime={new Date(updatedDate).toISOString()}>{fmtDate(new Date(updatedDate))}</time></span>}
 				<span> · By {SITE.name}</span>
 			</p>
 		</header>
@@ -127,7 +127,7 @@ const jsonLd = [
 							<a href={`/blog/${r.id}/`} class="related-card">
 								<img src={r.data.heroImage} alt={r.data.heroAlt} loading="lazy" decoding="async" width="400" height="225" />
 								<div class="related-body">
-									<span class="related-date"><time datetime={r.data.pubDate ? r.data.pubDate.toISOString() : ""}>{r.data.pubDate ? fmtDate(new Date(r.data.pubDate)) : ""}</time></span>
+									<span class="related-date"><time datetime={r.data.pubDate ? new Date(r.data.pubDate).toISOString() : ""}>{r.data.pubDate ? fmtDate(new Date(r.data.pubDate)) : ""}</time></span>
 									<h3>{r.data.title}</h3>
 								</div>
 							</a>
