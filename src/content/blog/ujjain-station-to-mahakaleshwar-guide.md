@@ -1,4 +1,5 @@
----title: 'Ujjain Railway Station to Mahakaleshwar: Distance, Auto Fare, Bus & Walking
+---
+title: 'Ujjain Railway Station to Mahakaleshwar: Distance, Auto Fare, Bus & Walking
   Route — Complete Guide'
 description: How to reach Mahakaleshwar Temple from Ujjain Railway Station — auto
   fare, bus routes, walking distance, timing tips, and what to expect.
@@ -28,3 +29,4 @@ faq:
 - q: Is there a direct bus from Ujjain station to Mahakaleshwar?
   a: Yes, city buses run between the railway station and the temple area. The fare
     is approximately ₹10–₹15 per person. Buses run every 20–30 minutes from 6 AM to
+---

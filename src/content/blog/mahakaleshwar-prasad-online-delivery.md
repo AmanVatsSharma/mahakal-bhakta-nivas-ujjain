@@ -1,4 +1,5 @@
----title: 'Mahakaleshwar Prasad Online Delivery: Order Authentic Mahakal Prasad from
+---
+title: 'Mahakaleshwar Prasad Online Delivery: Order Authentic Mahakal Prasad from
   Ujjain to Anywhere in India'
 description: How to order Mahakaleshwar prasad online and get it delivered to your
   home anywhere in India — options, costs, delivery time, and tips for authentic prasad.
@@ -28,3 +29,4 @@ faq:
     offer holy water (Ganga Jal), rudraksha, and other sacred items from the temple.
 - q: How much does prasad delivery cost?
   a: Prasad items typically cost ₹100–₹500. Courier charges depend on weight and destination,
+---

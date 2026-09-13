@@ -1,4 +1,5 @@
----title: 'Mahakaleshwar Temple Mobile Phone Rules: Photography, Cloak Room & What to
+---
+title: 'Mahakaleshwar Temple Mobile Phone Rules: Photography, Cloak Room & What to
   Leave Behind'
 description: Complete guide to Mahakaleshwar Temple mobile phone rules, photography
   policy, cloak room facilities, and what you can bring inside the temple.
@@ -28,3 +29,4 @@ faq:
   a: Photography is strictly prohibited in the garbhagriha and during Bhasma Aarti.
     Photography is allowed in the outer courtyard, but be respectful and avoid photographing
     other devotees without permission.
+---
