@@ -80,17 +80,19 @@ const TRIP_GUIDES = [
 							<img src={room.image} alt={room.imageAlt} loading="lazy" width="400" height="260">
 							{room.badge && <span class="room-badge">{room.badge}</span>}
 						</div>
-						<div class="room-details">
+						<div class="room-content">
 							<h3>{room.name}</h3>
-							<p class="room-meta">{room.capacity} · {room.size}</p>
-							<p>{room.description}</p>
+							<p class="room-description">{room.description}</p>
 							<ul class="room-features">
 								{room.features.map((f) => (
-									<li>{f}</li>
+									<li>✓ {f}</li>
 								))}
 							</ul>
-							<div class="room-price-row">
-								<span class="room-price">{room.priceText}<span>/night</span></span>
+							<div class="room-footer">
+								<div class="room-price">
+									<span class="price-amount">{room.priceText}</span>
+									<span class="price-period">/night</span>
+								</div>
 								<a href={`https://wa.me/${SITE.whatsapp.replace(/\D/g, '')}?text=${encodeURIComponent(`Hi! I'd like to book the ${room.name} at Mahakal Bhakta Nivas.`)}`} target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-sm">
 									Book Now
 								</a>
@@ -915,31 +917,25 @@ const TRIP_GUIDES = [
 		backdrop-filter: blur(4px);
 	}
 
-	.room-details {
+	.room-content {
 		padding: 1.5rem;
 		flex: 1;
 		display: flex;
 		flex-direction: column;
 	}
 
-	.room-details h3 {
+	.room-content h3 {
 		font-size: 1.25rem;
 		color: #1c1410;
 		margin: 0 0 0.3rem;
 		font-weight: 700;
 	}
 
-	.room-meta {
-		font-size: 0.85rem;
-		color: #8b6f47;
-		margin: 0 0 0.75rem;
-	}
-
-	.room-details p {
+	.room-description {
 		font-size: 0.95rem;
 		color: #4b3c30;
-		line-height: 1.55;
-		margin-bottom: 0.75rem;
+		margin-bottom: 1rem;
+		line-height: 1.6;
 		flex: 1;
 	}
 
@@ -963,34 +959,38 @@ const TRIP_GUIDES = [
 		font-weight: 500;
 	}
 
-	.room-features li::before {
-		content: '✓';
-		color: #16a34a;
-		font-weight: 700;
-	}
-
-	.room-price-row {
+	.room-footer {
 		display: flex;
-		align-items: center;
 		justify-content: space-between;
+		align-items: center;
 		padding-top: 1rem;
 		border-top: 1px solid #f5ede0;
 	}
 
 	.room-price {
+		display: flex;
+		align-items: baseline;
+		gap: 0.25rem;
+	}
+
+	.price-amount {
 		font-size: 1.5rem;
 		font-weight: 700;
 		color: #1c1410;
 	}
 
-	.room-price span {
+	.price-period {
 		font-size: 0.85rem;
 		font-weight: 400;
 		color: #8b6f47;
 	}
 
-	.room-price-row .btn {
-		padding: 0.6rem 1.4rem;
+	.btn-sm {
+		padding: 0.5rem 1.2rem;
+		font-size: 0.85rem;
+	}
+
+	.room-footer .btn-whatsapp {
 		font-size: 0.88rem;
 		font-weight: 700;
 		border-radius: 999px;
@@ -1007,7 +1007,7 @@ const TRIP_GUIDES = [
 		box-shadow: 0 2px 10px rgba(37, 211, 102, 0.35);
 	}
 
-	.room-price-row .btn:hover {
+	.room-footer .btn-whatsapp:hover {
 		background: #1ebc57;
 		transform: translateY(-2px);
 		box-shadow: 0 6px 16px rgba(37, 211, 102, 0.45);
