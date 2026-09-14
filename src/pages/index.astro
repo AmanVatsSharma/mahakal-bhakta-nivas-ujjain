@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE, CONTACT, STATS, ROOMS, AMENITIES, TESTIMONIALS, FAQ_DATA, GALLERY_CATEGORIES, GALLERY_ITEMS, NAV_LINKS, POOJAS, FESTIVALS } from '../config';
-import Header from '../components/Header.astro';
 import BookingDialog from '../components/BookingDialog.astro';
 import FaqSchema from '../components/FaqSchema.json';
 
@@ -22,7 +21,6 @@ const TRIP_GUIDES = [
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription} canonical={pageUrl} ogImage={ogImage}>
-	<Header />
 
 	<!-- Hero Section: banner with CTA buttons overlaid -->
 	<section class="hero" id="home" aria-label="Mahakal Bhakta Nivas introduction">
