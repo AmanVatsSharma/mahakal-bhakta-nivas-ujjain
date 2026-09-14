@@ -1,4 +1,5 @@
----title: 'Non-AC Rooms Near Mahakaleshwar Temple: Budget Options Under ₹1000 with Amenities'
+---
+title: 'Non-AC Rooms Near Mahakaleshwar Temple: Budget Options Under ₹1000 with Amenities'
 description: Non-AC rooms near Mahakaleshwar — best budget options, what amenities
   to expect, which properties are clean and comfortable, and how to book.
 tags:

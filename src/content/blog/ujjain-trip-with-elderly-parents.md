@@ -1,4 +1,5 @@
----title: 'Ujjain Trip with Elderly Parents: Complete Guide for a Comfortable Mahakaleshwar
+---
+title: 'Ujjain Trip with Elderly Parents: Complete Guide for a Comfortable Mahakaleshwar
   Pilgrimage'
 description: Planning a Ujjain trip with elderly parents — accessibility tips, accommodation
   recommendations, darshan strategies, what to bring, and how to make the pilgrimage

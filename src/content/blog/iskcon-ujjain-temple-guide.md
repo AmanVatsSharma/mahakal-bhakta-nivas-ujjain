@@ -1,4 +1,5 @@
----title: 'ISKCON Ujjain (Radha Madan Mohan): Kirtans, Prasad & Peace'
+---
+title: 'ISKCON Ujjain (Radha Madan Mohan): Kirtans, Prasad & Peace'
 description: ISKCON Ujjain, the Sri Sri Radha Madan Mohan temple, offers kirtans,
   prasad and calm a short ride from Mahakaleshwar. Timings, Sunday programs and how
   to reach.
@@ -72,6 +73,12 @@ ISKCON (International Society for Krishna Consciousness) was founded in 1966 by 
 - **Community service:** Many ISKCON centers, including Ujjain, run food distribution programs, educational initiatives, and spiritual retreats
 
 The Ujjain temple's connection to the Maheshwari community adds a local layer — this is not just a global movement's outpost, but a temple built with the active participation of the city's own devotees.
+
+## Understanding the Deities
+
+**Radha and Madan Mohan** are the central deities of the ISKCON Ujjain temple. Madan Mohan is a form of Lord Krishna — the name means "one who enchants even the mind of Cupid." Radha represents the supreme devotee, and together they represent the ideal of devotional love (bhakti) that ISKCON teaches.
+
+The deities are dressed fresh every day, with special outfits and decorations for festivals. The altar is always lit with lamps, and flowers are offered throughout the day. The visual experience of the altar — the colours, the decorations, the calm gaze of the deities — is itself a form of darshan that many visitors find deeply moving.
 
 ## What You Will Find
 
@@ -161,10 +168,55 @@ ISKCON's location makes it a convenient stop in several itineraries:
 - **Sunday planning** — the feast is open to visitors; a small donation is the custom for meals.
 - **Photography** — the hall is usually generous, but the altar rules vary by hour; look for the signs or simply ask.
 
+## The ISKCON Book Stall and Gift Shop
+
+The temple's book counter is one of the best-kept secrets of the ISKCON experience. It offers:
+
+- **Bhagavad Gita** in multiple languages — the As It Is translation by Srila Prabhupada is the most popular
+- **Srimad Bhagavatam** — the multi-volume set that tells the story of Krishna's life
+- **Small devotional items** — japa beads (mala), deity pictures, incense, and holy books
+- **Children's books** — illustrated versions of Krishna's stories that make great gifts
+
+Prices are modest, and purchases support the temple's community programs. Many visitors buy a copy of the Bhagavad Gita here as a spiritual souvenir of their Ujjain visit.
+
+## Combining ISKCON with a Full Ujjain Day
+
+ISKCON works beautifully as part of a broader Ujjain itinerary. Here is how to fit it in:
+
+**Morning (6:00–10:00 AM):** Mahakaleshwar darshan and morning aarti
+**Late morning (10:30–11:30 AM):** Kal Bhairav Temple or Harsiddhi Shakti Peeth
+**Midday (12:00–1:00 PM):** Lunch and rest at your accommodation
+**Afternoon (3:00–5:00 PM):** ISKCON temple — kirtan, darshan, and a peaceful hour
+**Evening (5:30–7:00 PM):** Sunday Feast at ISKCON (if visiting on a Sunday), or return to Mahakaleshwar for evening aarti
+
+This rhythm gives you both the intensity of Mahakal and the peace of Radha Madan Mohan in the same day — the two faces of Ujjain's devotion.
+
 ## Staying Near Both Mahakal and Radha Madan Mohan
 
 After visiting ISKCON, stay 200 m from Mahakal at Mahakal Bhakta Nivas, [rooms from ₹1,250](/rooms/). Pure veg food, attached bathrooms, hot water, WiFi, parking and power backup, with check-in at 12 PM and check-out at 11 AM. An evening kirtan at Radha Madan Mohan and a morning darshan of the lord of time fit in one easy day from our door — the quiet temple and the cosmic one, ten minutes apart.
 
 Call **7024204628** or visit our [rooms page](/rooms/) to check availability and plan your Ujjain itinerary.
+
+## FAQ
+
+**Q: Is there parking available near ISKCON Ujjain?**
+
+A: Limited street parking is available near the temple entrance. During Sunday programs and festival days, the lanes can fill up, so arriving by auto, e-rickshaw, or on foot from nearby accommodations is often easier. If you are driving, our [Mahakal Bhakta Nivas](/rooms/) offers free parking, and ISKCON is a 10-minute walk from our door.
+
+**Q: Can I attend the Sunday Feast without prior booking?**
+
+A: Yes, the Sunday Feast is open to all visitors without booking. Simply arrive at ISKCON before 5:00 PM on a Sunday, and you will be included. No registration is required — just dress modestly, remove your shoes, and enter the hall.
+
+**Q: Are there any guided tours or audio guides at ISKCON Ujjain?**
+
+A: ISKCON temples generally do not offer formal guided tours. However, the temple staff and resident devotees are happy to explain the deities, the altar, and the significance of the temple to interested visitors. The best approach is to arrive during a quiet period (mid-morning or early afternoon) and ask one of the devotees to walk you through the altar.
+
+**Q: What is the donation policy at ISKCON Ujjain?**
+
+A: ISKCON operates on a voluntary donation basis. There is no entry fee or mandatory donation for darshan. For the Sunday Feast meal, a small donation (₹50-₹100) is customary and appreciated but not required. If you wish to make a larger offering, the temple management can advise on specific programs and initiatives your donation would support.
+
+**Q: Is ISKCON Ujjain suitable for a quick 30-minute visit?**
+
+A: Yes, absolutely. Many pilgrims pop in for a quick darshan between Mahakaleshwar and other temples. Even 20–30 minutes of sitting in the hall during kirtan can be deeply refreshing. The temple is structured so that a brief visit feels complete — you do not need to stay for a full program to get something meaningful from it.
 
 *Timings and facilities as of 2026 — verify locally on visit day.*

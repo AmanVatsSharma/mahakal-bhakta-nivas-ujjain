@@ -1,4 +1,5 @@
----title: Temples Near Ujjain You Should Not Miss (Beyond Mahakaleshwar)
+---
+title: Temples Near Ujjain You Should Not Miss (Beyond Mahakaleshwar)
 description: The essential temples near Ujjain — Kal Bhairav, Harsiddhi, Chintaman
   Ganesh, Mangalnath, Sandipani Ashram and more, with timing and route tips.
 pubDate: 2026-07-02

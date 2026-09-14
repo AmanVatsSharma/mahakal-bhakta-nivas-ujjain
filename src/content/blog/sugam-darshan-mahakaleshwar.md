@@ -1,4 +1,5 @@
----title: 'Sugam Darshan at Mahakaleshwar: Special Darshan Pass for Senior Citizens,
+---
+title: 'Sugam Darshan at Mahakaleshwar: Special Darshan Pass for Senior Citizens,
   Divyang & Others'
 description: Sugam Darshan at Mahakaleshwar — the special darshan facility for senior
   citizens, differently-abled pilgrims, and those with mobility issues. How to avail

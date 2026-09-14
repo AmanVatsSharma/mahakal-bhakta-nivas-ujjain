@@ -1,4 +1,5 @@
----title: 'Mahakal Lok Corridor Ujjain: Complete Guide to the Heritage Walkway from Mahakaleshwar
+---
+title: 'Mahakal Lok Corridor Ujjain: Complete Guide to the Heritage Walkway from Mahakaleshwar
   Temple'
 description: Mahakal Lok Corridor in Ujjain — the modern heritage walkway connecting
   Mahakaleshwar Temple to the city, its art, history, timings, and visitor guide.

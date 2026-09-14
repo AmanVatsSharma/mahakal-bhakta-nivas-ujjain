@@ -1,4 +1,5 @@
----title: 'Dharamshala vs Hotel in Ujjain: Which Is Better for Mahakaleshwar Pilgrimage?'
+---
+title: 'Dharamshala vs Hotel in Ujjain: Which Is Better for Mahakaleshwar Pilgrimage?'
 description: Dharamshala vs hotel for your Ujjain trip — comparing cost, location,
   amenities, food quality, atmosphere, and which suits different types of pilgrims.
 tags:

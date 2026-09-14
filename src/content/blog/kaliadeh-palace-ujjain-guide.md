@@ -1,4 +1,5 @@
----title: 'Kaliadeh Palace Ujjain: Guide to the Ancient Solanki Palace on the Shipra
+---
+title: 'Kaliadeh Palace Ujjain: Guide to the Ancient Solanki Palace on the Shipra
   River'
 description: Kaliadeh Palace on the Shipra River near Ujjain — an ancient Solanki-era
   palace with incredible architecture, a Sun temple within the complex, history, legends,

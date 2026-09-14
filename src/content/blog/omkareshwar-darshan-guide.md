@@ -1,4 +1,5 @@
----title: 'Omkareshwar Darshan Guide: What to See Beyond the Jyotirlinga'
+---
+title: 'Omkareshwar Darshan Guide: What to See Beyond the Jyotirlinga'
 description: 'Omkareshwar darshan beyond the Jyotirlinga: the Om-shaped island, Mamleshwar
   temple on the far bank, the parikrama path, boating on the Narmada and crowd timings.'
 pubDate: 2026-09-06

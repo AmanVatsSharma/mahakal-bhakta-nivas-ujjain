@@ -1,4 +1,5 @@
----title: 'Guru Purnima in Ujjain: Honoring the Guru in the City of Sandipani'
+---
+title: 'Guru Purnima in Ujjain: Honoring the Guru in the City of Sandipani'
 description: Guru Purnima in Ujjain honors the guru at Sandipani Ashram, where tradition
   says Krishna studied. Programs, the guru-shishya ideal and a family plan for Ashadha
   Purnima.

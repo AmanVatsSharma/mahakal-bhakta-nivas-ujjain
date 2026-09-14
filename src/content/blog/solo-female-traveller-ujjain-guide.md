@@ -1,4 +1,5 @@
----title: 'Solo Female Traveller in Ujjain: Safety, Stays and a Darshan Plan'
+---
+title: 'Solo Female Traveller in Ujjain: Safety, Stays and a Darshan Plan'
 description: Solo female travel in Ujjain made simple — an honest safety answer, temple-quarter
   stay logic, dress advice, transport tips and a confident one-day darshan plan near
   the gate.

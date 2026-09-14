@@ -1,4 +1,5 @@
----title: 'Mahamrityunjaya Jaap in Ujjain: Complete Guide to the Great Death-Conquering
+---
+title: 'Mahamrityunjaya Jaap in Ujjain: Complete Guide to the Great Death-Conquering
   Mantra at Mahakaleshwar'
 description: Mahamrityunjaya Jaap at Mahakaleshwar Ujjain — the power of Om Tryambakam,
   why it is chanted at Mahakaleshwar, how to perform it, timing, and booking guidance.

@@ -1,4 +1,5 @@
----title: 'Nag Panchami Ujjain Guide: Snake Worship Festival at Mahakaleshwar & Temple
+---
+title: 'Nag Panchami Ujjain Guide: Snake Worship Festival at Mahakaleshwar & Temple
   Traditions'
 description: Nag Panchami in Ujjain — the snake worship festival, its significance
   at Mahakaleshwar, how it is celebrated, special rituals, and tips for visiting during

@@ -1,4 +1,5 @@
----title: 'Kal Bhairav Temple Ujjain: Guide to the Fierce Guardian of Mahakaleshwar &
+---
+title: 'Kal Bhairav Temple Ujjain: Guide to the Fierce Guardian of Mahakaleshwar &
   Alcohol Offerings'
 description: Kal Bhairav Temple in Ujjain — the fierce guardian deity of Mahakaleshwar,
   the unique liquor offering tradition, history, timings, the Bhasma connection, Navagraha

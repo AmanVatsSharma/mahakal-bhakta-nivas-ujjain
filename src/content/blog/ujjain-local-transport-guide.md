@@ -1,4 +1,5 @@
----title: 'Getting Around Ujjain: Autos, E-Rickshaws & City Buses Explained'
+---
+title: 'Getting Around Ujjain: Autos, E-Rickshaws & City Buses Explained'
 description: Ujjain local transport explained — autos, e-rickshaws and city buses
   with typical fares, plus which temples you can reach on foot from a stay 200 m from
   the gate.
@@ -124,6 +125,72 @@ Our dharamshala includes **free parking for cars and bikes** on site, so guests 
 ## Transport Planning Is Room Planning
 
 The cheapest auto fare in Ujjain cannot compete with not needing one. Transport planning is really room planning: stay far, and Ujjain is a series of negotiated fares, timing pressures and crowd negotiations; stay at the gate, and it is a walkable town with occasional auto adventures for the three destinations that genuinely justify a vehicle.
+
+## Temple-Day Transport Logistics
+
+On **Bhasma Aarti mornings** (daily at 4:00 AM except Mondays and certain festival days), transport works differently. Autos wait near the gate from about 3:15 AM, but they thin out fast after 4:30 AM once the aarti crowd disperses into the queue lines. If you are attending the Bhasma Aarti, arrange your auto the night before through your dharamshala desk, or book a return ride in advance — nothing is worse than emerging from a powerful aarti at 5:15 AM and finding no autos in the dark. A [stay at Mahakal Bhakta Nivas](/rooms/) means the Bhasma Aarti is a 2-minute walk, but even we recommend guests arrange their return auto if they are returning late.
+
+On **Shravan Somvar** (every Monday in the month of Shravan), the gate area is pedestrian-only from about 6:00 AM to 10:00 AM. Autos cannot approach closer than 300–400 m. Factor this into your plans: carry prasad in a bag you can hold easily, wear comfortable footwear for the walk from the auto drop, and arrive at the gate at least 45 minutes before your planned darshan slot. The [Shravan Somvar guide](/blog/shravan-somvar-mahakaleshwar-guide/) covers crowd management in full detail.
+
+For **Mahashivratri**, the entire old city is under crowd control from 24 hours before the festival. Vehicle access is restricted to permit holders and emergency services. The only reliable approach is to walk from wherever you are staying. Again, proximity wins — our dharamshala is 200 m from the gate, which on Mahashivratri means you can walk to the queue entry in under 5 minutes while others are still searching for parking kilometers away.
+
+## Transport for Elderly, Disabled and Family Groups
+
+Families with elderly members or differently-abled pilgrims should plan transport more carefully than solo travellers:
+
+- **Book a full-day taxi** rather than relying on autos. A sedan with a patient driver who knows the temple routes removes the stress of haggling at every stop. Rates run ₹1,000–₹1,500 per day.
+- **Request the temple's disabled-access gate** when booking darshan. Mahakaleshwar Temple has a separate, wheelchair-friendly entry near the western side. Arrive 30 minutes early and ask at the enquiry counter.
+- **Carry a folding stool or walking stick** for long queue waits. The queue to the sanctum can take 45–90 minutes on peak days.
+- **Avoid festival-day autos** for elderly travellers. The combined heat, crowds and waiting are exhausting. A dharamshala room with attached bathroom, hot water and a nearby meal option is worth more than any sightseeing.
+
+Our [rooms at Mahakal Bhakta Nivas](/rooms/) include ground-floor options with minimal steps, attached western-style bathrooms, and a lift for upper floors — ask at the time of booking.
+
+## App-Based Cabs: Ola and Uber
+
+Both Ola and Uber operate in Ujjain with reasonable coverage within the city. For temple-area trips, they are sometimes less convenient than autos because drivers may refuse short distances or ask for cancellation. However, they excel for:
+
+- **Airport transfers** from Indore — book an Outstation ride the day before. Fixed fares, no haggling, reliable pickup.
+- **Railway station transfers** — Ola Auto is available at Ujjain Junction. Book through the app and the driver picks up from the designated zone.
+- **Late-night returns** from temples after 10 PM — when autos become scarce, Ola and Uber are your fallback.
+
+**Pricing (as of 2026):**
+- Ujjain Junction to temple quarter: ₹80–₹150 (Auto)
+- Temple quarter to Freeganj: ₹60–₹120 (Auto)
+- Ujjain to Indore airport (outstation): ₹1,200–₹1,800 (Sedan, one-way)
+- Airport to Ujjain (return leg): Book Outstation on the app for a fixed round-trip fare.
+
+**Tip:** Install both Ola and Uber before you travel. On festival days when one app shows no cars available, the other often has supply. Keep both running and compare fares.
+
+## Two-Wheeler Rentals
+
+Scooter and motorcycle rentals are available near Ujjain Junction railway station and in the Freeganj market area. Rates typically run ₹300–₹500 per day with a helmet included, and ₹1,500–₹2,500 for a week.
+
+**Advantages:**
+- Maximum flexibility on a 2–3 day stay
+- Easy parking near the temple gate on side streets
+- Flat terrain around Ujjain makes riding comfortable
+
+**Cautions:**
+- Helmets are mandatory and police checkpoints enforce this strictly — always wear one
+- Festival-day traffic near the temple is chaotic; park and walk in
+- The Mandu ascent is not recommended for inexperienced riders
+- Carry your driving licence and bike registration at all times
+
+## Pilgrim Feedback: What Regular Visitors Say
+
+After serving thousands of pilgrims over the years, a few patterns emerge consistently:
+
+1. **The walkable radius is everything.** Guests who stay within 500 m of the gate rate their trip significantly higher than those who stay farther out — fewer transport hassles, more spontaneous temple visits, better sleep before early-morning aartis.
+
+2. **Autos are reliable but build in 10-minute buffers.** A "2-minute auto ride" can easily become 5 minutes during peak hours. Factor this into your aarti timing calculations.
+
+3. **Full-day auto hire is the best value.** If you are visiting Kal Bhairav, Mangalnath and Kaliadeh in one day, a negotiated full-day hire at ₹800–₹1,200 beats three individual rides and gives you a patient driver throughout.
+
+4. **Shared e-rickshaws are underrated.** Solo travellers on a budget should try them — they are cheaper than autos, more social, and the open-top ride through Ujjain's lanes is an experience in itself.
+
+5. **Plan transport before you plan the darshan timings.** Arriving at the temple only to discover the last auto back has left is a avoidable frustration. Map out your day in advance and confirm return transport at each stop.
+
+## Transport Planning Is Room Planning
 
 **Mahakal Bhakta Nivas** puts you 200 m — a 2 to 3 minute walk — from the Mahakaleshwar gate, with [rooms from ₹1,250](/rooms/), attached bathrooms, hot water, free WiFi, parking, 24/7 power backup and pure veg food. The far temples — Kal Bhairav, Mangalnath, Kaliadeh — are one arranged auto away. The gate, the ghats and the aarti are one footstep away.
 

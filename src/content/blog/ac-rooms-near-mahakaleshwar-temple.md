@@ -1,4 +1,5 @@
----title: 'AC Rooms Near Mahakaleshwar Temple: Best Air-Conditioned Accommodation Options
+---
+title: 'AC Rooms Near Mahakaleshwar Temple: Best Air-Conditioned Accommodation Options
   & Tariffs'
 description: AC rooms near Mahakaleshwar Temple Ujjain — best options, tariffs, amenities,
   and how to book for a comfortable stay during your temple visit.

@@ -1,4 +1,5 @@
----title: 'Why Monday Is the Day at Mahakaleshwar: Somvar Darshan Guide'
+---
+title: 'Why Monday Is the Day at Mahakaleshwar: Somvar Darshan Guide'
 description: Somvar vrat and Monday darshan at Mahakaleshwar explained — why Monday
   belongs to Shiva, what changes at the temple, Sawan somvar crowds, the Solah Somvar
   tradition, and a workable plan.

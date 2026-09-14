@@ -1,4 +1,5 @@
----title: 'Group Booking at Ujjain Dharamshalas: Guide for Yatra Groups & Temple Trusts
+---
+title: 'Group Booking at Ujjain Dharamshalas: Guide for Yatra Groups & Temple Trusts
   — Discounts & Coordination Tips'
 description: Group booking guide for Ujjain dharamshalas — how to book multiple rooms
   for yatra groups, temple trusts, family gatherings, what discounts to expect, and

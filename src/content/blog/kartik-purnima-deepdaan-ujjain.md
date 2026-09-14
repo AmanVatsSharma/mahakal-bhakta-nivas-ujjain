@@ -1,4 +1,5 @@
----title: 'Kartik Purnima & Deep Daan Ujjain: Sacred Full Moon Festival at Mahakaleshwar
+---
+title: 'Kartik Purnima & Deep Daan Ujjain: Sacred Full Moon Festival at Mahakaleshwar
   & Ram Ghat'
 description: Kartik Purnima and Deep Daan in Ujjain — the sacred full moon festival,
   floating lamps on the Shipra, special rituals at Mahakaleshwar, and how to participate.

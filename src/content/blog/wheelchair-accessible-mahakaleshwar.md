@@ -1,4 +1,5 @@
----title: 'Wheelchair Accessible Mahakaleshwar: Sugam Darshan for Divyang & Senior Pilgrims
+---
+title: 'Wheelchair Accessible Mahakaleshwar: Sugam Darshan for Divyang & Senior Pilgrims
   at Ujjain'
 description: Wheelchair and accessibility guide for Mahakaleshwar Temple — Sugam Darshan
   for differently-abled pilgrims, ramp access, special entry, and how to arrange assistance.

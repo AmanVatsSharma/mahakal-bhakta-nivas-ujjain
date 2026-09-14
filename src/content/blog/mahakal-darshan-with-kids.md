@@ -1,4 +1,5 @@
----title: 'Mahakal Darshan with Kids: Family Guide to Ujjain Temple Visit with Children'
+---
+title: 'Mahakal Darshan with Kids: Family Guide to Ujjain Temple Visit with Children'
 description: Taking children to Mahakaleshwar Temple — what to expect, tips for managing
   kids during darshan, keeping them engaged, and making the visit memorable for the
   whole family.

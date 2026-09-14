@@ -1,4 +1,5 @@
----title: 'Mahakaleshwar to Omkareshwar: Complete Route Guide for the Jyotirlinga Circuit
+---
+title: 'Mahakaleshwar to Omkareshwar: Complete Route Guide for the Jyotirlinga Circuit
   in MP'
 description: Mahakaleshwar to Omkareshwar route guide — the 135 km journey between
   the two Jyotirlingas, transport options, road conditions, and how to plan a combined
@@ -171,9 +172,31 @@ This four-day plan covers the most sacred sites, the most beautiful heritage, an
 - **Cash:** Ticket counters, boat operators, and small shrines prefer cash. Network on the island can be patchy.
 - **Bhasma Aarti + Omkareshwar pairing:** Do the Bhasma Aarti on Day 1 morning in Ujjain, rest, then Omkareshwar on Day 2 — the spiritual energy compounds beautifully across the two days.
 
+## Frequently Asked Questions
+
+**Q: Is the road to Omkareshwar safe for night driving?**
+A: We do not recommend night driving on the Malwa plateau stretches. The roads are good but rural MP has limited lighting and wildlife crossing signs. Leave Ujjain by 7–8 AM and return by 8–9 PM for a comfortable and safe day.
+
+**Q: Can I take my pet along on the Omkareshwar trip?**
+A: Pets are generally not permitted inside the temple complex at Omkareshwar. Leave them at your Ujjain accommodation — Mahakal Bhakta Nivas is happy to look after pets for guests who need a day trip.
+
+**Q: Are there good restaurants at Omkareshwar?**
+A: Yes, several pure-veg restaurants near the ghats serve simple, fresh meals. The MP Tourism restaurant near the boat landing is reliable. If you have specific dietary requirements, carry snacks from Ujjain.
+
+**Q: Is the island parikrama suitable for elderly pilgrims?**
+A: The full 7–10 km parikrama involves stone steps and can be physically demanding. For elderly pilgrims, a boat ride around the island (approximately 1 hour) is a good alternative that offers the same spiritual view without the walking.
+
+**Q: Do I need a separate pass or ticket for Mamleshwar Temple?**
+A: Mamleshwar has a separate entry fee (typically ₹10–₹25 per person). The boat crossing from the island to Mamleshwar also has a small fare. Keep small cash for both.
+
+**Q: What is the best month to visit Omkareshwar?**
+A: October to February is ideal — cool, clear, and comfortable for the parikrama. The Narmada water level is manageable, and the evening aarti on the ghats is pleasant. Avoid peak summer (April–June) when daytime temperatures make outdoor walking difficult.
+
 ## Where to Stay in Ujjain
 
 Plan your Omkareshwar leg from a comfortable base near Mahakal. **Mahakal Bhakta Nivas** sits on Gopal Mandir Road, approximately **200 m from the Mahakaleshwar gate** — a 2 to 3 minute walk that makes the difference on aarti mornings when every extra step matters. **Rooms from ₹1,250** with pure veg food, attached bathrooms, hot water, WiFi, and 24/7 power backup. WhatsApp booking available.
+
+For a complete darshan experience before your Omkareshwar trip, see our [Mahakaleshwar darshan guide](/blog/mahakaleshwar-darshan-guide/).
 
 Plan your Jyotirlinga circuit from our doorstep — [rooms from ₹1,250](/rooms/).
 

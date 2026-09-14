@@ -1,4 +1,5 @@
----title: 'Mahakal Lok Light Show Ujjain: Timings, Tickets & Experience Guide for Evening
+---
+title: 'Mahakal Lok Light Show Ujjain: Timings, Tickets & Experience Guide for Evening
   Visits'
 description: The Mahakal Lok light and sound show in Ujjain — timings, show timings,
   ticket information, what to expect, and tips for the best experience at the Mahakaleshwar

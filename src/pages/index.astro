@@ -864,8 +864,7 @@ const TRIP_GUIDES = [
 	.rooms-grid {
 		display: grid;
 		grid-template-columns: 1fr;
-		max-width: 420px;
-		margin: 0 auto;
+		gap: 2rem;
 	}
 
 	.room-card {
@@ -881,13 +880,12 @@ const TRIP_GUIDES = [
 
 	.room-card:hover {
 		transform: translateY(-4px);
-		box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+		box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
 	}
 
 	.room-image {
 		position: relative;
-		width: 100%;
-		height: 220px;
+		height: 240px;
 		overflow: hidden;
 	}
 
@@ -895,26 +893,20 @@ const TRIP_GUIDES = [
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
-		transition: transform 0.4s ease;
-	}
-
-	.room-card:hover .room-image img {
-		transform: scale(1.06);
+		display: block;
 	}
 
 	.room-badge {
 		position: absolute;
-		top: 14px;
-		left: 14px;
-		background: linear-gradient(135deg, #d97706, #b45309);
+		top: 1rem;
+		left: 1rem;
+		background: var(--accent);
 		color: white;
-		padding: 0.35rem 1rem;
-		border-radius: 20px;
-		font-size: 0.78rem;
-		font-weight: 700;
-		letter-spacing: 0.02em;
-		box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-		backdrop-filter: blur(4px);
+		padding: 0.35rem 0.9rem;
+		border-radius: 999px;
+		font-size: 0.8rem;
+		font-weight: 600;
+		z-index: 2;
 	}
 
 	.room-content {
@@ -1787,28 +1779,23 @@ const TRIP_GUIDES = [
 		}
 
 		.rooms-grid {
-			grid-template-columns: repeat(2, 1fr);
-			gap: 1rem;
+			grid-template-columns: 1fr;
 		}
 
 		.room-card {
-			border-radius: 12px;
-		}
-
-		.room-card img {
-			height: 160px;
+			border-radius: 16px;
 		}
 
 		.room-card-body {
-			padding: 1rem;
+			padding: 1.25rem;
 		}
 
 		.room-card-body h3 {
-			font-size: 1rem;
+			font-size: 1.05rem;
 		}
 
 		.room-card-body p {
-			font-size: 0.85rem;
+			font-size: 0.88rem;
 		}
 
 		.room-card-meta {
@@ -1870,6 +1857,18 @@ const TRIP_GUIDES = [
 
 		.amenities-grid {
 			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (min-width: 768px) {
+		.rooms-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.rooms-grid {
+			grid-template-columns: repeat(3, 1fr);
 		}
 	}
 </style>

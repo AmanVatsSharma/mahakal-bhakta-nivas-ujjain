@@ -1,4 +1,5 @@
----title: 'Hariyali Amavasya Ujjain Mela: Complete Guide to the Green New Moon Festival
+---
+title: 'Hariyali Amavasya Ujjain Mela: Complete Guide to the Green New Moon Festival
   at Ram Ghat'
 description: Hariyali Amavasya in Ujjain — the green new moon festival at Ram Ghat,
   its significance, the mela atmosphere, rituals, and how to experience it.

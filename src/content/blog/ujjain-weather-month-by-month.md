@@ -1,4 +1,5 @@
----title: 'Ujjain Weather Month by Month: Temperature, Rainfall & What to Pack for Your
+---
+title: 'Ujjain Weather Month by Month: Temperature, Rainfall & What to Pack for Your
   Mahakaleshwar Visit'
 description: Ujjain weather guide — month-by-month temperature, rainfall, humidity,
   and packing tips for your Mahakaleshwar temple visit throughout the year.

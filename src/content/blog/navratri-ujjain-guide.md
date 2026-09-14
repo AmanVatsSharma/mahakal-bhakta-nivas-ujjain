@@ -1,4 +1,5 @@
----title: 'Navratri in Ujjain: 9 Nights of Devi Worship at Harsiddhi Temple & Mahakaleshwar'
+---
+title: 'Navratri in Ujjain: 9 Nights of Devi Worship at Harsiddhi Temple & Mahakaleshwar'
 description: Navratri in Ujjain — the nine-night festival of the Divine Mother, with
   special focus on Harsiddhi Temple, Mahakaleshwar darshan, and the city's festive
   atmosphere.

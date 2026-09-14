@@ -1,4 +1,5 @@
----title: 'Understanding Ujjain: A Simple Zone Map for Pilgrims'
+---
+title: 'Understanding Ujjain: A Simple Zone Map for Pilgrims'
 description: A simple Ujjain map in zones — the walk-everything temple quarter, Freeganj
   market, the station side and the river corridor — so first visits feel easy.
 pubDate: 2026-09-11

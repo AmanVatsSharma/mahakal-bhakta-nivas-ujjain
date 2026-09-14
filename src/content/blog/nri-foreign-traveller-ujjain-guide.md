@@ -1,4 +1,5 @@
----title: 'Ujjain for NRI and Foreign Visitors: A Respectful, Practical Guide'
+---
+title: 'Ujjain for NRI and Foreign Visitors: A Respectful, Practical Guide'
 description: Ujjain for foreigners and NRI visitors — e-visa guidance, money and UPI,
   reaching via Indore, temple etiquette, aarti IDs, food safety and photo rules.
 pubDate: 2026-09-11

@@ -1,4 +1,5 @@
----title: 'Rooms Near Ram Ghat Ujjain: Staying Steps From the Shipra'
+---
+title: 'Rooms Near Ram Ghat Ujjain: Staying Steps From the Shipra'
 description: 'Hotels near Ram Ghat Ujjain compared with temple-gate stays: who suits
   ghat-side living, an evening aarti walk plan, and a stay 500 m from the ghat and
   200 m from Mahakal.'

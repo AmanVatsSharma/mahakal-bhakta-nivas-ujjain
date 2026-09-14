@@ -1,4 +1,5 @@
----title: 'Nearest Airport to Ujjain: Devi Ahilyabai Holkar Airport Indore — Complete
+---
+title: 'Nearest Airport to Ujjain: Devi Ahilyabai Holkar Airport Indore — Complete
   Guide'
 description: Devi Ahilyabai Holkar Airport in Indore is the nearest airport to Ujjain
   (55 km). Complete guide covering flights, airport transport, and the journey to

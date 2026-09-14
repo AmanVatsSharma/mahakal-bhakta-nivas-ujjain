@@ -1,4 +1,5 @@
----title: 'Kaal Sarp Dosh Pooja in Ujjain: Complete Guide to Ritual, Timing & Booking'
+---
+title: 'Kaal Sarp Dosh Pooja in Ujjain: Complete Guide to Ritual, Timing & Booking'
 description: Kaal Sarp Dosh Pooja at Mahakaleshwar Ujjain — the complete guide covering
   what the dosh means, how the pooja is performed, timing, cost, and how to book.
 pubDate: 2026-09-12

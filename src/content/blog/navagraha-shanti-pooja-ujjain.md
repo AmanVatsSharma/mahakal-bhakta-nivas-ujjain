@@ -1,4 +1,5 @@
----title: 'Navagraha Shanti Pooja in Ujjain: Complete Guide to the Nine-Planet Ritual
+---
+title: 'Navagraha Shanti Pooja in Ujjain: Complete Guide to the Nine-Planet Ritual
   at Mahakaleshwar'
 description: Navagraha Shanti Pooja at Mahakaleshwar Ujjain — the ritual for appeasing
   the nine planets, why it is performed here, procedure, timing, and how to book.

@@ -1,4 +1,5 @@
----title: 'Couple-Friendly Stay Ujjain: Hotels and Rooms for Married Couples Near Mahakaleshwar
+---
+title: 'Couple-Friendly Stay Ujjain: Hotels and Rooms for Married Couples Near Mahakaleshwar
   — Guide'
 description: Couple-friendly accommodation in Ujjain near Mahakaleshwar — which properties
   accept married couples, what documentation is needed, tips for hassle-free booking,

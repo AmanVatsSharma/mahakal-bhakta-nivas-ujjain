@@ -1,4 +1,5 @@
----title: 'Kumbh Mela Ujjain 2028 (Simhastha): Complete Guide to Dates, Rituals, Stay
+---
+title: 'Kumbh Mela Ujjain 2028 (Simhastha): Complete Guide to Dates, Rituals, Stay
   & Booking'
 description: Ujjain Kumbh Mela 2028 (Simhastha) — complete guide covering dates, the
   Mahakaleshwar connection, accommodation booking, rituals, crowd management, and
